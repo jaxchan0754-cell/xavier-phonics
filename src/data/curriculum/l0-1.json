@@ -1,0 +1,143 @@
+{
+  "id": "l0-1",
+  "level": 0,
+  "order": 1,
+  "emoji": "🐶",
+  "cn": "语音意识·动物声音",
+  "intro": {
+    "audio": "Hello! I'm Felix! Listen! What animal is it?"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "environment",
+      "rounds": [
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "woof woof",
+          "target": "dog",
+          "cards": [
+            {
+              "id": "dog",
+              "emoji": "🐶",
+              "audio": "dog",
+              "cn": "狗"
+            },
+            {
+              "id": "cat",
+              "emoji": "🐱",
+              "audio": "cat",
+              "cn": "猫"
+            },
+            {
+              "id": "duck",
+              "emoji": "🦆",
+              "audio": "duck",
+              "cn": "鸭子"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "meow",
+          "target": "cat",
+          "cards": [
+            {
+              "id": "cow",
+              "emoji": "🐮",
+              "audio": "cow",
+              "cn": "奶牛"
+            },
+            {
+              "id": "cat",
+              "emoji": "🐱",
+              "audio": "cat",
+              "cn": "猫"
+            },
+            {
+              "id": "dog",
+              "emoji": "🐶",
+              "audio": "dog",
+              "cn": "狗"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "moo",
+          "target": "cow",
+          "cards": [
+            {
+              "id": "duck",
+              "emoji": "🦆",
+              "audio": "duck",
+              "cn": "鸭子"
+            },
+            {
+              "id": "cow",
+              "emoji": "🐮",
+              "audio": "cow",
+              "cn": "奶牛"
+            },
+            {
+              "id": "pig",
+              "emoji": "🐷",
+              "audio": "pig",
+              "cn": "猪"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "quack quack",
+          "target": "duck",
+          "cards": [
+            {
+              "id": "pig",
+              "emoji": "🐷",
+              "audio": "pig",
+              "cn": "猪"
+            },
+            {
+              "id": "dog",
+              "emoji": "🐶",
+              "audio": "dog",
+              "cn": "狗"
+            },
+            {
+              "id": "duck",
+              "emoji": "🦆",
+              "audio": "duck",
+              "cn": "鸭子"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "woof woof",
+          "model": "woof woof",
+          "emoji": "🐶",
+          "cn": "狗叫声"
+        },
+        {
+          "text": "meow",
+          "model": "meow",
+          "emoji": "🐱",
+          "cn": "猫叫声"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🐶",
+      "audio": "Great job! You know the animal sounds!"
+    }
+  ],
+  "parentGuide": "目标：辨别常见动物叫声。让孩子自己点，点错不纠正，请他自己再听一遍。约 5 分钟。课后玩「学叫声」：家长学动物叫，孩子猜，再交换角色。"
+}

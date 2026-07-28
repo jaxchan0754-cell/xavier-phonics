@@ -1,0 +1,189 @@
+{
+  "id": "l1-3",
+  "level": 1,
+  "order": 9,
+  "emoji": "📌",
+  "cn": "字母音 i n + 拼读（pin/sit/tip/nap）",
+  "intro": {
+    "audio": "Hello! Today we learn ih and nnn! Let's read more words!"
+  },
+  "trickyWords": [
+    {
+      "text": "I",
+      "cn": "我",
+      "emoji": "🧒"
+    }
+  ],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "letter",
+      "rounds": [
+        {
+          "prompt": "Tap the letter ih!",
+          "target": "i",
+          "cards": [
+            {
+              "id": "i",
+              "emoji": "✒️",
+              "text": "i",
+              "audio": "ih"
+            },
+            {
+              "id": "t",
+              "emoji": "🐯",
+              "text": "t",
+              "audio": "tuh"
+            },
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter nnn!",
+          "target": "n",
+          "cards": [
+            {
+              "id": "n",
+              "emoji": "🥅",
+              "text": "n",
+              "audio": "nnn"
+            },
+            {
+              "id": "i",
+              "emoji": "✒️",
+              "text": "i",
+              "audio": "ih"
+            },
+            {
+              "id": "p",
+              "emoji": "🐷",
+              "text": "p",
+              "audio": "puh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "i",
+          "model": "ih",
+          "emoji": "✒️",
+          "cn": "墨水"
+        },
+        {
+          "text": "n",
+          "model": "nnn",
+          "emoji": "🥅",
+          "cn": "网"
+        },
+        {
+          "text": "I",
+          "model": "I",
+          "emoji": "🧒",
+          "cn": "我（tricky word，整体认读）",
+          "tricky": true
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "pin",
+          "emoji": "📌",
+          "cn": "别针",
+          "letters": [
+            {
+              "char": "p",
+              "audio": "puh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "n",
+              "audio": "nnn"
+            }
+          ],
+          "audio": "pin"
+        },
+        {
+          "word": "sit",
+          "emoji": "🪑",
+          "cn": "坐",
+          "letters": [
+            {
+              "char": "s",
+              "audio": "sss"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "sit"
+        },
+        {
+          "word": "tip",
+          "emoji": "☝️",
+          "cn": "尖端",
+          "letters": [
+            {
+              "char": "t",
+              "audio": "tuh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "p",
+              "audio": "puh"
+            }
+          ],
+          "audio": "tip"
+        },
+        {
+          "word": "nap",
+          "emoji": "😴",
+          "cn": "小睡",
+          "letters": [
+            {
+              "char": "n",
+              "audio": "nnn"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "p",
+              "audio": "puh"
+            }
+          ],
+          "audio": "nap"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "📌",
+      "audio": "Super! You can read pin, sit, tip, nap!"
+    }
+  ],
+  "parentGuide": "目标：学 i n，拼 pin/sit/tip/nap；第一个 tricky word「I」整体认读（不拼，看到直接读）。约 8 分钟。可把 I 做成小卡片贴镜子上，见面就指一指。"
+}

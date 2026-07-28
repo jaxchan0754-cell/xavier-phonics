@@ -1,0 +1,179 @@
+{
+  "id": "l1-8",
+  "level": 1,
+  "order": 14,
+  "emoji": "🍲",
+  "cn": "CVC 复习（pig/pot/sock/cap）",
+  "intro": {
+    "audio": "Hi! Let's read more words! You are a reading star!"
+  },
+  "trickyWords": [
+    {
+      "text": "into",
+      "cn": "进入",
+      "emoji": "📥"
+    }
+  ],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "word",
+      "rounds": [
+        {
+          "prompt": "Listen! Tap the picture!",
+          "stimulus": "pig",
+          "target": "pig",
+          "cards": [
+            {
+              "id": "pig",
+              "emoji": "🐷",
+              "audio": "pig",
+              "cn": "猪"
+            },
+            {
+              "id": "pot",
+              "emoji": "🍲",
+              "audio": "pot",
+              "cn": "锅"
+            },
+            {
+              "id": "dog",
+              "emoji": "🐶",
+              "audio": "dog",
+              "cn": "狗"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! Tap the picture!",
+          "stimulus": "pot",
+          "target": "pot",
+          "cards": [
+            {
+              "id": "cap",
+              "emoji": "🧢",
+              "audio": "cap",
+              "cn": "帽子"
+            },
+            {
+              "id": "pot",
+              "emoji": "🍲",
+              "audio": "pot",
+              "cn": "锅"
+            },
+            {
+              "id": "sock",
+              "emoji": "🧦",
+              "audio": "sock",
+              "cn": "袜子"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "pig",
+          "emoji": "🐷",
+          "cn": "猪",
+          "letters": [
+            {
+              "char": "p",
+              "audio": "puh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "g",
+              "audio": "guh"
+            }
+          ],
+          "audio": "pig"
+        },
+        {
+          "word": "pot",
+          "emoji": "🍲",
+          "cn": "锅",
+          "letters": [
+            {
+              "char": "p",
+              "audio": "puh"
+            },
+            {
+              "char": "o",
+              "audio": "aw"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "pot"
+        },
+        {
+          "word": "sock",
+          "emoji": "🧦",
+          "cn": "袜子",
+          "letters": [
+            {
+              "char": "s",
+              "audio": "sss"
+            },
+            {
+              "char": "o",
+              "audio": "aw"
+            },
+            {
+              "char": "ck",
+              "audio": "kuh"
+            }
+          ],
+          "audio": "sock"
+        },
+        {
+          "word": "cap",
+          "emoji": "🧢",
+          "cn": "帽子",
+          "letters": [
+            {
+              "char": "c",
+              "audio": "kuh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "p",
+              "audio": "puh"
+            }
+          ],
+          "audio": "cap"
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "into",
+          "model": "into",
+          "emoji": "📥",
+          "cn": "进入（tricky word，整体认读）",
+          "tricky": true
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🍲",
+      "audio": "Fantastic! You can read so many words!"
+    }
+  ],
+  "parentGuide": "目标：综合拼读 pig/pot/sock/cap；tricky word「into」。约 8 分钟。孩子开始真正「读出来」了——多鼓励少纠错，读错让他自己再点一次字母块发现。"
+}

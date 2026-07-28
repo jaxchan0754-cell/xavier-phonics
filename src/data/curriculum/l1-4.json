@@ -1,0 +1,189 @@
+{
+  "id": "l1-4",
+  "level": 1,
+  "order": 10,
+  "emoji": "👨",
+  "cn": "字母音 m d + 拼读（man/dad/mad/dim）",
+  "intro": {
+    "audio": "Hi! Today we learn mmm and duh!"
+  },
+  "trickyWords": [
+    {
+      "text": "no",
+      "cn": "不",
+      "emoji": "🙅"
+    }
+  ],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "letter",
+      "rounds": [
+        {
+          "prompt": "Tap the letter mmm!",
+          "target": "m",
+          "cards": [
+            {
+              "id": "m",
+              "emoji": "🐵",
+              "text": "m",
+              "audio": "mmm"
+            },
+            {
+              "id": "n",
+              "emoji": "🥅",
+              "text": "n",
+              "audio": "nnn"
+            },
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter duh!",
+          "target": "d",
+          "cards": [
+            {
+              "id": "d",
+              "emoji": "🐶",
+              "text": "d",
+              "audio": "duh"
+            },
+            {
+              "id": "t",
+              "emoji": "🐯",
+              "text": "t",
+              "audio": "tuh"
+            },
+            {
+              "id": "p",
+              "emoji": "🐷",
+              "text": "p",
+              "audio": "puh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "m",
+          "model": "mmm",
+          "emoji": "🐵",
+          "cn": "猴子"
+        },
+        {
+          "text": "d",
+          "model": "duh",
+          "emoji": "🐶",
+          "cn": "狗"
+        },
+        {
+          "text": "no",
+          "model": "no",
+          "emoji": "🙅",
+          "cn": "不（tricky word，整体认读）",
+          "tricky": true
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "man",
+          "emoji": "👨",
+          "cn": "男人",
+          "letters": [
+            {
+              "char": "m",
+              "audio": "mmm"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "n",
+              "audio": "nnn"
+            }
+          ],
+          "audio": "man"
+        },
+        {
+          "word": "dad",
+          "emoji": "👨‍👦",
+          "cn": "爸爸",
+          "letters": [
+            {
+              "char": "d",
+              "audio": "duh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "d",
+              "audio": "duh"
+            }
+          ],
+          "audio": "dad"
+        },
+        {
+          "word": "mad",
+          "emoji": "😠",
+          "cn": "生气的",
+          "letters": [
+            {
+              "char": "m",
+              "audio": "mmm"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "d",
+              "audio": "duh"
+            }
+          ],
+          "audio": "mad"
+        },
+        {
+          "word": "dim",
+          "emoji": "🔅",
+          "cn": "昏暗的",
+          "letters": [
+            {
+              "char": "d",
+              "audio": "duh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "m",
+              "audio": "mmm"
+            }
+          ],
+          "audio": "dim"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "👨",
+      "audio": "Great reading! Man, dad, mad, dim!"
+    }
+  ],
+  "parentGuide": "目标：学 m d，拼 man/dad/mad/dim；tricky word「no」。约 8 分钟。dim 孩子可能不懂，用调暗灯光演示。可让孩子把英文词夹进中文句子用（「爸爸是 dad」）。"
+}

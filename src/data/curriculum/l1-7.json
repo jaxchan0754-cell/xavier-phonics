@@ -1,0 +1,189 @@
+{
+  "id": "l1-7",
+  "level": 1,
+  "order": 13,
+  "emoji": "🐱",
+  "cn": "字母音 c k + 拼读（cat/cap/kid/sock）",
+  "intro": {
+    "audio": "Hello! Today we learn kuh! Two letters make kuh: c and k!"
+  },
+  "trickyWords": [
+    {
+      "text": "the",
+      "cn": "这/那（定冠词）",
+      "emoji": "📖"
+    }
+  ],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "letter",
+      "rounds": [
+        {
+          "prompt": "Tap the letter kuh!",
+          "target": "c",
+          "cards": [
+            {
+              "id": "c",
+              "emoji": "🐱",
+              "text": "c",
+              "audio": "kuh"
+            },
+            {
+              "id": "t",
+              "emoji": "🐯",
+              "text": "t",
+              "audio": "tuh"
+            },
+            {
+              "id": "g",
+              "emoji": "🍇",
+              "text": "g",
+              "audio": "guh"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter kuh! The other kuh!",
+          "target": "k",
+          "cards": [
+            {
+              "id": "k",
+              "emoji": "🪁",
+              "text": "k",
+              "audio": "kuh"
+            },
+            {
+              "id": "c",
+              "emoji": "🐱",
+              "text": "c",
+              "audio": "kuh"
+            },
+            {
+              "id": "d",
+              "emoji": "🐶",
+              "text": "d",
+              "audio": "duh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "c",
+          "model": "kuh",
+          "emoji": "🐱",
+          "cn": "猫（c 发 /k/）"
+        },
+        {
+          "text": "k",
+          "model": "kuh",
+          "emoji": "🪁",
+          "cn": "风筝"
+        },
+        {
+          "text": "the",
+          "model": "the",
+          "emoji": "📖",
+          "cn": "定冠词（tricky word，整体认读）",
+          "tricky": true
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "cat",
+          "emoji": "🐱",
+          "cn": "猫",
+          "letters": [
+            {
+              "char": "c",
+              "audio": "kuh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "cat"
+        },
+        {
+          "word": "cap",
+          "emoji": "🧢",
+          "cn": "帽子",
+          "letters": [
+            {
+              "char": "c",
+              "audio": "kuh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "p",
+              "audio": "puh"
+            }
+          ],
+          "audio": "cap"
+        },
+        {
+          "word": "kid",
+          "emoji": "🧒",
+          "cn": "小孩",
+          "letters": [
+            {
+              "char": "k",
+              "audio": "kuh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "d",
+              "audio": "duh"
+            }
+          ],
+          "audio": "kid"
+        },
+        {
+          "word": "sock",
+          "emoji": "🧦",
+          "cn": "袜子",
+          "letters": [
+            {
+              "char": "s",
+              "audio": "sss"
+            },
+            {
+              "char": "o",
+              "audio": "aw"
+            },
+            {
+              "char": "ck",
+              "audio": "kuh"
+            }
+          ],
+          "audio": "sock"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🐱",
+      "audio": "Purr-fect! Cat, cap, kid, sock!"
+    }
+  ],
+  "parentGuide": "目标：学 c 和 k（都发 /k/），拼 cat/cap/kid/sock；tricky word「the」。sock 里的 ck 是一个音块，只点一次。约 8 分钟。课后找家里 c/k 开头的物品。"
+}

@@ -1,0 +1,190 @@
+{
+  "id": "l1-10",
+  "level": 1,
+  "order": 16,
+  "emoji": "🏆",
+  "cn": "Level 1 大复习",
+  "intro": {
+    "audio": "Hi, superstar! Let's review everything! Are you ready?"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "letter",
+      "rounds": [
+        {
+          "prompt": "Tap the letter sss!",
+          "target": "s",
+          "cards": [
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            },
+            {
+              "id": "c",
+              "emoji": "🐱",
+              "text": "c",
+              "audio": "kuh"
+            },
+            {
+              "id": "m",
+              "emoji": "🐵",
+              "text": "m",
+              "audio": "mmm"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter mmm!",
+          "target": "m",
+          "cards": [
+            {
+              "id": "n",
+              "emoji": "🥅",
+              "text": "n",
+              "audio": "nnn"
+            },
+            {
+              "id": "m",
+              "emoji": "🐵",
+              "text": "m",
+              "audio": "mmm"
+            },
+            {
+              "id": "g",
+              "emoji": "🍇",
+              "text": "g",
+              "audio": "guh"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! Tap the picture!",
+          "stimulus": "kid",
+          "target": "kid",
+          "cards": [
+            {
+              "id": "kid",
+              "emoji": "🧒",
+              "audio": "kid",
+              "cn": "小孩"
+            },
+            {
+              "id": "cap",
+              "emoji": "🧢",
+              "audio": "cap",
+              "cn": "帽子"
+            },
+            {
+              "id": "dot",
+              "emoji": "🔵",
+              "audio": "dot",
+              "cn": "圆点"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "cat",
+          "emoji": "🐱",
+          "cn": "猫",
+          "letters": [
+            {
+              "char": "c",
+              "audio": "kuh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "cat"
+        },
+        {
+          "word": "pin",
+          "emoji": "📌",
+          "cn": "别针",
+          "letters": [
+            {
+              "char": "p",
+              "audio": "puh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "n",
+              "audio": "nnn"
+            }
+          ],
+          "audio": "pin"
+        },
+        {
+          "word": "dog",
+          "emoji": "🐶",
+          "cn": "狗",
+          "letters": [
+            {
+              "char": "d",
+              "audio": "duh"
+            },
+            {
+              "char": "o",
+              "audio": "aw"
+            },
+            {
+              "char": "g",
+              "audio": "guh"
+            }
+          ],
+          "audio": "dog"
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "I",
+          "model": "I",
+          "emoji": "🧒",
+          "cn": "我（tricky word）",
+          "tricky": true
+        },
+        {
+          "text": "no",
+          "model": "no",
+          "emoji": "🙅",
+          "cn": "不（tricky word）",
+          "tricky": true
+        },
+        {
+          "text": "go",
+          "model": "go",
+          "emoji": "🏃",
+          "cn": "去（tricky word）",
+          "tricky": true
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🏆",
+      "audio": "You did it! Level one complete! You are a reading star!"
+    }
+  ],
+  "parentGuide": "目标：Level 1 总复习。约 8 分钟。完成后建议来点小仪式感（贴纸/合影）。接下来进入 Level 2，保持每周 3-5 次、每次 10-15 分钟的节奏即可。"
+}

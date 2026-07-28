@@ -1,0 +1,121 @@
+{
+  "id": "l1-1",
+  "level": 1,
+  "order": 7,
+  "emoji": "🐍",
+  "cn": "字母音 s a t",
+  "intro": {
+    "audio": "Hello! I'm Felix! Today we learn three sounds! sss, ah, tuh!"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "letter",
+      "rounds": [
+        {
+          "prompt": "Tap the letter sss!",
+          "target": "s",
+          "cards": [
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            },
+            {
+              "id": "a",
+              "emoji": "🍎",
+              "text": "a",
+              "audio": "ah"
+            },
+            {
+              "id": "t",
+              "emoji": "🐯",
+              "text": "t",
+              "audio": "tuh"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter ah!",
+          "target": "a",
+          "cards": [
+            {
+              "id": "t",
+              "emoji": "🐯",
+              "text": "t",
+              "audio": "tuh"
+            },
+            {
+              "id": "a",
+              "emoji": "🍎",
+              "text": "a",
+              "audio": "ah"
+            },
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter tuh!",
+          "target": "t",
+          "cards": [
+            {
+              "id": "a",
+              "emoji": "🍎",
+              "text": "a",
+              "audio": "ah"
+            },
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            },
+            {
+              "id": "t",
+              "emoji": "🐯",
+              "text": "t",
+              "audio": "tuh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "s",
+          "model": "sss",
+          "emoji": "🐍",
+          "cn": "蛇"
+        },
+        {
+          "text": "a",
+          "model": "ah",
+          "emoji": "🍎",
+          "cn": "苹果"
+        },
+        {
+          "text": "t",
+          "model": "tuh",
+          "emoji": "🐯",
+          "cn": "老虎"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🐍",
+      "audio": "Great job! You know sss, ah, tuh!"
+    }
+  ],
+  "parentGuide": "第一课字母音！目标：认读 s a t 三个字母音（读字母的音，不是字母名）。约 5-8 分钟。平时多指认：「这是 sss」。课后在生活里找 s 开头的东西（snake、sun）。"
+}

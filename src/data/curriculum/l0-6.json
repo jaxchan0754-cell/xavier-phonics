@@ -1,0 +1,105 @@
+{
+  "id": "l0-6",
+  "level": 0,
+  "order": 6,
+  "emoji": "👍",
+  "cn": "语音意识·最小对立对（θ-s / v-w）",
+  "intro": {
+    "audio": "Hi! Listen carefully! Thumb, sum. Are they the same?"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "minimal-pair",
+      "rounds": [
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "thumb",
+          "target": "thumb",
+          "pair": "θ-s",
+          "cards": [
+            {
+              "id": "thumb",
+              "emoji": "👍",
+              "audio": "thumb",
+              "cn": "大拇指"
+            },
+            {
+              "id": "sum",
+              "emoji": "➕",
+              "audio": "sum",
+              "cn": "总和"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "sum",
+          "target": "sum",
+          "pair": "θ-s",
+          "cards": [
+            {
+              "id": "sum",
+              "emoji": "➕",
+              "audio": "sum",
+              "cn": "总和"
+            },
+            {
+              "id": "thumb",
+              "emoji": "👍",
+              "audio": "thumb",
+              "cn": "大拇指"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "vet",
+          "target": "vet",
+          "pair": "v-w",
+          "cards": [
+            {
+              "id": "vet",
+              "emoji": "🧑‍⚕️",
+              "audio": "vet",
+              "cn": "兽医"
+            },
+            {
+              "id": "wet",
+              "emoji": "💧",
+              "audio": "wet",
+              "cn": "湿的"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "wet",
+          "target": "wet",
+          "pair": "v-w",
+          "cards": [
+            {
+              "id": "wet",
+              "emoji": "💧",
+              "audio": "wet",
+              "cn": "湿的"
+            },
+            {
+              "id": "vet",
+              "emoji": "🧑‍⚕️",
+              "audio": "vet",
+              "cn": "兽医"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "👍",
+      "audio": "Wonderful! You can hear the little differences!"
+    }
+  ],
+  "parentGuide": "目标：分辨 thumb/sum、vet/wet。/θ/ 和 /v/ 是汉语没有的音。约 5 分钟。可照镜子玩「咬舌尖」（θ）和「上牙咬下唇」（v）游戏，重点是会听辨，不追求发音标准。"
+}

@@ -1,0 +1,169 @@
+{
+  "id": "l1-6",
+  "level": 1,
+  "order": 12,
+  "emoji": "🐶",
+  "cn": "字母音 g o + 拼读（dog/dig/dot）",
+  "intro": {
+    "audio": "Hi! Today we learn guh and aw!"
+  },
+  "trickyWords": [
+    {
+      "text": "to",
+      "cn": "到、向",
+      "emoji": "➡️"
+    }
+  ],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "letter",
+      "rounds": [
+        {
+          "prompt": "Tap the letter guh!",
+          "target": "g",
+          "cards": [
+            {
+              "id": "g",
+              "emoji": "🍇",
+              "text": "g",
+              "audio": "guh"
+            },
+            {
+              "id": "d",
+              "emoji": "🐶",
+              "text": "d",
+              "audio": "duh"
+            },
+            {
+              "id": "p",
+              "emoji": "🐷",
+              "text": "p",
+              "audio": "puh"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter aw!",
+          "target": "o",
+          "cards": [
+            {
+              "id": "o",
+              "emoji": "🐙",
+              "text": "o",
+              "audio": "aw"
+            },
+            {
+              "id": "a",
+              "emoji": "🍎",
+              "text": "a",
+              "audio": "ah"
+            },
+            {
+              "id": "i",
+              "emoji": "✒️",
+              "text": "i",
+              "audio": "ih"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "g",
+          "model": "guh",
+          "emoji": "🍇",
+          "cn": "葡萄"
+        },
+        {
+          "text": "o",
+          "model": "aw",
+          "emoji": "🐙",
+          "cn": "章鱼"
+        },
+        {
+          "text": "to",
+          "model": "to",
+          "emoji": "➡️",
+          "cn": "到、向（tricky word，整体认读）",
+          "tricky": true
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "dog",
+          "emoji": "🐶",
+          "cn": "狗",
+          "letters": [
+            {
+              "char": "d",
+              "audio": "duh"
+            },
+            {
+              "char": "o",
+              "audio": "aw"
+            },
+            {
+              "char": "g",
+              "audio": "guh"
+            }
+          ],
+          "audio": "dog"
+        },
+        {
+          "word": "dig",
+          "emoji": "⛏️",
+          "cn": "挖",
+          "letters": [
+            {
+              "char": "d",
+              "audio": "duh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "g",
+              "audio": "guh"
+            }
+          ],
+          "audio": "dig"
+        },
+        {
+          "word": "dot",
+          "emoji": "🔵",
+          "cn": "圆点",
+          "letters": [
+            {
+              "char": "d",
+              "audio": "duh"
+            },
+            {
+              "char": "o",
+              "audio": "aw"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "dot"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🐶",
+      "audio": "Great job! Dog, dig, dot!"
+    }
+  ],
+  "parentGuide": "目标：学 g o，拼 dog/dig/dot；tricky word「to」。约 8 分钟。注意 o 的圆唇口型。课后玩「dig」：在米桶或沙堆里挖小玩具。"
+}

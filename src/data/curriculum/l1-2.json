@@ -1,0 +1,150 @@
+{
+  "id": "l1-2",
+  "level": 1,
+  "order": 8,
+  "emoji": "🐷",
+  "cn": "字母音 p + 拼读起步（sat/pat/tap）",
+  "intro": {
+    "audio": "Hi! Today we learn puh! And we can read words!"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "letter",
+      "rounds": [
+        {
+          "prompt": "Tap the letter puh!",
+          "target": "p",
+          "cards": [
+            {
+              "id": "p",
+              "emoji": "🐷",
+              "text": "p",
+              "audio": "puh"
+            },
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            },
+            {
+              "id": "t",
+              "emoji": "🐯",
+              "text": "t",
+              "audio": "tuh"
+            }
+          ]
+        },
+        {
+          "prompt": "Tap the letter sss!",
+          "target": "s",
+          "cards": [
+            {
+              "id": "a",
+              "emoji": "🍎",
+              "text": "a",
+              "audio": "ah"
+            },
+            {
+              "id": "p",
+              "emoji": "🐷",
+              "text": "p",
+              "audio": "puh"
+            },
+            {
+              "id": "s",
+              "emoji": "🐍",
+              "text": "s",
+              "audio": "sss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "p",
+          "model": "puh",
+          "emoji": "🐷",
+          "cn": "猪"
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "sat",
+          "emoji": "🧎",
+          "cn": "坐（过去式）",
+          "letters": [
+            {
+              "char": "s",
+              "audio": "sss"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "sat"
+        },
+        {
+          "word": "pat",
+          "emoji": "👋",
+          "cn": "轻拍",
+          "letters": [
+            {
+              "char": "p",
+              "audio": "puh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "pat"
+        },
+        {
+          "word": "tap",
+          "emoji": "🚰",
+          "cn": "水龙头",
+          "letters": [
+            {
+              "char": "t",
+              "audio": "tuh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "p",
+              "audio": "puh"
+            }
+          ],
+          "audio": "tap"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🐷",
+      "audio": "Wow! You can read sat, pat, tap!"
+    }
+  ],
+  "parentGuide": "目标：学 p，并第一次把音拼成词（sat/pat/tap）。拼读环节让孩子自己点字母块，别急着告诉答案。约 8 分钟。课后可用手指在桌上写这三个词让孩子拼读。"
+}

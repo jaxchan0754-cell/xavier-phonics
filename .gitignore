@@ -1,0 +1,7 @@
+node_modules
+dist
+scripts/.venv
+.vscode
+*.local
+.DS_Store
+文本.txt

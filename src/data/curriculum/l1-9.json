@@ -1,0 +1,88 @@
+{
+  "id": "l1-9",
+  "level": 1,
+  "order": 15,
+  "emoji": "🗣️",
+  "cn": "短句起步（a cat / a dog / I sat）",
+  "intro": {
+    "audio": "Hello! Today we read little sentences! A cat! A dog!"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "a cat",
+          "model": "a cat",
+          "emoji": "🐱",
+          "cn": "一只猫"
+        },
+        {
+          "text": "a dog",
+          "model": "a dog",
+          "emoji": "🐶",
+          "cn": "一只狗"
+        },
+        {
+          "text": "I sat",
+          "model": "I sat",
+          "emoji": "🧎",
+          "cn": "我坐下了"
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "mom",
+          "emoji": "👩",
+          "cn": "妈妈",
+          "letters": [
+            {
+              "char": "m",
+              "audio": "mmm"
+            },
+            {
+              "char": "o",
+              "audio": "aw"
+            },
+            {
+              "char": "m",
+              "audio": "mmm"
+            }
+          ],
+          "audio": "mom"
+        },
+        {
+          "word": "sad",
+          "emoji": "😢",
+          "cn": "伤心的",
+          "letters": [
+            {
+              "char": "s",
+              "audio": "sss"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "d",
+              "audio": "duh"
+            }
+          ],
+          "audio": "sad"
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🗣️",
+      "audio": "Amazing! You can read sentences now!"
+    }
+  ],
+  "parentGuide": "目标：读短语 a cat / a dog / I sat；拼 mom/sad。约 5-8 分钟。让孩子指着家里的猫狗说 a cat / a dog。这是第一次「用起来」，值得隆重表扬。"
+}

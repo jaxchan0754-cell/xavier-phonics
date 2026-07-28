@@ -1,0 +1,204 @@
+{
+  "id": "l1-5",
+  "level": 1,
+  "order": 11,
+  "emoji": "🔄",
+  "cn": "复习 satpinmd + 听词选图 + 拼读混合",
+  "intro": {
+    "audio": "Hello! Let's review! Listen to the words!"
+  },
+  "trickyWords": [
+    {
+      "text": "go",
+      "cn": "去",
+      "emoji": "🏃"
+    }
+  ],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "word",
+      "rounds": [
+        {
+          "prompt": "Listen! Tap the picture!",
+          "stimulus": "sat",
+          "target": "sat",
+          "cards": [
+            {
+              "id": "sat",
+              "emoji": "🧎",
+              "audio": "sat",
+              "cn": "坐（过去式）"
+            },
+            {
+              "id": "nap",
+              "emoji": "😴",
+              "audio": "nap",
+              "cn": "小睡"
+            },
+            {
+              "id": "man",
+              "emoji": "👨",
+              "audio": "man",
+              "cn": "男人"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! Tap the picture!",
+          "stimulus": "pat",
+          "target": "pat",
+          "cards": [
+            {
+              "id": "dad",
+              "emoji": "👨‍👦",
+              "audio": "dad",
+              "cn": "爸爸"
+            },
+            {
+              "id": "pat",
+              "emoji": "👋",
+              "audio": "pat",
+              "cn": "轻拍"
+            },
+            {
+              "id": "sit",
+              "emoji": "🪑",
+              "audio": "sit",
+              "cn": "坐"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! Tap the picture!",
+          "stimulus": "nap",
+          "target": "nap",
+          "cards": [
+            {
+              "id": "tip",
+              "emoji": "☝️",
+              "audio": "tip",
+              "cn": "尖端"
+            },
+            {
+              "id": "nap",
+              "emoji": "😴",
+              "audio": "nap",
+              "cn": "小睡"
+            },
+            {
+              "id": "mad",
+              "emoji": "😠",
+              "audio": "mad",
+              "cn": "生气的"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "blend",
+      "words": [
+        {
+          "word": "pan",
+          "emoji": "🍳",
+          "cn": "平底锅",
+          "letters": [
+            {
+              "char": "p",
+              "audio": "puh"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "n",
+              "audio": "nnn"
+            }
+          ],
+          "audio": "pan"
+        },
+        {
+          "word": "tin",
+          "emoji": "🥫",
+          "cn": "罐头",
+          "letters": [
+            {
+              "char": "t",
+              "audio": "tuh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "n",
+              "audio": "nnn"
+            }
+          ],
+          "audio": "tin"
+        },
+        {
+          "word": "dip",
+          "emoji": "🍟",
+          "cn": "蘸（蘸酱）",
+          "letters": [
+            {
+              "char": "d",
+              "audio": "duh"
+            },
+            {
+              "char": "i",
+              "audio": "ih"
+            },
+            {
+              "char": "p",
+              "audio": "puh"
+            }
+          ],
+          "audio": "dip"
+        },
+        {
+          "word": "mat",
+          "emoji": "🧘",
+          "cn": "垫子",
+          "letters": [
+            {
+              "char": "m",
+              "audio": "mmm"
+            },
+            {
+              "char": "a",
+              "audio": "ah"
+            },
+            {
+              "char": "t",
+              "audio": "tuh"
+            }
+          ],
+          "audio": "mat"
+        }
+      ]
+    },
+    {
+      "type": "echo",
+      "prompt": "Listen, then you say it!",
+      "items": [
+        {
+          "text": "go",
+          "model": "go",
+          "emoji": "🏃",
+          "cn": "去（tricky word，整体认读）",
+          "tricky": true
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🔄",
+      "audio": "Well done! You remember all the sounds!"
+    }
+  ],
+  "parentGuide": "目标：复习 s a t p i n m d 八个音并听词选图；tricky word「go」。约 8 分钟。如果孩子连续点错，说明累了，今天先停下，不要加量。"
+}

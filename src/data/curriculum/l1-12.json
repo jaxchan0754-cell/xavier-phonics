@@ -1,0 +1,79 @@
+{
+  "id": "l1-12",
+  "level": 1,
+  "order": 18,
+  "emoji": "🧠",
+  "cn": "最小对立对综合（θ-s / v-w / l-r / ɪ-iː）",
+  "parentGuide": "中文母语专项：综合复习四对难点音（thumb/sum、vet/wet、lock/rock、ship/sheep）。约 8 分钟。这些对立在汉语里不存在，听辨需要大量重复，点错很正常。课后可在生活里随机考：「这是 ship 还是 sheep？」",
+  "intro": { "audio": "Listen carefully! Ship or sheep? Thumb or sum? You have super ears!" },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "minimal-pair",
+      "rounds": [
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "ship",
+          "target": "ship",
+          "pair": "ɪ-iː",
+          "cards": [
+            { "id": "ship", "emoji": "🚢", "audio": "ship", "cn": "轮船" },
+            { "id": "sheep", "emoji": "🐑", "audio": "sheep", "cn": "绵羊" }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "thumb",
+          "target": "thumb",
+          "pair": "θ-s",
+          "cards": [
+            { "id": "sum", "emoji": "➕", "audio": "sum", "cn": "总和" },
+            { "id": "thumb", "emoji": "👍", "audio": "thumb", "cn": "大拇指" }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "wet",
+          "target": "wet",
+          "pair": "v-w",
+          "cards": [
+            { "id": "wet", "emoji": "💧", "audio": "wet", "cn": "湿的" },
+            { "id": "vet", "emoji": "🧑‍⚕️", "audio": "vet", "cn": "兽医" }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "rock",
+          "target": "rock",
+          "pair": "l-r",
+          "cards": [
+            { "id": "lock", "emoji": "🔒", "audio": "lock", "cn": "锁" },
+            { "id": "rock", "emoji": "🪨", "audio": "rock", "cn": "石头" }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "sheep",
+          "target": "sheep",
+          "pair": "ɪ-iː",
+          "cards": [
+            { "id": "sheep", "emoji": "🐑", "audio": "sheep", "cn": "绵羊" },
+            { "id": "ship", "emoji": "🚢", "audio": "ship", "cn": "轮船" }
+          ]
+        },
+        {
+          "prompt": "Listen! Which word do you hear?",
+          "stimulus": "vet",
+          "target": "vet",
+          "pair": "v-w",
+          "cards": [
+            { "id": "vet", "emoji": "🧑‍⚕️", "audio": "vet", "cn": "兽医" },
+            { "id": "wet", "emoji": "💧", "audio": "wet", "cn": "湿的" }
+          ]
+        }
+      ]
+    },
+    { "type": "celebrate", "sticker": "🧠", "audio": "Amazing ears! You can hear all the tricky sounds!" }
+  ]
+}

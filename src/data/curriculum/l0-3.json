@@ -1,0 +1,121 @@
+{
+  "id": "l0-3",
+  "level": 0,
+  "order": 3,
+  "emoji": "🎩",
+  "cn": "语音意识·押韵听辨",
+  "intro": {
+    "audio": "Hello! Let's play the rhyming game! Cat, hat, bat!"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "rhyme",
+      "rounds": [
+        {
+          "prompt": "Cat! Which one rhymes with cat?",
+          "target": "hat",
+          "cards": [
+            {
+              "id": "hat",
+              "emoji": "🎩",
+              "audio": "hat",
+              "cn": "帽子"
+            },
+            {
+              "id": "dog",
+              "emoji": "🐶",
+              "audio": "dog",
+              "cn": "狗"
+            },
+            {
+              "id": "sun",
+              "emoji": "☀️",
+              "audio": "sun",
+              "cn": "太阳"
+            }
+          ]
+        },
+        {
+          "prompt": "Dog! Which one rhymes with dog?",
+          "target": "frog",
+          "cards": [
+            {
+              "id": "pig",
+              "emoji": "🐷",
+              "audio": "pig",
+              "cn": "猪"
+            },
+            {
+              "id": "frog",
+              "emoji": "🐸",
+              "audio": "frog",
+              "cn": "青蛙"
+            },
+            {
+              "id": "man",
+              "emoji": "👨",
+              "audio": "man",
+              "cn": "男人"
+            }
+          ]
+        },
+        {
+          "prompt": "Sun! Which one rhymes with sun?",
+          "target": "bun",
+          "cards": [
+            {
+              "id": "car",
+              "emoji": "🚗",
+              "audio": "car",
+              "cn": "汽车"
+            },
+            {
+              "id": "egg",
+              "emoji": "🥚",
+              "audio": "egg",
+              "cn": "鸡蛋"
+            },
+            {
+              "id": "bun",
+              "emoji": "🍞",
+              "audio": "bun",
+              "cn": "小圆面包"
+            }
+          ]
+        },
+        {
+          "prompt": "Log! Which one rhymes with log?",
+          "target": "dog",
+          "cards": [
+            {
+              "id": "dog",
+              "emoji": "🐶",
+              "audio": "dog",
+              "cn": "狗"
+            },
+            {
+              "id": "cat",
+              "emoji": "🐱",
+              "audio": "cat",
+              "cn": "猫"
+            },
+            {
+              "id": "duck",
+              "emoji": "🦆",
+              "audio": "duck",
+              "cn": "鸭子"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🎩",
+      "audio": "Super! Cat, hat, bat! You can rhyme!"
+    }
+  ],
+  "parentGuide": "目标：听出押韵词（cat/hat 尾巴音相同）。约 5-8 分钟。孩子不理解「押韵」很正常，用中文解释「音的尾巴一样」。平时读绘本时夸张地读出押韵词。"
+}

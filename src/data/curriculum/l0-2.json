@@ -1,0 +1,125 @@
+{
+  "id": "l0-2",
+  "level": 0,
+  "order": 2,
+  "emoji": "🚗",
+  "cn": "语音意识·生活中的声音",
+  "intro": {
+    "audio": "Hi! I'm Felix! Listen! What sound is it?"
+  },
+  "trickyWords": [],
+  "activities": [
+    {
+      "type": "listen",
+      "kind": "environment",
+      "rounds": [
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "vroom vroom",
+          "target": "car",
+          "cards": [
+            {
+              "id": "car",
+              "emoji": "🚗",
+              "audio": "car",
+              "cn": "汽车"
+            },
+            {
+              "id": "phone",
+              "emoji": "📱",
+              "audio": "phone",
+              "cn": "电话"
+            },
+            {
+              "id": "bell",
+              "emoji": "🔔",
+              "audio": "bell",
+              "cn": "铃铛"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "ring ring",
+          "target": "phone",
+          "cards": [
+            {
+              "id": "bell",
+              "emoji": "🔔",
+              "audio": "bell",
+              "cn": "铃铛"
+            },
+            {
+              "id": "phone",
+              "emoji": "📱",
+              "audio": "phone",
+              "cn": "电话"
+            },
+            {
+              "id": "baby",
+              "emoji": "👶",
+              "audio": "baby",
+              "cn": "婴儿"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "ding dong",
+          "target": "bell",
+          "cards": [
+            {
+              "id": "baby",
+              "emoji": "👶",
+              "audio": "baby",
+              "cn": "婴儿"
+            },
+            {
+              "id": "bell",
+              "emoji": "🔔",
+              "audio": "bell",
+              "cn": "铃铛"
+            },
+            {
+              "id": "car",
+              "emoji": "🚗",
+              "audio": "car",
+              "cn": "汽车"
+            }
+          ]
+        },
+        {
+          "prompt": "Listen! What do you hear?",
+          "stimulus": "wah wah",
+          "target": "baby",
+          "cards": [
+            {
+              "id": "phone",
+              "emoji": "📱",
+              "audio": "phone",
+              "cn": "电话"
+            },
+            {
+              "id": "baby",
+              "emoji": "👶",
+              "audio": "baby",
+              "cn": "婴儿"
+            },
+            {
+              "id": "bell",
+              "emoji": "🔔",
+              "audio": "bell",
+              "cn": "铃铛"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🚗",
+      "audio": "Well done! You have super ears!"
+    }
+  ],
+  "parentGuide": "目标：辨别生活中的声音（车、电话、铃铛、婴儿）。约 5 分钟。鼓励孩子用中文说出声音来源也可以。课后玩「闭眼听声音」：在家闭眼听门铃、水壶声，指出是什么。"
+}
