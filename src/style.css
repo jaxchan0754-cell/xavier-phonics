@@ -30,9 +30,11 @@ body {
   color: var(--ink);
   user-select: none;
   -webkit-user-select: none;
+  -webkit-touch-callout: none; /* iOS 长按不弹系统菜单 */
 }
 
 #app {
+  height: 100vh; /* 回退：不支持 dvh 的旧浏览器 */
   height: 100dvh;
   width: 100vw;
 }
@@ -126,6 +128,7 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: linear-gradient(180deg, #b3e5fc 0%, var(--cream) 40%);
 }
 .map-topbar {
@@ -266,6 +269,7 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: linear-gradient(180deg, #d7f5e3 0%, var(--cream) 60%);
 }
 .lesson-topbar {
@@ -353,9 +357,40 @@ button {
   border-radius: 32px;
 }
 
-/* 听音辨音图卡 */
+/* 关卡入口：巨大开始按钮（emoji + 呼吸光圈动画，零文字依赖） */
+.start-btn {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background: var(--coral);
+  font-size: 72px;
+  line-height: 1;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+  animation: startPulse 1.4s ease-in-out infinite;
+}
+.start-btn:disabled {
+  background: var(--coral);
+  opacity: 0.65;
+  animation: none;
+}
+@keyframes startPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(255, 107, 107, 0.55);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15), 0 0 0 28px rgba(255, 107, 107, 0);
+  }
+}
+
+/* 听音辨音图卡：可换行居中，保证 4 张卡在 iPad 竖屏（768px）完整可点 */
 .cards {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
   gap: 28px;
 }
 .card {

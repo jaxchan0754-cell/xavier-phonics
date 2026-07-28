@@ -4,7 +4,7 @@ import { completeLevel } from '../db'
 import { getLesson } from '../curriculum'
 import { seedReviewItems } from '../review-store'
 import type { Navigate } from '../types'
-import { el, foxRow, bigButton, makeContext, type ActivityContext } from './common'
+import { el, foxRow, makeContext, type ActivityContext } from './common'
 import type { Activity, Lesson } from './types'
 import { renderListen } from './activities/listen'
 import { renderEcho } from './activities/echo'
@@ -56,7 +56,9 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
     })
   }
 
-  // 开场：角色问候（GO 按钮点击本身就是手势，可解锁并播放问候语音）
+  // 开场：巨大开始按钮（emoji + 动画，零文字依赖）。
+  // 点击本身就是用户手势——iOS 自动播放策略要求首次发声在手势回调里，
+  // 因此在点击回调中播放开场问候，问候播完（或音频缺失立即降级）再进入活动流。
   const intro = lesson.intro ?? { audio: "Hello! I'm Felix! Let's go!" }
   const introStage = el('div', 'stage')
   introStage.appendChild(foxRow(ctx.fox, intro.text ?? '', intro.audio))
@@ -67,9 +69,16 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
     introStage.appendChild(row)
   }
   await new Promise<void>((resolve) => {
-    introStage.appendChild(bigButton('GO! ⭐', resolve))
+    const startBtn = document.createElement('button')
+    startBtn.className = 'start-btn'
+    startBtn.textContent = '▶️'
+    startBtn.setAttribute('aria-label', '开始')
+    startBtn.onclick = () => {
+      startBtn.disabled = true // 防连点重复进入
+      void ctx.speak(intro.audio).finally(() => resolve())
+    }
+    introStage.appendChild(startBtn)
     stageBox.replaceChildren(introStage)
-    void ctx.speak(intro.audio)
   })
 
   // 依次执行活动

@@ -18,7 +18,7 @@ export function renderBlend(
         return
       }
       const stage = el('div', 'stage')
-      stage.appendChild(foxRow(ctx.fox, 'Tap the sounds!'))
+      stage.appendChild(foxRow(ctx.fox, 'Tap the sounds!', 'Tap the sounds!'))
       stage.appendChild(el('div', 'word-emoji', word.emoji))
       if (word.cn) stage.appendChild(el('p', 'parent-hint', `(${word.cn})`))
 

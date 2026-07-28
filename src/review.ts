@@ -35,15 +35,23 @@ export function collectWordBank(): BankCard[] {
   return [...bank.values()]
 }
 
-// 从词库为 target 选 n 个干扰项（排除自身）
-function pickDistractors(bank: BankCard[], targetId: string, n: number): BankCard[] {
-  const pool = bank.filter((c) => c.id !== targetId)
-  // 洗牌后取前 n 个
-  for (let i = pool.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[pool[i], pool[j]] = [pool[j], pool[i]]
+// 从词库为 target 选干扰项：排除自身，且排除同 emoji 的卡片
+// （词库里字母卡与单词可能同图，如 c=🐱 与 cat=🐱，同图干扰项会让孩子无法区分）。
+// 候选不足时放宽数量下限（至少 1 个），实在没有才放宽 emoji 限制。
+export function pickDistractors(bank: BankCard[], target: BankCard, n: number): BankCard[] {
+  const shuffle = <T>(arr: T[]): T[] => {
+    const a = [...arr]
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[a[i], a[j]] = [a[j], a[i]]
+    }
+    return a
   }
-  return pool.slice(0, n)
+  const distinctEmoji = shuffle(bank.filter((c) => c.id !== target.id && c.emoji !== target.emoji))
+  if (distinctEmoji.length >= n) return distinctEmoji.slice(0, n)
+  if (distinctEmoji.length > 0) return distinctEmoji // 数量下限放宽：有几个算几个
+  // 极端情况：没有异图候选，放宽 emoji 限制保证至少 1 个干扰项
+  return shuffle(bank.filter((c) => c.id !== target.id)).slice(0, 1)
 }
 
 // 纯函数：把到期复习项组装成一个合成 Lesson（便于测试）
@@ -71,7 +79,7 @@ export function buildReviewLesson(items: ReviewItem[], bank: BankCard[]): Lesson
       kind: 'word',
       rounds: wordItems.map((i) => {
         const data = JSON.parse(i.data) as ReviewFlashData
-        const distractors = pickDistractors(bank, i.key, 2)
+        const distractors = pickDistractors(bank, { id: i.key, emoji: data.emoji }, 2)
         const cards = [
           { id: i.key, emoji: data.emoji, audio: i.key },
           ...distractors.map((d) => ({ id: d.id, emoji: d.emoji, audio: d.audio })),

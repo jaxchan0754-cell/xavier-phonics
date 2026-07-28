@@ -19,20 +19,34 @@ const NOW = Date.now()
 
 // ---- 造数：quizDue ----
 // 场景 1：无进度 → 不出现
-check('无进度 → 小测不出现', await quizDue(), false)
+// 造课：l1-1..l1-4 各带一个 blend 词（素材充足，供 quizDue 校验通过）
+const fakeLessons = [1, 2, 3, 4].map((i) => ({
+  id: `l1-${i}`,
+  level: 1,
+  order: i,
+  emoji: '🐱',
+  activities: [
+    {
+      type: 'blend' as const,
+      words: [{ word: `w${i}`, emoji: '🐶', letters: [{ char: 'w', audio: 'wuh' }], audio: `w${i}` }],
+    },
+  ],
+}))
+
+check('无进度 → 小测不出现', await quizDue(Date.now(), fakeLessons), false)
 
 // 场景 2：只完成 3 课 + 记录 15 天前 → 不出现
 for (let i = 1; i <= 3; i++) await db.progress.put({ levelId: `l1-${i}`, completedAt: NOW - 15 * DAY_MS })
 await db.records.add({ levelId: 'l1-1', activity: 'celebrate', at: NOW - 15 * DAY_MS })
-check('完成 3 课 → 小测不出现', await quizDue(), false)
+check('完成 3 课 → 小测不出现', await quizDue(Date.now(), fakeLessons), false)
 
 // 场景 3：完成 4 课 + 最早记录 15 天前 → 出现（验收造数场景）
 await db.progress.put({ levelId: 'l1-4', completedAt: NOW - 14 * DAY_MS })
-check('完成 4 课 + 记录 15 天前 → 小测出现', await quizDue(), true)
+check('完成 4 课 + 记录 15 天前 → 小测出现', await quizDue(Date.now(), fakeLessons), true)
 
 // 场景 4：3 天前刚测过 → 不出现
 await db.records.add({ levelId: 'quiz', activity: 'quiz', detail: 'done|3/4|weak:none', at: NOW - 3 * DAY_MS })
-check('3 天前测过 → 小测不出现', await quizDue(), false)
+check('3 天前测过 → 小测不出现', await quizDue(Date.now(), fakeLessons), false)
 
 // ---- review-store：播种 → 到期 → 结算 ----
 const lesson = {

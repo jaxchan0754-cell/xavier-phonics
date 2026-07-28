@@ -83,7 +83,7 @@ function buildPath(points: Point[]): string {
 
 export async function renderMap(root: HTMLElement, navigate: Navigate): Promise<void> {
   const levels = levelsData as LevelDef[]
-  const states = await getLevelStates(levels.map((l) => l.id))
+  const states = await getLevelStates(levels.map((l) => ({ id: l.id, playable: l.lessonId !== null })))
 
   // 达到每日时长上限：进入休息模式
   if (await isRestMode()) {
@@ -153,8 +153,10 @@ export async function renderMap(root: HTMLElement, navigate: Navigate): Promise<
     } else if (state === 'locked') {
       const lock = document.createElement('span')
       lock.className = 'node-badge'
-      lock.textContent = '🔒'
+      // lessonId 为 null 的预告节点：敬请期待（🔜），与未解锁一致的灰态+摇摆反馈
+      lock.textContent = level.lessonId === null ? '🔜' : '🔒'
       node.appendChild(lock)
+      if (level.lessonId === null) node.setAttribute('aria-label', `第 ${i + 1} 关（敬请期待）`)
     }
 
     node.onclick = () => {

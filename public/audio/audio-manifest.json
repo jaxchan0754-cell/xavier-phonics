@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-28T16:30:14.780Z",
+  "generatedAt": "2026-07-28T17:22:19.337Z",
   "engine": "edge-tts",
   "voice": "en-US-AnaNeural",
-  "count": 140,
-  "totalBytes": 2099653,
+  "count": 141,
+  "totalBytes": 2111341,
   "items": [
     {
       "key": "95e00b20",
       "text": "Amazing ears! You can hear all the tricky sounds!",
       "file": "tts/95e00b20.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "a3ffd4d3",
@@ -63,13 +63,13 @@
       "key": "8b661876",
       "text": "Great job! You can hear the little sounds at the end!",
       "file": "tts/8b661876.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "175d244f",
       "text": "Great job! You finished the review!",
       "file": "tts/175d244f.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "596148cc",
@@ -207,25 +207,25 @@
       "key": "924f8ad6",
       "text": "Let's review! Are you ready?",
       "file": "tts/924f8ad6.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "47a50fba",
       "text": "Listen carefully! Ship or sheep? Thumb or sum? You have super ears!",
       "file": "tts/47a50fba.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "aeb2044a",
       "text": "Listen for the last sound! Cat! Can you hear the little tuh at the end?",
       "file": "tts/aeb2044a.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "33420a4c",
       "text": "Listen to the last sound, then you say it!",
       "file": "tts/33420a4c.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "c26f0adc",
@@ -291,7 +291,7 @@
       "key": "cea0d5a0",
       "text": "Quiz time! Show me what you know!",
       "file": "tts/cea0d5a0.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "df0140e4",
@@ -384,6 +384,12 @@
       "status": "exists"
     },
     {
+      "key": "614d8372",
+      "text": "Tap the sounds!",
+      "file": "tts/614d8372.m4a",
+      "status": "generated"
+    },
+    {
       "key": "08912f1a",
       "text": "Well done! You have super ears!",
       "file": "tts/08912f1a.m4a",
@@ -405,7 +411,7 @@
       "key": "4586617e",
       "text": "Wow! Quiz complete! You are a superstar!",
       "file": "tts/4586617e.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "c6a2242f",

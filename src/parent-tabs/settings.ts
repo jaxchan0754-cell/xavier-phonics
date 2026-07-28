@@ -39,6 +39,8 @@ export async function renderSettingsTab(container: HTMLElement): Promise<void> {
   // ---- 音量 ----
   const sec2 = el('section', 'parent-section')
   sec2.appendChild(el('h3', '', '音量'))
+  // iOS（含 iPadOS 伪装的 MacIntel）系统音量只认实体音量键，Web 音量滑块无效
+  const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
   const volRow = el('div', 'settings-row')
   const volInput = document.createElement('input')
   volInput.type = 'range'
@@ -50,6 +52,10 @@ export async function renderSettingsTab(container: HTMLElement): Promise<void> {
   volInput.oninput = () => {
     volLabel.textContent = `${volInput.value}%`
     saveSettings({ volume: Number(volInput.value) / 100 }) // 即时生效
+  }
+  if (isIOS) {
+    volInput.disabled = true
+    volLabel.textContent = '请用 iPad 音量键调节'
   }
   volRow.append(volInput, volLabel)
   sec2.appendChild(volRow)

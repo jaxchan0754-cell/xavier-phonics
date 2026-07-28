@@ -12,11 +12,15 @@ import type { Navigate } from './types'
 export const QUIZ_INTERVAL_DAYS = 14
 export const QUIZ_MIN_COMPLETED = 4
 
-// 小测是否到期
-export async function quizDue(now = Date.now()): Promise<boolean> {
+// 小测是否到期（lessons 可注入，便于测试；默认取课程表）
+export async function quizDue(now = Date.now(), lessons: Lesson[] = listLessons()): Promise<boolean> {
   // progress 表只写真实课程关卡（合成课 review/quiz 已由引擎守卫跳过）
   const completedCount = await db.progress.count()
   if (completedCount < QUIZ_MIN_COMPLETED) return false
+
+  // 素材校验：已完成的课里没有足够的听辨轮 + blend 词时不放小测（避免空卷）
+  const completedIds = new Set((await db.progress.toArray()).map((p) => p.levelId))
+  if (!hasEnoughQuizMaterial(lessons, completedIds)) return false
 
   const records = await db.records.toArray()
   const quizAts = records.filter((r) => r.activity === 'quiz').map((r) => r.at)
@@ -35,18 +39,33 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-// 组卷：从已完成的课里抽 3 个 blend 词 + 4 轮最小对立对听辨
-export function buildQuizLesson(completedIds: Set<string>): { lesson: Lesson; listenTargets: string[] } {
-  const completed = listLessons().filter((l) => completedIds.has(l.id))
-
-  const pairRounds: ListenRound[] = []
-  const blendWords: BlendWord[] = []
-  for (const lesson of completed) {
+// 组卷素材：从已完成的课里收集最小对立对听辨轮与 blend 词
+export function collectQuizMaterial(
+  lessons: Lesson[],
+  completedIds: Set<string>,
+): { rounds: ListenRound[]; words: BlendWord[] } {
+  const rounds: ListenRound[] = []
+  const words: BlendWord[] = []
+  for (const lesson of lessons.filter((l) => completedIds.has(l.id))) {
     for (const activity of lesson.activities) {
-      if (activity.type === 'listen' && activity.kind === 'minimal-pair') pairRounds.push(...activity.rounds)
-      if (activity.type === 'blend') blendWords.push(...activity.words)
+      if (activity.type === 'listen' && activity.kind === 'minimal-pair') rounds.push(...activity.rounds)
+      if (activity.type === 'blend') words.push(...activity.words)
     }
   }
+  return { rounds, words }
+}
+
+// 素材下限：听辨轮 + blend 词合计 ≥3 才够出一份有意义的卷子
+export const QUIZ_MIN_MATERIAL = 3
+
+export function hasEnoughQuizMaterial(lessons: Lesson[], completedIds: Set<string>): boolean {
+  const { rounds, words } = collectQuizMaterial(lessons, completedIds)
+  return rounds.length + words.length >= QUIZ_MIN_MATERIAL
+}
+
+// 组卷：从已完成的课里抽 3 个 blend 词 + 4 轮最小对立对听辨
+export function buildQuizLesson(completedIds: Set<string>): { lesson: Lesson; listenTargets: string[] } {
+  const { rounds: pairRounds, words: blendWords } = collectQuizMaterial(listLessons(), completedIds)
 
   const rounds = shuffle(pairRounds).slice(0, 4)
   const words = shuffle(blendWords).slice(0, 3)

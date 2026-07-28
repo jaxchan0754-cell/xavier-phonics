@@ -63,6 +63,9 @@ export interface ReviewItem {
 
 export const db = new PhonicsDB()
 
+// 请求持久化存储，降低 Safari  eviction（7 天未交互清数据）风险；被拒绝也无妨
+void navigator.storage?.persist?.().catch(() => undefined)
+
 // 保存一次成功的跟读录音（同 key 覆盖，控制容量）
 export async function saveRecording(key: string, blob: Blob): Promise<void> {
   await db.recordings.put({ key, blob, at: Date.now() })
@@ -75,15 +78,16 @@ export async function resetAllProgress(): Promise<void> {
 
 export type LevelState = 'passed' | 'current' | 'locked'
 
-// 节点状态推导：已完成 → passed；第一个未完成 → current；其余 → locked
-export async function getLevelStates(levelIds: string[]): Promise<Map<string, LevelState>> {
+// 节点状态推导：已完成 → passed；第一个未完成且可玩 → current；其余 → locked
+// playable=false 的节点（lessonId 为 null 的预告节点）不分配 current，恒为 locked
+export async function getLevelStates(levels: { id: string; playable: boolean }[]): Promise<Map<string, LevelState>> {
   const done = new Set((await db.progress.toArray()).map((p) => p.levelId))
   const states = new Map<string, LevelState>()
   let currentAssigned = false
-  for (const id of levelIds) {
+  for (const { id, playable } of levels) {
     if (done.has(id)) {
       states.set(id, 'passed')
-    } else if (!currentAssigned) {
+    } else if (!currentAssigned && playable) {
       states.set(id, 'current')
       currentAssigned = true
     } else {

@@ -2,6 +2,7 @@
 // 听示范 → 录音 → 回放对比 → ✓ 读对了 / 🔁 再练一次（家长或大孩子确认）
 // 三级渐进纠错：第 1 次重练→鼓励重试；第 2 次→自动复述示范+提示；第 3 次→自动播示范并允许跳过。
 // 确认/跳过结果写入 Dexie records（含内容、结果、时间戳）。
+import { playUrl } from '../../audio'
 import { el, foxRow, bigButton, type ActivityContext } from '../common'
 import type { EchoActivity, EchoItem } from '../types'
 
@@ -51,9 +52,8 @@ export function renderEcho(
       recordBtn.setAttribute('aria-label', '录音')
 
       const playBtn = bigButton('▶', () => {
-        if (recordingUrl) {
-          void new Audio(recordingUrl).play().catch((e) => console.warn('[echo] 回放失败', e))
-        }
+        // 走统一播放封装：回放录音时若正在播示范语音会先停掉，避免叠加
+        if (recordingUrl) void playUrl(recordingUrl)
       }, false)
       playBtn.setAttribute('aria-label', '回放录音')
       playBtn.disabled = true
@@ -69,19 +69,39 @@ export function renderEcho(
         try {
           stream = await navigator.mediaDevices.getUserMedia({ audio: true })
           chunks = []
-          recorder = new MediaRecorder(stream)
+          // 探测容器格式：iOS Safari 优先 audio/mp4，兜底 audio/aac，再不行用浏览器默认
+          const mimeType = ['audio/mp4', 'audio/aac'].find((t) => MediaRecorder.isTypeSupported(t))
+          recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream)
+          const blobType = recorder.mimeType || mimeType || 'audio/mp4'
+
+          // 录音中断复位：轨道被系统夺走（来电/切 App）或编码出错时恢复按钮状态
+          const resetRecording = () => {
+            if (!recording) return
+            recording = false
+            recordBtn.classList.remove('recording')
+            hint.textContent = '录音被打断了，请再录一次'
+          }
+          stream.getAudioTracks()[0]?.addEventListener('ended', resetRecording)
+          recorder.onerror = resetRecording
+          // 页面隐藏（切后台/锁屏）时主动停止，走正常 onstop 保存
+          const onHidden = () => {
+            if (document.hidden && recording) recorder?.stop()
+          }
+          document.addEventListener('visibilitychange', onHidden)
+
           recorder.ondataavailable = (e) => chunks.push(e.data)
           recorder.onstop = () => {
+            document.removeEventListener('visibilitychange', onHidden)
             recording = false
             recordBtn.classList.remove('recording')
             stream?.getTracks().forEach((t) => t.stop())
             stream = null
             if (recordingUrl) URL.revokeObjectURL(recordingUrl)
-            lastBlob = new Blob(chunks)
+            lastBlob = new Blob(chunks, { type: blobType }) // 带 MIME，iOS 才能回放
             recordingUrl = URL.createObjectURL(lastBlob)
             playBtn.disabled = false
-            // 录完自动回放一遍，方便对比
-            void new Audio(recordingUrl).play().catch(() => undefined)
+            // 录完自动回放一遍，方便对比（同样走统一声道，不会与其他语音叠加）
+            void playUrl(recordingUrl)
           }
           recorder.start()
           recording = true
@@ -108,6 +128,7 @@ export function renderEcho(
         ctx.record('echo', `${item.text}|retry`)
         if (attempts === 1) {
           hint.textContent = 'One more time! You can do it!'
+          void ctx.speak(item.model) // 重练即重播示范
         } else if (attempts === 2) {
           hint.textContent = '再听一次示范，跟着读（家长可示范口型）'
           void ctx.speak(item.model)

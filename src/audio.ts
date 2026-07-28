@@ -29,9 +29,10 @@ export function initAudioUnlock(): void {
   window.addEventListener('touchstart', unlock)
 }
 
-// 拼接静态资源路径（兼容 base 子路径部署）
+// 拼接静态资源路径（兼容 base 子路径部署；非 Vite 环境如 node 测试降级为 '/'）
 export function audioUrl(name: string): string {
-  return `${import.meta.env.BASE_URL}audio/${name}`
+  const base = (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? '/'
+  return `${base}audio/${name}`
 }
 
 // 文本 → 音频文件名的哈希（FNV-1a 32bit）。
@@ -46,35 +47,86 @@ export function audioKey(text: string): string {
   return (h >>> 0).toString(16).padStart(8, '0')
 }
 
-// 播放一段文本对应的预生成语音（TTS 管线产物）。
-// 依次尝试 .m4a / .mp3；都缺失时走 playSound 的降级（console.warn）。
-export async function speak(text: string): Promise<boolean> {
-  const key = audioKey(text.trim())
-  if (await playSound(`tts/${key}.m4a`)) return true
-  return playSound(`tts/${key}.mp3`)
+// ---- 并发控制：声道式单播 ----
+// 同一声道同一时刻最多播放一个音频：新播放请求先停止该声道当前播放再播新的，
+// 因此连点同一元素（如地图 🦊）不会叠加多个声音。
+// - speech（默认）：语音类（TTS 指令、示范、单词、录音回放），互斥
+// - sfx：音效类短反馈，独立于语音声道，可与语音并存
+export type AudioChannel = 'speech' | 'sfx'
+
+interface ActivePlayback {
+  audio: HTMLAudioElement
+  finish: (ok: boolean, warn?: boolean) => void
 }
 
-// 播放一个音频文件；返回是否成功。所有调用应发生在用户手势回调链路中。
-export function playSound(name: string): Promise<boolean> {
+const active: Partial<Record<AudioChannel, ActivePlayback>> = {}
+
+// 停止指定声道（不传则全部）的当前播放；被打断的播放按「静默结束」处理（不算失败、不告警）
+export function stopPlayback(channel?: AudioChannel): void {
+  const channels: AudioChannel[] = channel ? [channel] : ['speech', 'sfx']
+  for (const ch of channels) {
+    const playback = active[ch]
+    if (!playback) continue
+    delete active[ch]
+    playback.audio.onended = null
+    playback.audio.onerror = null
+    try {
+      playback.audio.pause()
+    } catch {
+      // 忽略（未开始播放时 pause 可能抛错）
+    }
+    playback.finish(false, false)
+  }
+}
+
+// 播放一个 URL（blob: 也可）；resolve(true)=完整播完，resolve(false)=缺失/被拒/被打断。
+// 所有调用应发生在用户手势回调链路中。
+export function playUrl(url: string, channel: AudioChannel = 'speech'): Promise<boolean> {
   return new Promise((resolve) => {
-    const url = audioUrl(name)
+    stopPlayback(channel) // 单播：先停掉该声道正在播的
     let settled = false
-    const done = (ok: boolean, err?: unknown) => {
+    const finish = (ok: boolean, warn = true) => {
       if (settled) return
       settled = true
-      if (!ok) console.warn(`[audio] 音频不可用，已跳过: ${url}`, err ?? '')
+      if (!ok && warn) console.warn(`[audio] 音频不可用，已跳过: ${url}`)
       resolve(ok)
     }
     try {
       const audio = new Audio(url)
       audio.volume = getSettings().volume
-      audio.onerror = () => done(false)
-      audio
-        .play()
-        .then(() => done(true))
-        .catch((err) => done(false, err))
-    } catch (e) {
-      done(false, e)
+      active[channel] = { audio, finish }
+      const clearIfSelf = () => {
+        if (active[channel]?.audio === audio) delete active[channel]
+      }
+      audio.onended = () => {
+        clearIfSelf()
+        finish(true)
+      }
+      audio.onerror = () => {
+        clearIfSelf()
+        finish(false)
+      }
+      audio.play().catch((err) => {
+        if (settled) return // 被 stopPlayback 打断（AbortError），已静默结算
+        clearIfSelf()
+        // AbortError 之外才算真正的失败（缺失、自动播放被拒等）
+        finish(false, !(err instanceof DOMException && err.name === 'AbortError'))
+      })
+    } catch {
+      finish(false)
     }
   })
+}
+
+// 播放一个 /audio 静态目录下的文件
+export function playSound(name: string, channel: AudioChannel = 'speech'): Promise<boolean> {
+  return playUrl(audioUrl(name), channel)
+}
+
+// 播放一段文本对应的预生成语音（TTS 管线产物）。
+// 依次尝试 .m4a / .mp3；都缺失时走降级（console.warn）。
+export async function speak(text: string): Promise<boolean> {
+  const key = audioKey(text.trim())
+  if (await playSound(`tts/${key}.m4a`)) return true
+  return playSound(`tts/${key}.mp3`)
 }

@@ -1,4 +1,5 @@
 // 录音回放板块：echo「✓ 读对了」时保存的里程碑录音
+import { playUrl } from '../audio'
 import { db } from '../db'
 
 function el(tag: string, className?: string, text?: string): HTMLElement {
@@ -29,10 +30,9 @@ export async function renderRecordingsTab(container: HTMLElement): Promise<void>
     playBtn.className = 'btn btn-secondary recording-play'
     playBtn.textContent = '▶ 回放'
     playBtn.onclick = () => {
+      // 走统一播放封装（speech 声道互斥）；settle 后回收 objectURL
       const url = URL.createObjectURL(rec.blob)
-      const audio = new Audio(url)
-      audio.onended = () => URL.revokeObjectURL(url)
-      void audio.play().catch((e) => console.warn('[recordings] 回放失败', e))
+      void playUrl(url).finally(() => URL.revokeObjectURL(url))
     }
     row.appendChild(playBtn)
     container.appendChild(row)

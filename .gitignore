@@ -5,3 +5,4 @@ scripts/.venv
 *.local
 .DS_Store
 文本.txt
+.tmp-*
