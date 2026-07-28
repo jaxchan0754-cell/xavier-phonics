@@ -1,7 +1,25 @@
 # Xavier Phonics 自然拼读 PWA
 
 面向 5-6 岁英语零基础儿童的自然拼读学习应用（PWA，iPad「添加到主屏幕」使用）。
+
+**生产环境：https://jaxchan0754-cell.github.io/xavier-phonics/**
+（push 到 main 自动部署，仓库：https://github.com/jaxchan0754-cell/xavier-phonics）
+
 当前进度：**M4 —— 复习与自适应**（间隔重复闪卡、双周小测、薄弱点降难度、中文母语难点专项课）。
+
+## iPad 验收步骤
+
+1. iPad **Safari** 打开 https://jaxchan0754-cell.github.io/xavier-phonics/
+2. 点「分享」→「**添加到主屏幕**」→「添加」
+3. 从主屏幕图标启动（standalone 全屏、独立存储分区）
+4. 首屏学习地图：🦊 旁的闪亮节点是当前课；点节点进入关卡，
+   走「问候 → 听辨 → 跟读 → 拼读 → 庆祝」流程；完成后地图前进一步
+5. 右上角 👪 → 家长门（两位数乘法）→ 家长端五板块
+   （音素图谱 / 本周报告 / 陪学指引 / 录音回放 / 设置）
+6. 首次加载完成后可断网使用（Service Worker 已预缓存全部资源）
+
+> 注意：请务必首次使用就「添加到主屏幕」——Safari 标签页与主屏幕 PWA 的
+> 存储（IndexedDB 进度）是**两个独立分区**，中途切换会丢进度。
 
 ## 技术栈
 
