@@ -1,8 +1,9 @@
-// word 词页：词图 + 拉开间距的字母
-// 整词慢速示范 → 音素分解示范（逐字母高亮，复用逐音音频）→ 整词慢速
+// word 词页：字母块拼出单词是主角（具体词配图标，抽象词/tricky 以单词本体大字呈现）
+// 整词慢速示范 → 音素分解示范（逐字母高亮）→ 整词慢速
 // → 跟读整词 → 词级宽松匹配确认（WebSpeech / Whisper / VAD）
 import { speakSlow } from '../../audio'
-import { el, foxRow, bigButton, type ActivityContext } from '../common'
+import { icon } from '../../icons'
+import { el, guideRow, type ActivityContext } from '../common'
 import { runReadLoop } from '../read-loop'
 import { audioText, type WordActivity } from '../types'
 
@@ -11,10 +12,16 @@ export function renderWord(container: HTMLElement, activity: WordActivity, ctx: 
     const modelText = audioText(activity.audio)
     const stage = el('div', 'stage')
 
-    stage.appendChild(foxRow(ctx.fox, '', modelText))
+    stage.appendChild(guideRow('', modelText))
 
-    // 词图 + 拉开间距的字母
-    stage.appendChild(el('div', 'word-emoji', activity.emoji))
+    // 视觉主角：有图标时图标在上、字母块在下；无图标（tricky/抽象词）时单词本体超大
+    if (activity.icon) {
+      stage.appendChild(icon(activity.icon, 'word-icon'))
+    } else {
+      stage.appendChild(el('div', 'word-hero', activity.word))
+    }
+
+    // 字母块（tricky 词也展示字母本体，突出拼写）
     const lettersRow = el('div', 'word-letters')
     const letterSpans: HTMLElement[] = []
     for (const letter of activity.letters ?? []) {
@@ -23,21 +30,25 @@ export function renderWord(container: HTMLElement, activity: WordActivity, ctx: 
       lettersRow.appendChild(span)
     }
     if (letterSpans.length > 0) stage.appendChild(lettersRow)
-    if (activity.tricky) stage.appendChild(el('div', 'echo-tricky', '⭐'))
+    if (activity.tricky) stage.appendChild(el('div', 'tricky-badge', 'Tricky word'))
     if (activity.cn) stage.appendChild(el('p', 'parent-hint', `(${activity.cn})`))
 
     const row = el('div', 'record-row')
-    const listenBtn = bigButton('🔊', () => void speakSlow(modelText), false)
+    const listenBtn = document.createElement('button')
+    listenBtn.className = 'btn btn-secondary'
+    listenBtn.textContent = 'Listen'
     listenBtn.setAttribute('aria-label', '慢速示范')
+    listenBtn.onclick = () => void speakSlow(modelText)
     const recordBtn = document.createElement('button')
-    recordBtn.className = 'record-btn'
-    recordBtn.textContent = '🎤'
+    recordBtn.className = 'btn btn-record'
+    recordBtn.textContent = 'Say it!'
+    recordBtn.dataset.idleLabel = 'Say it!'
     recordBtn.setAttribute('aria-label', '跟读录音')
     recordBtn.disabled = true // 示范序列播完才开放录音
     row.append(listenBtn, recordBtn)
     stage.appendChild(row)
 
-    const status = el('p', 'asr-status', '⏳ 准备中…')
+    const status = el('p', 'asr-status', 'Preparing…')
     const hint = el('p', 'record-hint', '')
     stage.append(status, hint)
     container.replaceChildren(stage)

@@ -2,7 +2,6 @@
   "id": "l1-7",
   "level": 1,
   "order": 13,
-  "emoji": "🐱",
   "cn": "字母音 c k + 拼读（cat/cap/kid/sock）",
   "intro": {
     "audio": "Hello! Today we learn kuh! Two letters make kuh: c and k!"
@@ -10,37 +9,35 @@
   "trickyWords": [
     {
       "text": "the",
-      "cn": "这/那（定冠词）",
-      "emoji": "📖"
+      "cn": "这/那（定冠词）"
     }
   ],
   "activities": [
     {
       "type": "phoneme",
       "grapheme": "c",
-      "emoji": "🐱",
       "audio": {
         "audio": "kuh",
         "slow": true
       },
       "cn": "猫（c 发 /k/）",
-      "tip": "像轻轻咳嗽的前半截"
+      "tip": "像轻轻咳嗽的前半截",
+      "icon": "cat"
     },
     {
       "type": "phoneme",
       "grapheme": "k",
-      "emoji": "🪁",
       "audio": {
         "audio": "kuh",
         "slow": true
       },
       "cn": "风筝",
-      "tip": "像轻轻咳嗽的前半截"
+      "tip": "像轻轻咳嗽的前半截",
+      "icon": "kite"
     },
     {
       "type": "word",
       "word": "the",
-      "emoji": "📖",
       "cn": "定冠词（tricky word，整体认读）",
       "tricky": true,
       "letters": [
@@ -60,12 +57,12 @@
       "misreadings": [
         "ze",
         "de"
-      ]
+      ],
+      "icon": null
     },
     {
       "type": "word",
       "word": "cat",
-      "emoji": "🐱",
       "cn": "猫",
       "letters": [
         {
@@ -88,12 +85,12 @@
       "misreadings": [
         "tat",
         "kat"
-      ]
+      ],
+      "icon": "cat"
     },
     {
       "type": "word",
       "word": "cap",
-      "emoji": "🧢",
       "cn": "帽子",
       "letters": [
         {
@@ -115,12 +112,12 @@
       },
       "misreadings": [
         "kap"
-      ]
+      ],
+      "icon": "cap"
     },
     {
       "type": "word",
       "word": "kid",
-      "emoji": "🧒",
       "cn": "小孩",
       "letters": [
         {
@@ -142,12 +139,12 @@
       },
       "misreadings": [
         "kit"
-      ]
+      ],
+      "icon": "kid"
     },
     {
       "type": "word",
       "word": "sock",
-      "emoji": "🧦",
       "cn": "袜子",
       "letters": [
         {
@@ -169,13 +166,15 @@
       },
       "misreadings": [
         "sok"
-      ]
+      ],
+      "icon": "sock"
     },
     {
       "type": "celebrate",
-      "sticker": "🐱",
+      "sticker": "star",
       "audio": "Purr-fect! Cat, cap, kid, sock!"
     }
   ],
-  "parentGuide": "目标：学 c 和 k（都发 /k/），拼 cat/cap/kid/sock；tricky word「the」。sock 里的 ck 是一个音块，只点一次。约 8 分钟。课后找家里 c/k 开头的物品。"
+  "parentGuide": "目标：学 c 和 k（都发 /k/），拼 cat/cap/kid/sock；tricky word「the」。sock 里的 ck 是一个音块，只点一次。约 8 分钟。课后找家里 c/k 开头的物品。",
+  "icon": "cat"
 }

@@ -73,7 +73,7 @@ export function runReadLoop(opts: ReadLoopOptions): Promise<'pass' | 'softpass'>
         stream = await navigator.mediaDevices.getUserMedia({ audio: true })
       } catch (e) {
         console.warn('[read] 麦克风不可用', e)
-        hintEl.textContent = '🎤 需要家长允许麦克风权限'
+        hintEl.textContent = '需要家长允许麦克风权限'
         void fail() // 无麦克风也算一次尝试；三次后降级通过，流程不死
         return
       }
@@ -90,11 +90,13 @@ export function runReadLoop(opts: ReadLoopOptions): Promise<'pass' | 'softpass'>
       session.begin(stream)
 
       recorder.ondataavailable = (e) => chunks.push(e.data)
+      const idleLabel = recordBtn.dataset.idleLabel ?? 'Say it!'
       recorder.onerror = () => {
         if (!recording) return
         recording = false
         ctx.setBusy?.(false)
         recordBtn.classList.remove('recording')
+        recordBtn.textContent = idleLabel
         hintEl.textContent = '录音被打断了，请再录一次'
       }
       recorder.onstop = async () => {
@@ -102,6 +104,7 @@ export function runReadLoop(opts: ReadLoopOptions): Promise<'pass' | 'softpass'>
         recording = false
         ctx.setBusy?.(false)
         recordBtn.classList.remove('recording')
+        recordBtn.textContent = idleLabel
         stream?.getTracks().forEach((t) => t.stop())
         stream = null
 
@@ -125,6 +128,8 @@ export function runReadLoop(opts: ReadLoopOptions): Promise<'pass' | 'softpass'>
       recording = true
       ctx.setBusy?.(true) // 录音中禁用 swipe 翻页
       recordBtn.classList.add('recording')
+      recordBtn.textContent = 'Stop'
+      recordBtn.disabled = false
       // 翻页离开时在录音：引擎触发清理，主动停止（走正常 onstop）
       ctx.onCleanup?.(() => {
         if (recording && recorder && recorder.state !== 'inactive') recorder.stop()

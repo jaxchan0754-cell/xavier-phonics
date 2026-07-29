@@ -2,7 +2,6 @@
   "id": "l1-1",
   "level": 1,
   "order": 7,
-  "emoji": "🐍",
   "cn": "字母音 s a t",
   "intro": {
     "audio": "Hello! I'm Felix! Today we learn three sounds! sss, ah, tuh!"
@@ -12,41 +11,42 @@
     {
       "type": "phoneme",
       "grapheme": "s",
-      "emoji": "🐍",
       "audio": {
         "audio": "sss",
         "slow": true
       },
       "cn": "蛇",
-      "tip": "牙齿并拢，像小蛇一样嘶——"
+      "tip": "牙齿并拢，像小蛇一样嘶——",
+      "icon": "snake"
     },
     {
       "type": "phoneme",
       "grapheme": "a",
-      "emoji": "🍎",
       "audio": {
         "audio": "ah",
         "slow": true
       },
       "cn": "苹果",
-      "tip": "嘴巴张得大大的，像咬大苹果"
+      "tip": "嘴巴张得大大的，像咬大苹果",
+      "icon": "apple"
     },
     {
       "type": "phoneme",
       "grapheme": "t",
-      "emoji": "🐯",
       "audio": {
         "audio": "tuh",
         "slow": true
       },
       "cn": "老虎",
-      "tip": "舌尖抵住上牙龈，轻轻弹开"
+      "tip": "舌尖抵住上牙龈，轻轻弹开",
+      "icon": "tiger"
     },
     {
       "type": "celebrate",
-      "sticker": "🐍",
+      "sticker": "star",
       "audio": "Great job! You know sss, ah, tuh!"
     }
   ],
-  "parentGuide": "第一课字母音！目标：认读 s a t 三个字母音（读字母的音，不是字母名）。约 5-8 分钟。平时多指认：「这是 sss」。课后在生活里找 s 开头的东西（snake、sun）。"
+  "parentGuide": "第一课字母音！目标：认读 s a t 三个字母音（读字母的音，不是字母名）。约 5-8 分钟。平时多指认：「这是 sss」。课后在生活里找 s 开头的东西（snake、sun）。",
+  "icon": "snake"
 }

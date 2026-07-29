@@ -24,12 +24,12 @@ const fakeLessons = [1, 2, 3, 4].map((i) => ({
   id: `l1-${i}`,
   level: 1,
   order: i,
-  emoji: '🐱',
+  icon: 'cat',
   activities: [
     {
       type: 'word' as const,
       word: `w${i}`,
-      emoji: '🐶',
+      icon: 'dog',
       audio: { audio: `w${i}`, slow: true },
     },
   ],
@@ -55,15 +55,15 @@ const lesson = {
   id: 'l-x',
   level: 1,
   order: 99,
-  emoji: '🐱',
+  icon: 'cat',
   activities: [
-    { type: 'phoneme' as const, grapheme: 's', emoji: '🐍', audio: { audio: 'sss', slow: true } },
-    { type: 'phoneme' as const, grapheme: 'a', emoji: '🍎', audio: { audio: 'ah', slow: true } },
-    { type: 'word' as const, word: 'I', emoji: '🧒', tricky: true, audio: { audio: 'I', slow: true } },
+    { type: 'phoneme' as const, grapheme: 's', icon: 'snake', audio: { audio: 'sss', slow: true } },
+    { type: 'phoneme' as const, grapheme: 'a', icon: 'apple', audio: { audio: 'ah', slow: true } },
+    { type: 'word' as const, word: 'I', icon: null, tricky: true, audio: { audio: 'I', slow: true } },
     {
       type: 'word' as const,
       word: 'cat',
-      emoji: '🐱',
+      icon: 'cat',
       letters: [
         { char: 'c', audio: 'kuh' },
         { char: 'a', audio: 'ah' },

@@ -2,7 +2,6 @@
   "id": "l1-3",
   "level": 1,
   "order": 9,
-  "emoji": "📌",
   "cn": "字母音 i n + 拼读（pin/sit/tip/nap）",
   "intro": {
     "audio": "Hello! Today we learn ih and nnn! Let's read more words!"
@@ -10,37 +9,35 @@
   "trickyWords": [
     {
       "text": "I",
-      "cn": "我",
-      "emoji": "🧒"
+      "cn": "我"
     }
   ],
   "activities": [
     {
       "type": "phoneme",
       "grapheme": "i",
-      "emoji": "✒️",
       "audio": {
         "audio": "ih",
         "slow": true
       },
       "cn": "墨水",
-      "tip": "短短的'诶'，不要读成'衣'"
+      "tip": "短短的'诶'，不要读成'衣'",
+      "icon": "nib"
     },
     {
       "type": "phoneme",
       "grapheme": "n",
-      "emoji": "🥅",
       "audio": {
         "audio": "nnn",
         "slow": true
       },
       "cn": "网",
-      "tip": "舌尖抵上牙龈，鼻音 nnn"
+      "tip": "舌尖抵上牙龈，鼻音 nnn",
+      "icon": "net"
     },
     {
       "type": "word",
       "word": "I",
-      "emoji": "🧒",
       "cn": "我（tricky word，整体认读）",
       "tricky": true,
       "letters": [
@@ -52,12 +49,12 @@
       "audio": {
         "audio": "I",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "word",
       "word": "pin",
-      "emoji": "📌",
       "cn": "别针",
       "letters": [
         {
@@ -79,12 +76,12 @@
       },
       "misreadings": [
         "bin"
-      ]
+      ],
+      "icon": "pin"
     },
     {
       "type": "word",
       "word": "sit",
-      "emoji": "🪑",
       "cn": "坐",
       "letters": [
         {
@@ -106,12 +103,12 @@
       },
       "misreadings": [
         "zit"
-      ]
+      ],
+      "icon": "sit"
     },
     {
       "type": "word",
       "word": "tip",
-      "emoji": "☝️",
       "cn": "尖端",
       "letters": [
         {
@@ -133,12 +130,12 @@
       },
       "misreadings": [
         "dip"
-      ]
+      ],
+      "icon": "tip"
     },
     {
       "type": "word",
       "word": "nap",
-      "emoji": "😴",
       "cn": "小睡",
       "letters": [
         {
@@ -157,13 +154,15 @@
       "audio": {
         "audio": "nap",
         "slow": true
-      }
+      },
+      "icon": "nap"
     },
     {
       "type": "celebrate",
-      "sticker": "📌",
+      "sticker": "star",
       "audio": "Super! You can read pin, sit, tip, nap!"
     }
   ],
-  "parentGuide": "目标：学 i n，拼 pin/sit/tip/nap；第一个 tricky word「I」整体认读（不拼，看到直接读）。约 8 分钟。可把 I 做成小卡片贴镜子上，见面就指一指。"
+  "parentGuide": "目标：学 i n，拼 pin/sit/tip/nap；第一个 tricky word「I」整体认读（不拼，看到直接读）。约 8 分钟。可把 I 做成小卡片贴镜子上，见面就指一指。",
+  "icon": "pin"
 }

@@ -2,7 +2,6 @@
   "id": "l1-5",
   "level": 1,
   "order": 11,
-  "emoji": "🔄",
   "cn": "复习 satpinmd + 听词选图 + 拼读混合",
   "intro": {
     "audio": "Hello! Let's review! Listen to the words!"
@@ -10,15 +9,13 @@
   "trickyWords": [
     {
       "text": "go",
-      "cn": "去",
-      "emoji": "🏃"
+      "cn": "去"
     }
   ],
   "activities": [
     {
       "type": "word",
       "word": "sat",
-      "emoji": "🧎",
       "cn": "坐（过去式）",
       "letters": [
         {
@@ -40,12 +37,12 @@
       },
       "misreadings": [
         "set"
-      ]
+      ],
+      "icon": "sat"
     },
     {
       "type": "word",
       "word": "pat",
-      "emoji": "👋",
       "cn": "轻拍",
       "letters": [
         {
@@ -67,12 +64,12 @@
       },
       "misreadings": [
         "bat"
-      ]
+      ],
+      "icon": "pat"
     },
     {
       "type": "word",
       "word": "nap",
-      "emoji": "😴",
       "cn": "小睡",
       "letters": [
         {
@@ -91,12 +88,12 @@
       "audio": {
         "audio": "nap",
         "slow": true
-      }
+      },
+      "icon": "nap"
     },
     {
       "type": "word",
       "word": "pan",
-      "emoji": "🍳",
       "cn": "平底锅",
       "letters": [
         {
@@ -118,12 +115,12 @@
       },
       "misreadings": [
         "pen"
-      ]
+      ],
+      "icon": "pan"
     },
     {
       "type": "word",
       "word": "tin",
-      "emoji": "🥫",
       "cn": "罐头",
       "letters": [
         {
@@ -142,12 +139,12 @@
       "audio": {
         "audio": "tin",
         "slow": true
-      }
+      },
+      "icon": "tin"
     },
     {
       "type": "word",
       "word": "dip",
-      "emoji": "🍟",
       "cn": "蘸（蘸酱）",
       "letters": [
         {
@@ -166,12 +163,12 @@
       "audio": {
         "audio": "dip",
         "slow": true
-      }
+      },
+      "icon": "dip"
     },
     {
       "type": "word",
       "word": "mat",
-      "emoji": "🧘",
       "cn": "垫子",
       "letters": [
         {
@@ -190,12 +187,12 @@
       "audio": {
         "audio": "mat",
         "slow": true
-      }
+      },
+      "icon": "mat"
     },
     {
       "type": "word",
       "word": "go",
-      "emoji": "🏃",
       "cn": "去（tricky word，整体认读）",
       "tricky": true,
       "letters": [
@@ -211,13 +208,15 @@
       "audio": {
         "audio": "go",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "celebrate",
-      "sticker": "🔄",
+      "sticker": "star",
       "audio": "Well done! You remember all the sounds!"
     }
   ],
-  "parentGuide": "目标：复习 s a t p i n m d 八个音并听词选图；tricky word「go」。约 8 分钟。如果孩子连续点错，说明累了，今天先停下，不要加量。"
+  "parentGuide": "目标：复习 s a t p i n m d 八个音并听词选图；tricky word「go」。约 8 分钟。如果孩子连续点错，说明累了，今天先停下，不要加量。",
+  "icon": "refresh"
 }

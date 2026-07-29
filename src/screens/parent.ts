@@ -86,11 +86,11 @@ export function renderParentGate(root: HTMLElement, navigate: Navigate): void {
 type TabId = 'phonemes' | 'report' | 'guide' | 'recordings' | 'settings'
 
 const TABS: { id: TabId; label: string; render: (container: HTMLElement) => void | Promise<void> }[] = [
-  { id: 'phonemes', label: '🔤 音素图谱', render: renderPhonemesTab },
-  { id: 'report', label: '📊 本周报告', render: renderReportTab },
-  { id: 'guide', label: '📖 陪学指引', render: renderGuideTab },
-  { id: 'recordings', label: '🎤 录音回放', render: renderRecordingsTab },
-  { id: 'settings', label: '⚙️ 设置', render: renderSettingsTab },
+  { id: 'phonemes', label: '音素图谱', render: renderPhonemesTab },
+  { id: 'report', label: '本周报告', render: renderReportTab },
+  { id: 'guide', label: '陪学指引', render: renderGuideTab },
+  { id: 'recordings', label: '录音回放', render: renderRecordingsTab },
+  { id: 'settings', label: '设置', render: renderSettingsTab },
 ]
 
 export function renderParent(root: HTMLElement, navigate: Navigate): void {

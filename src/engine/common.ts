@@ -1,6 +1,7 @@
 // 活动组件共享的 DOM 工具与上下文
 import { speak } from '../audio'
 import { addRecord, saveRecording } from '../db'
+import { icon } from '../icons'
 import type { Lesson } from './types'
 
 export function el(tag: string, className?: string, text?: string): HTMLElement {
@@ -13,7 +14,6 @@ export function el(tag: string, className?: string, text?: string): HTMLElement 
 // 每个活动组件的渲染上下文
 export interface ActivityContext {
   lesson: Lesson
-  fox: string // 引导角色 emoji
   speak: (text: string) => Promise<boolean>
   // 写一条练习记录（echo 确认结果等）
   record: (activity: string, detail?: string) => void
@@ -29,23 +29,23 @@ export interface ActivityContext {
 export function makeContext(lesson: Lesson): ActivityContext {
   return {
     lesson,
-    fox: '🦊',
     speak,
     record: (activity, detail) => void addRecord(lesson.id, activity, detail),
     saveRecording: (key, blob) => void saveRecording(key, blob),
   }
 }
 
-// 角色 + 气泡（文字为占位，正式版为语音指令；🔊 可重听）
-export function foxRow(fox: string, text: string, audioText?: string): HTMLElement {
-  const row = el('div', 'fox-row')
-  const face = el('span', 'fox', fox)
+// 引导角色 + 气泡（文字为占位，正式版为语音指令；「Listen」文字按钮可重听）
+export function guideRow(text: string, audioText?: string): HTMLElement {
+  const row = el('div', 'guide-row')
+  const face = el('span', 'guide-face')
+  face.appendChild(icon('fox'))
   const bubble = el('div', 'bubble')
   if (text) bubble.appendChild(el('span', '', text))
   if (audioText) {
     const replay = document.createElement('button')
-    replay.className = 'replay-btn'
-    replay.textContent = '🔊'
+    replay.className = 'btn btn-ghost btn-small replay-btn'
+    replay.textContent = 'Listen'
     replay.setAttribute('aria-label', '再听一次')
     replay.onclick = () => void speak(audioText)
     bubble.appendChild(replay)
@@ -54,7 +54,7 @@ export function foxRow(fox: string, text: string, audioText?: string): HTMLEleme
   return row
 }
 
-// 大号主按钮
+// 大号主按钮（文字按钮）
 export function bigButton(text: string, onClick: () => void, primary = true): HTMLButtonElement {
   const btn = document.createElement('button')
   btn.className = `btn ${primary ? 'btn-primary' : 'btn-secondary'} big-next`

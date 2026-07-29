@@ -2,7 +2,6 @@
   "id": "l1-8",
   "level": 1,
   "order": 14,
-  "emoji": "🍲",
   "cn": "CVC 复习（pig/pot/sock/cap）",
   "intro": {
     "audio": "Hi! Let's read more words! You are a reading star!"
@@ -10,15 +9,13 @@
   "trickyWords": [
     {
       "text": "into",
-      "cn": "进入",
-      "emoji": "📥"
+      "cn": "进入"
     }
   ],
   "activities": [
     {
       "type": "word",
       "word": "pig",
-      "emoji": "🐷",
       "cn": "猪",
       "letters": [
         {
@@ -40,12 +37,12 @@
       },
       "misreadings": [
         "big"
-      ]
+      ],
+      "icon": "pig"
     },
     {
       "type": "word",
       "word": "pot",
-      "emoji": "🍲",
       "cn": "锅",
       "letters": [
         {
@@ -67,12 +64,12 @@
       },
       "misreadings": [
         "bot"
-      ]
+      ],
+      "icon": "pot"
     },
     {
       "type": "word",
       "word": "pig",
-      "emoji": "🐷",
       "cn": "猪",
       "letters": [
         {
@@ -94,12 +91,12 @@
       },
       "misreadings": [
         "big"
-      ]
+      ],
+      "icon": "pig"
     },
     {
       "type": "word",
       "word": "pot",
-      "emoji": "🍲",
       "cn": "锅",
       "letters": [
         {
@@ -121,12 +118,12 @@
       },
       "misreadings": [
         "bot"
-      ]
+      ],
+      "icon": "pot"
     },
     {
       "type": "word",
       "word": "sock",
-      "emoji": "🧦",
       "cn": "袜子",
       "letters": [
         {
@@ -148,12 +145,12 @@
       },
       "misreadings": [
         "sok"
-      ]
+      ],
+      "icon": "sock"
     },
     {
       "type": "word",
       "word": "cap",
-      "emoji": "🧢",
       "cn": "帽子",
       "letters": [
         {
@@ -175,12 +172,12 @@
       },
       "misreadings": [
         "kap"
-      ]
+      ],
+      "icon": "cap"
     },
     {
       "type": "word",
       "word": "into",
-      "emoji": "📥",
       "cn": "进入（tricky word，整体认读）",
       "tricky": true,
       "letters": [
@@ -204,13 +201,15 @@
       "audio": {
         "audio": "into",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "celebrate",
-      "sticker": "🍲",
+      "sticker": "star",
       "audio": "Fantastic! You can read so many words!"
     }
   ],
-  "parentGuide": "目标：综合拼读 pig/pot/sock/cap；tricky word「into」。约 8 分钟。孩子开始真正「读出来」了——多鼓励少纠错，读错让他自己再点一次字母块发现。"
+  "parentGuide": "目标：综合拼读 pig/pot/sock/cap；tricky word「into」。约 8 分钟。孩子开始真正「读出来」了——多鼓励少纠错，读错让他自己再点一次字母块发现。",
+  "icon": "pot"
 }

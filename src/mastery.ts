@@ -8,7 +8,7 @@ export interface Phoneme {
   id: string
   symbol: string // IPA，如 /æ/
   grapheme: string // 拼写形式，如 "c k ck"
-  emoji: string
+  icon?: string // 例词图标名（assets/icons 内）
   word: string // 例词
   cn: string
   level: number // 所属 Level

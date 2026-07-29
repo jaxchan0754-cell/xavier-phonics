@@ -2,7 +2,6 @@
   "id": "l1-10",
   "level": 1,
   "order": 16,
-  "emoji": "🏆",
   "cn": "Level 1 大复习",
   "intro": {
     "audio": "Hi, superstar! Let's review everything! Are you ready?"
@@ -12,7 +11,6 @@
     {
       "type": "word",
       "word": "cat",
-      "emoji": "🐱",
       "cn": "猫",
       "letters": [
         {
@@ -35,12 +33,12 @@
       "misreadings": [
         "tat",
         "kat"
-      ]
+      ],
+      "icon": "cat"
     },
     {
       "type": "word",
       "word": "pin",
-      "emoji": "📌",
       "cn": "别针",
       "letters": [
         {
@@ -62,12 +60,12 @@
       },
       "misreadings": [
         "bin"
-      ]
+      ],
+      "icon": "pin"
     },
     {
       "type": "word",
       "word": "dog",
-      "emoji": "🐶",
       "cn": "狗",
       "letters": [
         {
@@ -89,12 +87,12 @@
       },
       "misreadings": [
         "tog"
-      ]
+      ],
+      "icon": "dog"
     },
     {
       "type": "word",
       "word": "I",
-      "emoji": "🧒",
       "cn": "我（tricky word）",
       "tricky": true,
       "letters": [
@@ -106,12 +104,12 @@
       "audio": {
         "audio": "I",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "word",
       "word": "no",
-      "emoji": "🙅",
       "cn": "不（tricky word）",
       "tricky": true,
       "letters": [
@@ -127,12 +125,12 @@
       "audio": {
         "audio": "no",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "word",
       "word": "go",
-      "emoji": "🏃",
       "cn": "去（tricky word）",
       "tricky": true,
       "letters": [
@@ -148,13 +146,15 @@
       "audio": {
         "audio": "go",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "celebrate",
-      "sticker": "🏆",
+      "sticker": "star",
       "audio": "You did it! Level one complete! You are a reading star!"
     }
   ],
-  "parentGuide": "目标：Level 1 总复习。约 8 分钟。完成后建议来点小仪式感（贴纸/合影）。接下来进入 Level 2，保持每周 3-5 次、每次 10-15 分钟的节奏即可。"
+  "parentGuide": "目标：Level 1 总复习。约 8 分钟。完成后建议来点小仪式感（贴纸/合影）。接下来进入 Level 2，保持每周 3-5 次、每次 10-15 分钟的节奏即可。",
+  "icon": "trophy"
 }

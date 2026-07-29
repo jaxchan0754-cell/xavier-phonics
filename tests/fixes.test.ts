@@ -18,11 +18,11 @@ const mkLesson = (id: string, wordCount: number) => ({
   id,
   level: 1,
   order: 1,
-  emoji: '🐱',
+  icon: 'cat',
   activities: Array.from({ length: wordCount }, (_, i) => ({
     type: 'word' as const,
     word: `w${i}`,
-    emoji: '🐶',
+    icon: 'dog',
     audio: { audio: `w${i}`, slow: true },
   })),
 })

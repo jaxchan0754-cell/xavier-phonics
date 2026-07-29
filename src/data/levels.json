@@ -1,26 +1,122 @@
 [
-  { "id": "l0-1", "emoji": "🐶", "lessonId": "l0-1" },
-  { "id": "l0-2", "emoji": "🚗", "lessonId": "l0-2" },
-  { "id": "l0-3", "emoji": "🎩", "lessonId": "l0-3" },
-  { "id": "l0-4", "emoji": "🧩", "lessonId": "l0-4" },
-  { "id": "l0-5", "emoji": "🚢", "lessonId": "l0-5" },
-  { "id": "l0-6", "emoji": "👍", "lessonId": "l0-6" },
-  { "id": "l1-1", "emoji": "🐍", "lessonId": "l1-1" },
-  { "id": "l1-2", "emoji": "🐷", "lessonId": "l1-2" },
-  { "id": "l1-3", "emoji": "📌", "lessonId": "l1-3" },
-  { "id": "l1-4", "emoji": "👨", "lessonId": "l1-4" },
-  { "id": "l1-5", "emoji": "🔄", "lessonId": "l1-5" },
-  { "id": "l1-6", "emoji": "🐶", "lessonId": "l1-6" },
-  { "id": "l1-7", "emoji": "🐱", "lessonId": "l1-7" },
-  { "id": "l1-8", "emoji": "🍲", "lessonId": "l1-8" },
-  { "id": "l1-9", "emoji": "🗣️", "lessonId": "l1-9" },
-  { "id": "l1-10", "emoji": "🏆", "lessonId": "l1-10" },
-  { "id": "l1-11", "emoji": "🎯", "lessonId": "l1-11" },
-  { "id": "l1-12", "emoji": "🧠", "lessonId": "l1-12" },
-  { "id": "level-2", "emoji": "2️⃣", "lessonId": null },
-  { "id": "level-3", "emoji": "3️⃣", "lessonId": null },
-  { "id": "level-4", "emoji": "4️⃣", "lessonId": null },
-  { "id": "level-5", "emoji": "5️⃣", "lessonId": null },
-  { "id": "level-6", "emoji": "6️⃣", "lessonId": null },
-  { "id": "level-7", "emoji": "7️⃣", "lessonId": null }
+  {
+    "id": "l0-1",
+    "lessonId": "l0-1",
+    "icon": "dog"
+  },
+  {
+    "id": "l0-2",
+    "lessonId": "l0-2",
+    "icon": "car"
+  },
+  {
+    "id": "l0-3",
+    "lessonId": "l0-3",
+    "icon": "hat"
+  },
+  {
+    "id": "l0-4",
+    "lessonId": "l0-4",
+    "icon": "sound"
+  },
+  {
+    "id": "l0-5",
+    "lessonId": "l0-5",
+    "icon": "ship"
+  },
+  {
+    "id": "l0-6",
+    "lessonId": "l0-6",
+    "icon": "thumb"
+  },
+  {
+    "id": "l1-1",
+    "lessonId": "l1-1",
+    "icon": "snake"
+  },
+  {
+    "id": "l1-2",
+    "lessonId": "l1-2",
+    "icon": "pig"
+  },
+  {
+    "id": "l1-3",
+    "lessonId": "l1-3",
+    "icon": "pin"
+  },
+  {
+    "id": "l1-4",
+    "lessonId": "l1-4",
+    "icon": "man"
+  },
+  {
+    "id": "l1-5",
+    "lessonId": "l1-5",
+    "icon": "refresh"
+  },
+  {
+    "id": "l1-6",
+    "lessonId": "l1-6",
+    "icon": "dog"
+  },
+  {
+    "id": "l1-7",
+    "lessonId": "l1-7",
+    "icon": "cat"
+  },
+  {
+    "id": "l1-8",
+    "lessonId": "l1-8",
+    "icon": "pot"
+  },
+  {
+    "id": "l1-9",
+    "lessonId": "l1-9",
+    "icon": "sound"
+  },
+  {
+    "id": "l1-10",
+    "lessonId": "l1-10",
+    "icon": "trophy"
+  },
+  {
+    "id": "l1-11",
+    "lessonId": "l1-11",
+    "icon": "target"
+  },
+  {
+    "id": "l1-12",
+    "lessonId": "l1-12",
+    "icon": "brain"
+  },
+  {
+    "id": "level-2",
+    "lessonId": null,
+    "icon": null
+  },
+  {
+    "id": "level-3",
+    "lessonId": null,
+    "icon": null
+  },
+  {
+    "id": "level-4",
+    "lessonId": null,
+    "icon": null
+  },
+  {
+    "id": "level-5",
+    "lessonId": null,
+    "icon": null
+  },
+  {
+    "id": "level-6",
+    "lessonId": null,
+    "icon": null
+  },
+  {
+    "id": "level-7",
+    "lessonId": null,
+    "icon": null
+  }
 ]

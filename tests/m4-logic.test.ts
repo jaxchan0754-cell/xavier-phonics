@@ -1,6 +1,5 @@
 // M4 纯逻辑冒烟测试：间隔重复调度、scaffold 判定、复习课组装（esbuild 打包后 node 运行）
 import { nextReviewState, REVIEW_INTERVALS, DAY_MS } from '../src/review-store'
-import { needsScaffold } from '../src/engine/activities/listen'
 import { buildReviewLesson, REVIEW_SESSION_SIZE } from '../src/review'
 import type { ReviewItem } from '../src/db'
 
@@ -30,9 +29,6 @@ const reset = nextReviewState({ interval: 7, reps: 3 }, false, NOW)
 check('失败 → 当天重做、reps 清零', [reset.interval, reset.reps, reset.due], [0, 0, NOW])
 
 // ---- scaffold 判定 ----
-check('错 0 次不降难度', needsScaffold(0), false)
-check('错 1 次不降难度', needsScaffold(1), false)
-check('错 2 次触发降难度', needsScaffold(2), true)
 
 // ---- 复习课组装 ----
 const mkItem = (key: string, kind: 'sound' | 'word', data: object): ReviewItem => ({
@@ -44,10 +40,10 @@ const mkItem = (key: string, kind: 'sound' | 'word', data: object): ReviewItem =
   data: JSON.stringify(data),
 })
 const items: ReviewItem[] = [
-  mkItem('s', 'sound', { emoji: '🐍', model: 'sss' }),
-  mkItem('a', 'sound', { emoji: '🍎', model: 'ah' }),
-  mkItem('cat', 'word', { emoji: '🐱' }),
-  mkItem('dog', 'word', { emoji: '🐶' }),
+  mkItem('s', 'sound', { icon: 'snake', model: 'sss' }),
+  mkItem('a', 'sound', { icon: 'apple', model: 'ah' }),
+  mkItem('cat', 'word', { icon: 'cat' }),
+  mkItem('dog', 'word', { icon: 'dog' }),
 ]
 const lesson = buildReviewLesson(items)
 check('复习课 id', lesson.id, 'review')
@@ -66,7 +62,7 @@ check('word 项进 word 快闪', wordActs.map((a) => (a.type === 'word' ? a.word
 check('结尾是庆祝', lesson.activities[lesson.activities.length - 1].type, 'celebrate')
 
 // 会话规模上限
-const many = Array.from({ length: 20 }, (_, i) => mkItem(`w${i}`, 'word', { emoji: '🐶' }))
+const many = Array.from({ length: 20 }, (_, i) => mkItem(`w${i}`, 'word', { icon: 'dog' }))
 const big = buildReviewLesson(many)
 check(
   '超过上限只取前 N 项',

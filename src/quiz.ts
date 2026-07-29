@@ -64,12 +64,12 @@ export function buildQuizLesson(completedIds: Set<string>): { lesson: Lesson; qu
   const { words } = collectQuizMaterial(listLessons(), completedIds)
   const picked = shuffle(words).slice(0, QUIZ_MAX_WORDS)
 
-  const activities: Activity[] = [...picked, { type: 'celebrate', sticker: '🏆', audio: 'Wow! Quiz complete! You are a superstar!' }]
+  const activities: Activity[] = [...picked, { type: 'celebrate', sticker: 'trophy', audio: 'Wow! Quiz complete! You are a superstar!' }]
   const lesson: Lesson = {
     id: 'quiz',
     level: 0,
     order: -1,
-    emoji: '🏆',
+    icon: 'trophy',
     intro: { audio: 'Quiz time! Show me what you know!' },
     activities,
   }

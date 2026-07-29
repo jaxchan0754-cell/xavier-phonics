@@ -26,7 +26,7 @@ export function nextReviewState(item: Pick<ReviewState, 'interval' | 'reps'>, pa
 
 // 复习项快闪所需数据
 export interface ReviewFlashData {
-  emoji: string
+  icon?: string | null
   model?: string // sound 项的示范语音文本
 }
 
@@ -42,7 +42,7 @@ export async function seedReviewItems(lesson: Lesson, now = Date.now()): Promise
         interval: 1,
         due: now + DAY_MS, // 首次复习在明天
         reps: 0,
-        data: JSON.stringify({ emoji: activity.emoji, model: audioText(activity.audio) }),
+        data: JSON.stringify({ icon: activity.icon, model: audioText(activity.audio) }),
       })
     } else if (activity.type === 'word') {
       items.push({
@@ -51,7 +51,7 @@ export async function seedReviewItems(lesson: Lesson, now = Date.now()): Promise
         interval: 1,
         due: now + DAY_MS,
         reps: 0,
-        data: JSON.stringify({ emoji: activity.emoji }),
+        data: JSON.stringify({ icon: activity.icon }),
       })
     }
   }

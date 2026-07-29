@@ -1,4 +1,4 @@
-// 音素图谱板块：44 音素三态视图（已会✓ / 在学🔸 / 未学灰）
+// 音素图谱板块：44 音素三态视图（已会 / 在学 / 未学）
 import { computeMastery, getPhonemes, MASTERY_LABEL, type MasteryState } from '../mastery'
 
 function el(tag: string, className?: string, text?: string): HTMLElement {
@@ -18,7 +18,7 @@ export async function renderPhonemesTab(container: HTMLElement): Promise<void> {
   const summary = el(
     'p',
     'parent-note',
-    `已会 ${counts.mastered} · 在学 ${counts.learning} · 未学 ${counts.none}（共 ${phonemes.length} 个音素，⭐ 为中文母语难点音）`,
+    `已会 ${counts.mastered} · 在学 ${counts.learning} · 未学 ${counts.none}（共 ${phonemes.length} 个音素，◆ 为中文母语难点音）`,
   )
   container.appendChild(summary)
 
@@ -26,8 +26,8 @@ export async function renderPhonemesTab(container: HTMLElement): Promise<void> {
   const legend = el('div', 'phoneme-legend')
   for (const state of ['mastered', 'learning', 'none'] as MasteryState[]) {
     const item = el('span', `legend-item state-${state}`)
-    const icon = state === 'mastered' ? '✓' : state === 'learning' ? '🔸' : '·'
-    item.textContent = `${icon} ${MASTERY_LABEL[state]}`
+    const mark = state === 'mastered' ? '✓' : state === 'learning' ? '◆' : '·'
+    item.textContent = `${mark} ${MASTERY_LABEL[state]}`
     legend.appendChild(item)
   }
   container.appendChild(legend)
@@ -42,13 +42,13 @@ export async function renderPhonemesTab(container: HTMLElement): Promise<void> {
       const state = mastery.get(p.id)!
       const chip = el('div', `phoneme-chip state-${state}`)
       chip.title = `${p.word}（${p.cn}）— ${MASTERY_LABEL[state]}`
-      chip.appendChild(el('span', 'phoneme-emoji', p.emoji))
+      chip.appendChild(el('span', 'phoneme-letter', p.grapheme.split(' ')[0]))
       const mid = el('span', 'phoneme-mid')
       mid.appendChild(el('span', 'phoneme-symbol', p.symbol))
       mid.appendChild(el('span', 'phoneme-grapheme', p.grapheme))
       chip.appendChild(mid)
-      const badge = state === 'mastered' ? '✓' : state === 'learning' ? '🔸' : ''
-      chip.appendChild(el('span', 'phoneme-badge', p.ell ? `⭐${badge}` : badge))
+      const badge = state === 'mastered' ? '✓' : state === 'learning' ? '◆' : ''
+      chip.appendChild(el('span', 'phoneme-badge', p.ell ? `难${badge}` : badge))
       grid.appendChild(chip)
     }
     section.appendChild(grid)

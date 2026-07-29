@@ -22,24 +22,24 @@ export function buildReviewLesson(items: ReviewItem[]): Lesson {
       return {
         type: 'phoneme',
         grapheme: item.key,
-        emoji: data.emoji,
+        icon: data.icon,
         audio: slow(data.model ?? item.key),
       }
     }
     return {
       type: 'word',
       word: item.key,
-      emoji: data.emoji,
+      icon: data.icon,
       audio: slow(item.key),
     }
   })
-  activities.push({ type: 'celebrate', sticker: '✨', audio: 'Great job! You finished the review!' })
+  activities.push({ type: 'celebrate', sticker: 'sparkles', audio: 'Great job! You finished the review!' })
 
   return {
     id: 'review',
     level: 0,
     order: -1,
-    emoji: '✨',
+    icon: 'sparkles',
     intro: { audio: "Let's review! Are you ready?" },
     activities,
   }

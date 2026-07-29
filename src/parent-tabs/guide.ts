@@ -22,15 +22,17 @@ export async function renderGuideTab(container: HTMLElement): Promise<void> {
       container.appendChild(el('h3', 'guide-level', title))
     }
     const done = completed.has(lesson.id)
-    let stateIcon = '🔒'
-    if (done) stateIcon = '✅'
+    let stateTag = '未解锁'
+    if (done) stateTag = '已完成'
     else if (!currentAssigned) {
-      stateIcon = '👉'
+      stateTag = '当前'
       currentAssigned = true
     }
 
     const item = el('details', 'guide-item')
-    const summary = el('summary', '', `${stateIcon} ${lesson.emoji} ${lesson.cn ?? lesson.id}`)
+    const summary = el('summary')
+    summary.appendChild(el('span', `guide-state state-${done ? 'done' : stateTag === '当前' ? 'current' : 'locked'}`, stateTag))
+    summary.appendChild(el('span', 'guide-name', lesson.cn ?? lesson.id))
     item.appendChild(summary)
     item.appendChild(el('p', 'guide-text', lesson.parentGuide ?? '（指引编写中）'))
     container.appendChild(item)

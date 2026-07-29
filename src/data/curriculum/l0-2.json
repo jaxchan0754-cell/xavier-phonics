@@ -2,7 +2,6 @@
   "id": "l0-2",
   "level": 0,
   "order": 2,
-  "emoji": "🚗",
   "cn": "语音意识·生活中的声音",
   "intro": {
     "audio": "Hi! I'm Felix! Listen! What sound is it?"
@@ -12,7 +11,6 @@
     {
       "type": "word",
       "word": "car",
-      "emoji": "🚗",
       "cn": "汽车",
       "letters": [
         {
@@ -27,12 +25,12 @@
       "audio": {
         "audio": "car",
         "slow": true
-      }
+      },
+      "icon": "car"
     },
     {
       "type": "word",
       "word": "phone",
-      "emoji": "📱",
       "cn": "电话",
       "letters": [
         {
@@ -59,12 +57,12 @@
       "audio": {
         "audio": "phone",
         "slow": true
-      }
+      },
+      "icon": "phone"
     },
     {
       "type": "word",
       "word": "bell",
-      "emoji": "🔔",
       "cn": "铃铛",
       "letters": [
         {
@@ -83,12 +81,12 @@
       "audio": {
         "audio": "bell",
         "slow": true
-      }
+      },
+      "icon": "bell"
     },
     {
       "type": "word",
       "word": "baby",
-      "emoji": "👶",
       "cn": "婴儿",
       "letters": [
         {
@@ -111,13 +109,15 @@
       "audio": {
         "audio": "baby",
         "slow": true
-      }
+      },
+      "icon": "baby"
     },
     {
       "type": "celebrate",
-      "sticker": "🚗",
+      "sticker": "star",
       "audio": "Well done! You have super ears!"
     }
   ],
-  "parentGuide": "目标：辨别生活中的声音（车、电话、铃铛、婴儿）。约 5 分钟。鼓励孩子用中文说出声音来源也可以。课后玩「闭眼听声音」：在家闭眼听门铃、水壶声，指出是什么。"
+  "parentGuide": "目标：辨别生活中的声音（车、电话、铃铛、婴儿）。约 5 分钟。鼓励孩子用中文说出声音来源也可以。课后玩「闭眼听声音」：在家闭眼听门铃、水壶声，指出是什么。",
+  "icon": "car"
 }

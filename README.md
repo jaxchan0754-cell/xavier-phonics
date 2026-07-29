@@ -243,6 +243,11 @@ npm test   # esbuild 打包 tests/*.test.ts 后 node 运行（掌握度/统计/�
 > （IndexedDB），没有云端同步。建议固定一台设备作为学习机；另一台设备上
 > 可用家长端的「进度导出 JSON」做备份查看。
 
+## 资源与署名
+
+- **字体**：Andika（SIL 出品，专为初读者设计的识字字体），[SIL Open Font License 1.1](https://openfontlicense.org/)，本地打包于 `public/fonts/`
+- **图标**：[game-icons.net](https://game-icons.net/)（CC-BY 3.0），源文件在 `assets/icons/`，经 `npm run build:icons` 内联进 `src/icons.ts`
+
 ## 音频说明
 
 - 运行时所有播放走 `src/audio.ts`：`speak(文本)` 按哈希解析 TTS 文件（.m4a → .mp3 回退），

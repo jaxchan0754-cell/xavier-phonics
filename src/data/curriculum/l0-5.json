@@ -2,7 +2,6 @@
   "id": "l0-5",
   "level": 0,
   "order": 5,
-  "emoji": "🚢",
   "cn": "语音意识·最小对立对（ɪ-iː / l-r）",
   "intro": {
     "audio": "Hello! Listen carefully! Ship, sheep. Are they the same?"
@@ -12,7 +11,6 @@
     {
       "type": "word",
       "word": "ship",
-      "emoji": "🚢",
       "cn": "轮船（对比 sheep）",
       "letters": [
         {
@@ -34,12 +32,12 @@
       },
       "misreadings": [
         "sip"
-      ]
+      ],
+      "icon": "ship"
     },
     {
       "type": "word",
       "word": "sheep",
-      "emoji": "🐑",
       "cn": "绵羊（对比 ship）",
       "letters": [
         {
@@ -61,12 +59,12 @@
       },
       "misreadings": [
         "ship"
-      ]
+      ],
+      "icon": "sheep"
     },
     {
       "type": "word",
       "word": "lock",
-      "emoji": "🔒",
       "cn": "锁（对比 rock）",
       "letters": [
         {
@@ -88,12 +86,12 @@
       },
       "misreadings": [
         "rock"
-      ]
+      ],
+      "icon": "lock"
     },
     {
       "type": "word",
       "word": "rock",
-      "emoji": "🪨",
       "cn": "石头（对比 lock）",
       "letters": [
         {
@@ -115,13 +113,15 @@
       },
       "misreadings": [
         "lock"
-      ]
+      ],
+      "icon": "rock"
     },
     {
       "type": "celebrate",
-      "sticker": "🚢",
+      "sticker": "star",
       "audio": "Great ears! Ship and sheep are different!"
     }
   ],
-  "parentGuide": "目标：分辨 ship/sheep、lock/rock。中国孩子分不清 ɪ/iː 和 l/r 非常正常，点错不要纠正，让他再听一次。约 5 分钟。平时用夸张口型对比读这两对词。"
+  "parentGuide": "目标：分辨 ship/sheep、lock/rock。中国孩子分不清 ɪ/iː 和 l/r 非常正常，点错不要纠正，让他再听一次。约 5 分钟。平时用夸张口型对比读这两对词。",
+  "icon": "ship"
 }

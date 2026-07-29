@@ -2,7 +2,6 @@
   "id": "l1-2",
   "level": 1,
   "order": 8,
-  "emoji": "🐷",
   "cn": "字母音 p + 拼读起步（sat/pat/tap）",
   "intro": {
     "audio": "Hi! Today we learn puh! And we can read words!"
@@ -12,18 +11,17 @@
     {
       "type": "phoneme",
       "grapheme": "p",
-      "emoji": "🐷",
       "audio": {
         "audio": "puh",
         "slow": true
       },
       "cn": "猪",
-      "tip": "双唇紧闭，然后吹开"
+      "tip": "双唇紧闭，然后吹开",
+      "icon": "pig"
     },
     {
       "type": "word",
       "word": "sat",
-      "emoji": "🧎",
       "cn": "坐（过去式）",
       "letters": [
         {
@@ -45,12 +43,12 @@
       },
       "misreadings": [
         "set"
-      ]
+      ],
+      "icon": "sat"
     },
     {
       "type": "word",
       "word": "pat",
-      "emoji": "👋",
       "cn": "轻拍",
       "letters": [
         {
@@ -72,12 +70,12 @@
       },
       "misreadings": [
         "bat"
-      ]
+      ],
+      "icon": "pat"
     },
     {
       "type": "word",
       "word": "tap",
-      "emoji": "🚰",
       "cn": "水龙头",
       "letters": [
         {
@@ -99,13 +97,15 @@
       },
       "misreadings": [
         "dap"
-      ]
+      ],
+      "icon": "tap"
     },
     {
       "type": "celebrate",
-      "sticker": "🐷",
+      "sticker": "star",
       "audio": "Wow! You can read sat, pat, tap!"
     }
   ],
-  "parentGuide": "目标：学 p，并第一次把音拼成词（sat/pat/tap）。拼读环节让孩子自己点字母块，别急着告诉答案。约 8 分钟。课后可用手指在桌上写这三个词让孩子拼读。"
+  "parentGuide": "目标：学 p，并第一次把音拼成词（sat/pat/tap）。拼读环节让孩子自己点字母块，别急着告诉答案。约 8 分钟。课后可用手指在桌上写这三个词让孩子拼读。",
+  "icon": "pig"
 }

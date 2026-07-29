@@ -1,29 +1,23 @@
 // 翻书引擎：每课 = 一本书。
-// 封面页（大 emoji + 课程名语音）→ 各 activity 页 → 庆祝页（封底）。
-// - 翻页：左下/右下大箭头 + 屏幕左右 1/4 边缘点按 + 水平 swipe（录音中禁用）
-// - 锁定：向后翻永远自由；向前翻需当前页互动完成（右箭头置灰🔒 → 完成后亮起+短音效）
-// - 书签：当前课学到第几页存 localStorage，书架「继续 ▶」直达；完成课清除
-// - 活动接口：player 提供页容器，活动组件返回的 Promise 即「完成回调」——
-//   第二步换跟读页型时只需替换 activities/*.ts 组件，引擎不动。
+// 封面页（课程图标 + 课程名语音 + Start 按钮）→ 各 activity 页 → 庆祝页（封底）。
+// - 翻页：左下/右下文字按钮 Back/Next + 屏幕左右边缘点按 + 水平 swipe（录音中禁用）
+// - 锁定：向后翻永远自由；向前翻需当前页互动完成（Next 置灰+锁图标 → 完成后亮起+短音效）
+// - 书签：当前课学到第几页存 localStorage，书架「继续」直达；完成课清除
+// - 活动接口：player 提供页容器，活动组件返回的 Promise 即「完成回调」
 import { completeLevel } from '../db'
 import { getLesson } from '../curriculum'
 import { seedReviewItems } from '../review-store'
 import { stopPlayback } from '../audio'
+import { icon } from '../icons'
 import type { Navigate } from '../types'
-import { el, foxRow, makeContext, type ActivityContext } from './common'
+import { el, guideRow, makeContext, type ActivityContext } from './common'
 import type { Activity, Lesson } from './types'
-import { renderListen } from './activities/listen'
-import { renderEcho } from './activities/echo'
-import { renderBlend } from './activities/blend'
 import { renderCelebrate } from './activities/celebrate'
 import { renderPhoneme } from './activities/phoneme'
 import { renderWord } from './activities/word'
 
 // 活动类型 → 渲染组件（可替换接口：页容器 + Promise 完成信号）
 const RENDERERS: Record<Activity['type'], (c: HTMLElement, a: never, ctx: ActivityContext) => Promise<void>> = {
-  listen: renderListen as never,
-  echo: renderEcho as never,
-  blend: renderBlend as never,
   celebrate: renderCelebrate as never,
   phoneme: renderPhoneme as never,
   word: renderWord as never,
@@ -32,18 +26,8 @@ const RENDERERS: Record<Activity['type'], (c: HTMLElement, a: never, ctx: Activi
 // 缺庆祝环节的课自动补一个默认庆祝
 const DEFAULT_CELEBRATE: Activity = {
   type: 'celebrate',
-  sticker: '🌟',
+  sticker: 'star',
   audio: 'Great job! See you tomorrow!',
-}
-
-// 页图标
-const PAGE_ICON: Record<Activity['type'], string> = {
-  listen: '🎧',
-  echo: '🎤',
-  blend: '🧩',
-  celebrate: '🌟',
-  phoneme: '🔤',
-  word: '💬',
 }
 
 const FLIP_MS = 280
@@ -93,8 +77,8 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
 
   const topbar = el('div', 'lesson-topbar')
   const exitBtn = document.createElement('button')
-  exitBtn.className = 'exit-btn'
-  exitBtn.textContent = '✕'
+  exitBtn.className = 'btn btn-ghost exit-btn'
+  exitBtn.textContent = 'Exit'
   exitBtn.setAttribute('aria-label', '退出关卡')
   exitBtn.onclick = () => navigate('map')
   topbar.appendChild(exitBtn)
@@ -105,17 +89,19 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
 
   const footer = el('div', 'book-footer')
   const leftArrow = document.createElement('button')
-  leftArrow.className = 'arrow-btn left'
-  leftArrow.textContent = '◀'
+  leftArrow.className = 'btn btn-secondary arrow-btn left'
+  leftArrow.textContent = 'Back'
   leftArrow.setAttribute('aria-label', '上一页')
-  const icons = el('div', 'page-icons')
+  const dots = el('div', 'page-dots')
+  const rightWrap = el('div', 'arrow-wrap')
   const rightArrow = document.createElement('button')
-  rightArrow.className = 'arrow-btn right'
-  rightArrow.textContent = '▶'
+  rightArrow.className = 'btn btn-primary arrow-btn right'
+  rightArrow.textContent = 'Next'
   rightArrow.setAttribute('aria-label', '下一页')
-  const lockBadge = el('span', 'arrow-lock', '🔒')
-  rightArrow.appendChild(lockBadge)
-  footer.append(leftArrow, icons, rightArrow)
+  const lockBadge = el('span', 'arrow-lock')
+  lockBadge.appendChild(icon('lock'))
+  rightWrap.append(rightArrow, lockBadge)
+  footer.append(leftArrow, dots, rightWrap)
   screen.appendChild(footer)
   root.appendChild(screen)
 
@@ -145,16 +131,16 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
   const renderCoverPage = (pageEl: HTMLElement): void => {
     const intro = lesson.intro ?? { audio: "Hello! I'm Felix! Let's go!" }
     const cover = el('div', 'book-cover-page')
-    cover.appendChild(el('div', 'cover-emoji', lesson.emoji))
-    cover.appendChild(foxRow(ctx.fox, intro.text ?? '', intro.audio))
+    if (lesson.icon) cover.appendChild(icon(lesson.icon, 'cover-icon'))
+    cover.appendChild(guideRow(intro.text ?? '', intro.audio))
     if (lesson.trickyWords?.length) {
       const row = el('div', 'tricky-preview')
-      for (const t of lesson.trickyWords) row.appendChild(el('span', 'tricky-chip', `${t.emoji} ${t.text}`))
+      for (const t of lesson.trickyWords) row.appendChild(el('span', 'tricky-chip', t.text))
       cover.appendChild(row)
     }
     const startBtn = document.createElement('button')
-    startBtn.className = 'start-btn'
-    startBtn.textContent = '▶️'
+    startBtn.className = 'btn btn-primary start-btn'
+    startBtn.textContent = 'Start'
     startBtn.setAttribute('aria-label', '开始')
     startBtn.onclick = () => {
       startBtn.disabled = true // 防连点
@@ -182,7 +168,7 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
   const turnTo = async (next: number): Promise<void> => {
     if (turning || next < 0 || next >= pages.length || next === pageIndex) return
     const dir = next > pageIndex ? 1 : -1
-    // 向前翻软锁定：当前页未完成 → 右箭头摇摆提示
+    // 向前翻软锁定：当前页未完成 → Next 摇摆提示
     if (dir === 1 && !completedPages.has(pageIndex)) {
       rightArrow.classList.add('wiggle')
       setTimeout(() => rightArrow.classList.remove('wiggle'), 450)
@@ -207,24 +193,24 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
     turning = false
   }
 
-  // ---- 页脚与箭头状态 ----
+  // ---- 页脚与按钮状态 ----
   const updateChrome = () => {
-    // 页图标：当前页放大高亮，已完成页点亮
-    icons.innerHTML = ''
-    pages.forEach((p, i) => {
-      const icon = el(
+    // 页码圆点：数字小圆点，当前页放大高亮，已完成页点亮
+    dots.innerHTML = ''
+    pages.forEach((_, i) => {
+      const dot = el(
         'span',
-        `page-icon${completedPages.has(i) ? ' done' : ''}${i === pageIndex ? ' active' : ''}`,
-        p.kind === 'cover' ? '📖' : PAGE_ICON[p.activity!.type],
+        `page-dot${completedPages.has(i) ? ' done' : ''}${i === pageIndex ? ' active' : ''}`,
+        String(i + 1),
       )
-      icons.appendChild(icon)
+      dots.appendChild(dot)
     })
-    // 左箭头：第一页禁用；右箭头：未完成置灰+🔒，完成亮起脉动；封底隐藏
+    // Back：第一页禁用；Next：未完成置灰+锁，完成亮起；封底隐藏
     leftArrow.disabled = pageIndex === 0
     const isLast = pageIndex === pages.length - 1
     const unlocked = completedPages.has(pageIndex)
-    rightArrow.classList.toggle('hidden', isLast)
-    rightArrow.classList.toggle('locked', !unlocked && !isLast)
+    rightWrap.classList.toggle('hidden', isLast)
+    rightWrap.classList.toggle('locked', !unlocked && !isLast)
     rightArrow.classList.toggle('ready', unlocked && !isLast)
     rightArrow.disabled = !unlocked || isLast
   }

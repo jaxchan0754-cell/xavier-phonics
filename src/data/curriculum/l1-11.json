@@ -2,7 +2,6 @@
   "id": "l1-11",
   "level": 1,
   "order": 17,
-  "emoji": "🎯",
   "cn": "词尾辅音专项（cat/dog/pig 尾音读清楚）",
   "parentGuide": "中文母语专项：汉语几乎没有词尾辅音，孩子容易把 cat 读成「ca」。目标是听出并读出词尾音。约 8 分钟。家长示范时夸张一点：cat-t！平时玩「小尾巴」游戏——读一个词，让孩子指出最后的音是什么。",
   "intro": {
@@ -13,7 +12,6 @@
     {
       "type": "word",
       "word": "cat",
-      "emoji": "🐱",
       "cn": "猫（对比 cap）",
       "letters": [
         {
@@ -36,12 +34,12 @@
       "misreadings": [
         "tat",
         "kat"
-      ]
+      ],
+      "icon": "cat"
     },
     {
       "type": "word",
       "word": "cap",
-      "emoji": "🧢",
       "cn": "帽子（对比 cat）",
       "letters": [
         {
@@ -63,12 +61,12 @@
       },
       "misreadings": [
         "kap"
-      ]
+      ],
+      "icon": "cap"
     },
     {
       "type": "word",
       "word": "cat",
-      "emoji": "🐱",
       "cn": "猫（尾音 /t/ 要读出来）",
       "letters": [
         {
@@ -91,12 +89,12 @@
       "misreadings": [
         "tat",
         "kat"
-      ]
+      ],
+      "icon": "cat"
     },
     {
       "type": "word",
       "word": "dog",
-      "emoji": "🐶",
       "cn": "狗（尾音 /g/ 要读出来）",
       "letters": [
         {
@@ -118,12 +116,12 @@
       },
       "misreadings": [
         "tog"
-      ]
+      ],
+      "icon": "dog"
     },
     {
       "type": "word",
       "word": "pig",
-      "emoji": "🐷",
       "cn": "猪（尾音 /g/ 要读出来）",
       "letters": [
         {
@@ -145,12 +143,14 @@
       },
       "misreadings": [
         "big"
-      ]
+      ],
+      "icon": "pig"
     },
     {
       "type": "celebrate",
-      "sticker": "🎯",
+      "sticker": "star",
       "audio": "Great job! You can hear the little sounds at the end!"
     }
-  ]
+  ],
+  "icon": "target"
 }

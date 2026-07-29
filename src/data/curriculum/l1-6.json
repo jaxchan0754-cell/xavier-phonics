@@ -2,7 +2,6 @@
   "id": "l1-6",
   "level": 1,
   "order": 12,
-  "emoji": "🐶",
   "cn": "字母音 g o + 拼读（dog/dig/dot）",
   "intro": {
     "audio": "Hi! Today we learn guh and aw!"
@@ -10,37 +9,35 @@
   "trickyWords": [
     {
       "text": "to",
-      "cn": "到、向",
-      "emoji": "➡️"
+      "cn": "到、向"
     }
   ],
   "activities": [
     {
       "type": "phoneme",
       "grapheme": "g",
-      "emoji": "🍇",
       "audio": {
         "audio": "guh",
         "slow": true
       },
       "cn": "葡萄",
-      "tip": "舌根抬起，短促有力"
+      "tip": "舌根抬起，短促有力",
+      "icon": "grapes"
     },
     {
       "type": "phoneme",
       "grapheme": "o",
-      "emoji": "🐙",
       "audio": {
         "audio": "aw",
         "slow": true
       },
       "cn": "章鱼",
-      "tip": "圆圆的嘴，短短的'奥'"
+      "tip": "圆圆的嘴，短短的'奥'",
+      "icon": "octopus"
     },
     {
       "type": "word",
       "word": "to",
-      "emoji": "➡️",
       "cn": "到、向（tricky word，整体认读）",
       "tricky": true,
       "letters": [
@@ -56,12 +53,12 @@
       "audio": {
         "audio": "to",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "word",
       "word": "dog",
-      "emoji": "🐶",
       "cn": "狗",
       "letters": [
         {
@@ -83,12 +80,12 @@
       },
       "misreadings": [
         "tog"
-      ]
+      ],
+      "icon": "dog"
     },
     {
       "type": "word",
       "word": "dig",
-      "emoji": "⛏️",
       "cn": "挖",
       "letters": [
         {
@@ -110,12 +107,12 @@
       },
       "misreadings": [
         "tik"
-      ]
+      ],
+      "icon": "dig"
     },
     {
       "type": "word",
       "word": "dot",
-      "emoji": "🔵",
       "cn": "圆点",
       "letters": [
         {
@@ -137,13 +134,15 @@
       },
       "misreadings": [
         "tot"
-      ]
+      ],
+      "icon": "dot"
     },
     {
       "type": "celebrate",
-      "sticker": "🐶",
+      "sticker": "star",
       "audio": "Great job! Dog, dig, dot!"
     }
   ],
-  "parentGuide": "目标：学 g o，拼 dog/dig/dot；tricky word「to」。约 8 分钟。注意 o 的圆唇口型。课后玩「dig」：在米桶或沙堆里挖小玩具。"
+  "parentGuide": "目标：学 g o，拼 dog/dig/dot；tricky word「to」。约 8 分钟。注意 o 的圆唇口型。课后玩「dig」：在米桶或沙堆里挖小玩具。",
+  "icon": "dog"
 }

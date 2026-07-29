@@ -101,12 +101,12 @@ export async function renderReportTab(container: HTMLElement): Promise<void> {
 
   // 最近一次小测结果
   const quizSection = el('section', 'parent-section')
-  quizSection.appendChild(el('h3', '', '🏆 最近一次小测'))
+  quizSection.appendChild(el('h3', '', '最近一次小测'))
   const latestQuiz = (await db.records.toArray())
     .filter((r) => r.activity === 'quiz' && r.detail?.startsWith('done|'))
     .sort((a, b) => b.at - a.at)[0]
   if (!latestQuiz) {
-    quizSection.appendChild(el('p', '', '还没有小测记录。完成 4 课且距上次小测满 14 天后，地图上会出现 🏆 小测节点。'))
+    quizSection.appendChild(el('p', '', '还没有小测记录。完成 4 课且距上次小测满 14 天后，书架上会出现小测（Quiz）小书。'))
   } else {
     // detail 格式：done|得分/总题|weak:弱项1,弱项2
     const [, scoreText = '', weakText = ''] = latestQuiz.detail!.split('|')
@@ -115,7 +115,7 @@ export async function renderReportTab(container: HTMLElement): Promise<void> {
       el('p', '', `时间：${new Date(latestQuiz.at).toLocaleString('zh-CN', { hour12: false })}`),
     )
     quizSection.appendChild(el('p', '', `听辨得分：${scoreText}（口拼题不设对错，鼓励孩子完成即可）`))
-    quizSection.appendChild(el('p', '', `弱项：${weak === 'none' ? '无，全部一次听对 🎉' : weak}`))
+    quizSection.appendChild(el('p', '', `弱项：${weak === 'none' ? '无，全部一次通过' : weak}`))
   }
   container.appendChild(quizSection)
 
@@ -124,12 +124,12 @@ export async function renderReportTab(container: HTMLElement): Promise<void> {
   section.appendChild(el('h3', '', '薄弱点与线下陪学建议'))
   const weakPoints = findWeakPoints(report.records)
   if (weakPoints.length === 0) {
-    section.appendChild(el('p', '', '本周没有发现明显薄弱点，继续保持！🎉'))
+    section.appendChild(el('p', '', '本周没有发现明显薄弱点，继续保持！'))
   } else {
     for (const wp of weakPoints) {
       const item = el('div', 'weak-item')
       item.appendChild(el('div', 'weak-title', `「${wp.key}」— ${wp.reason}`))
-      item.appendChild(el('div', 'weak-advice', `💡 ${ADVICE.byKey[wp.key] ?? ADVICE.generic}`))
+      item.appendChild(el('div', 'weak-advice', `建议：${ADVICE.byKey[wp.key] ?? ADVICE.generic}`))
       section.appendChild(item)
     }
   }
@@ -140,7 +140,7 @@ export async function renderReportTab(container: HTMLElement): Promise<void> {
   const tip = el(
     'p',
     'parent-note',
-    `提示：⭐ 标记的 ${ellPhonemes.length} 个音素（如 /æ/ /ɪ/ /θ/ /v/ /l/ vs /r/）是中文母语者常见难点，进度慢一些完全正常。`,
+    `提示：标记「难」的 ${ellPhonemes.length} 个音素（如 /æ/ /ɪ/ /θ/ /v/ /l/ vs /r/）是中文母语者常见难点，进度慢一些完全正常。`,
   )
   container.appendChild(tip)
 }

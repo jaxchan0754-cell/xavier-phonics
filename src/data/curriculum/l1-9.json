@@ -2,7 +2,6 @@
   "id": "l1-9",
   "level": 1,
   "order": 15,
-  "emoji": "🗣️",
   "cn": "短句起步（a cat / a dog / I sat）",
   "intro": {
     "audio": "Hello! Today we read little sentences! A cat! A dog!"
@@ -12,37 +11,36 @@
     {
       "type": "word",
       "word": "a cat",
-      "emoji": "🐱",
       "cn": "一只猫",
       "audio": {
         "audio": "a cat",
         "slow": true
-      }
+      },
+      "icon": "cat"
     },
     {
       "type": "word",
       "word": "a dog",
-      "emoji": "🐶",
       "cn": "一只狗",
       "audio": {
         "audio": "a dog",
         "slow": true
-      }
+      },
+      "icon": "dog"
     },
     {
       "type": "word",
       "word": "I sat",
-      "emoji": "🧎",
       "cn": "我坐下了",
       "audio": {
         "audio": "I sat",
         "slow": true
-      }
+      },
+      "icon": null
     },
     {
       "type": "word",
       "word": "mom",
-      "emoji": "👩",
       "cn": "妈妈",
       "letters": [
         {
@@ -61,12 +59,12 @@
       "audio": {
         "audio": "mom",
         "slow": true
-      }
+      },
+      "icon": "mom"
     },
     {
       "type": "word",
       "word": "sad",
-      "emoji": "😢",
       "cn": "伤心的",
       "letters": [
         {
@@ -88,13 +86,15 @@
       },
       "misreadings": [
         "sed"
-      ]
+      ],
+      "icon": "sad"
     },
     {
       "type": "celebrate",
-      "sticker": "🗣️",
+      "sticker": "star",
       "audio": "Amazing! You can read sentences now!"
     }
   ],
-  "parentGuide": "目标：读短语 a cat / a dog / I sat；拼 mom/sad。约 5-8 分钟。让孩子指着家里的猫狗说 a cat / a dog。这是第一次「用起来」，值得隆重表扬。"
+  "parentGuide": "目标：读短语 a cat / a dog / I sat；拼 mom/sad。约 5-8 分钟。让孩子指着家里的猫狗说 a cat / a dog。这是第一次「用起来」，值得隆重表扬。",
+  "icon": "sound"
 }

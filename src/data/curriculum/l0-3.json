@@ -2,7 +2,6 @@
   "id": "l0-3",
   "level": 0,
   "order": 3,
-  "emoji": "🎩",
   "cn": "语音意识·押韵听辨",
   "intro": {
     "audio": "Hello! Let's play the rhyming game! Cat, hat, bat!"
@@ -12,7 +11,6 @@
     {
       "type": "word",
       "word": "hat",
-      "emoji": "🎩",
       "cn": "帽子",
       "letters": [
         {
@@ -34,12 +32,12 @@
       },
       "misreadings": [
         "het"
-      ]
+      ],
+      "icon": "hat"
     },
     {
       "type": "word",
       "word": "frog",
-      "emoji": "🐸",
       "cn": "青蛙",
       "letters": [
         {
@@ -62,12 +60,12 @@
       "audio": {
         "audio": "frog",
         "slow": true
-      }
+      },
+      "icon": "frog"
     },
     {
       "type": "word",
       "word": "bun",
-      "emoji": "🍞",
       "cn": "小圆面包",
       "letters": [
         {
@@ -86,12 +84,12 @@
       "audio": {
         "audio": "bun",
         "slow": true
-      }
+      },
+      "icon": "bun"
     },
     {
       "type": "word",
       "word": "dog",
-      "emoji": "🐶",
       "cn": "狗",
       "letters": [
         {
@@ -113,13 +111,15 @@
       },
       "misreadings": [
         "tog"
-      ]
+      ],
+      "icon": "dog"
     },
     {
       "type": "celebrate",
-      "sticker": "🎩",
+      "sticker": "star",
       "audio": "Super! Cat, hat, bat! You can rhyme!"
     }
   ],
-  "parentGuide": "目标：听出押韵词（cat/hat 尾巴音相同）。约 5-8 分钟。孩子不理解「押韵」很正常，用中文解释「音的尾巴一样」。平时读绘本时夸张地读出押韵词。"
+  "parentGuide": "目标：听出押韵词（cat/hat 尾巴音相同）。约 5-8 分钟。孩子不理解「押韵」很正常，用中文解释「音的尾巴一样」。平时读绘本时夸张地读出押韵词。",
+  "icon": "hat"
 }

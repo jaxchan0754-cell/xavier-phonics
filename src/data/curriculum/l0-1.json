@@ -2,7 +2,6 @@
   "id": "l0-1",
   "level": 0,
   "order": 1,
-  "emoji": "🐶",
   "cn": "语音意识·动物声音",
   "intro": {
     "audio": "Hello! I'm Felix! Listen! What animal is it?"
@@ -12,7 +11,6 @@
     {
       "type": "word",
       "word": "dog",
-      "emoji": "🐶",
       "cn": "狗",
       "letters": [
         {
@@ -34,12 +32,12 @@
       },
       "misreadings": [
         "tog"
-      ]
+      ],
+      "icon": "dog"
     },
     {
       "type": "word",
       "word": "cat",
-      "emoji": "🐱",
       "cn": "猫",
       "letters": [
         {
@@ -62,12 +60,12 @@
       "misreadings": [
         "tat",
         "kat"
-      ]
+      ],
+      "icon": "cat"
     },
     {
       "type": "word",
       "word": "cow",
-      "emoji": "🐮",
       "cn": "奶牛",
       "letters": [
         {
@@ -82,12 +80,12 @@
       "audio": {
         "audio": "cow",
         "slow": true
-      }
+      },
+      "icon": "cow"
     },
     {
       "type": "word",
       "word": "duck",
-      "emoji": "🦆",
       "cn": "鸭子",
       "letters": [
         {
@@ -106,22 +104,22 @@
       "audio": {
         "audio": "duck",
         "slow": true
-      }
+      },
+      "icon": "duck"
     },
     {
       "type": "word",
       "word": "woof woof",
-      "emoji": "🐶",
       "cn": "狗叫声",
       "audio": {
         "audio": "woof woof",
         "slow": true
-      }
+      },
+      "icon": "dog"
     },
     {
       "type": "word",
       "word": "meow",
-      "emoji": "🐱",
       "cn": "猫叫声",
       "letters": [
         {
@@ -140,13 +138,15 @@
       "audio": {
         "audio": "meow",
         "slow": true
-      }
+      },
+      "icon": "cat"
     },
     {
       "type": "celebrate",
-      "sticker": "🐶",
+      "sticker": "star",
       "audio": "Great job! You know the animal sounds!"
     }
   ],
-  "parentGuide": "目标：辨别常见动物叫声。让孩子自己点，点错不纠正，请他自己再听一遍。约 5 分钟。课后玩「学叫声」：家长学动物叫，孩子猜，再交换角色。"
+  "parentGuide": "目标：辨别常见动物叫声。让孩子自己点，点错不纠正，请他自己再听一遍。约 5 分钟。课后玩「学叫声」：家长学动物叫，孩子猜，再交换角色。",
+  "icon": "dog"
 }

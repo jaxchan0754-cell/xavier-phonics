@@ -2,7 +2,6 @@
   "id": "l1-12",
   "level": 1,
   "order": 18,
-  "emoji": "🧠",
   "cn": "最小对立对综合（θ-s / v-w / l-r / ɪ-iː）",
   "parentGuide": "中文母语专项：综合复习四对难点音（thumb/sum、vet/wet、lock/rock、ship/sheep）。约 8 分钟。这些对立在汉语里不存在，听辨需要大量重复，点错很正常。课后可在生活里随机考：「这是 ship 还是 sheep？」",
   "intro": {
@@ -13,7 +12,6 @@
     {
       "type": "word",
       "word": "ship",
-      "emoji": "🚢",
       "cn": "轮船（对比 sheep）",
       "letters": [
         {
@@ -35,12 +33,12 @@
       },
       "misreadings": [
         "sip"
-      ]
+      ],
+      "icon": "ship"
     },
     {
       "type": "word",
       "word": "sheep",
-      "emoji": "🐑",
       "cn": "绵羊（对比 ship）",
       "letters": [
         {
@@ -62,12 +60,12 @@
       },
       "misreadings": [
         "ship"
-      ]
+      ],
+      "icon": "sheep"
     },
     {
       "type": "word",
       "word": "sum",
-      "emoji": "➕",
       "cn": "总和（对比 thumb）",
       "letters": [
         {
@@ -89,12 +87,12 @@
       },
       "misreadings": [
         "sam"
-      ]
+      ],
+      "icon": "sum"
     },
     {
       "type": "word",
       "word": "thumb",
-      "emoji": "👍",
       "cn": "大拇指（对比 sum）",
       "letters": [
         {
@@ -121,12 +119,12 @@
       "misreadings": [
         "sum",
         "fum"
-      ]
+      ],
+      "icon": "thumb"
     },
     {
       "type": "word",
       "word": "wet",
-      "emoji": "💧",
       "cn": "湿的（对比 vet）",
       "letters": [
         {
@@ -145,12 +143,12 @@
       "audio": {
         "audio": "wet",
         "slow": true
-      }
+      },
+      "icon": "wet"
     },
     {
       "type": "word",
       "word": "vet",
-      "emoji": "🧑‍⚕️",
       "cn": "兽医（对比 wet）",
       "letters": [
         {
@@ -172,12 +170,12 @@
       },
       "misreadings": [
         "wet"
-      ]
+      ],
+      "icon": "vet"
     },
     {
       "type": "word",
       "word": "lock",
-      "emoji": "🔒",
       "cn": "锁（对比 rock）",
       "letters": [
         {
@@ -199,12 +197,12 @@
       },
       "misreadings": [
         "rock"
-      ]
+      ],
+      "icon": "lock"
     },
     {
       "type": "word",
       "word": "rock",
-      "emoji": "🪨",
       "cn": "石头（对比 lock）",
       "letters": [
         {
@@ -226,12 +224,14 @@
       },
       "misreadings": [
         "lock"
-      ]
+      ],
+      "icon": "rock"
     },
     {
       "type": "celebrate",
-      "sticker": "🧠",
+      "sticker": "star",
       "audio": "Amazing ears! You can hear all the tricky sounds!"
     }
-  ]
+  ],
+  "icon": "brain"
 }

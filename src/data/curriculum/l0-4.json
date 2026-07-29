@@ -2,7 +2,6 @@
   "id": "l0-4",
   "level": 0,
   "order": 4,
-  "emoji": "🧩",
   "cn": "语音意识·口头合成（听分音拼词）",
   "intro": {
     "audio": "Hi! Let's play the blending game! Listen to the sounds!"
@@ -12,7 +11,6 @@
     {
       "type": "word",
       "word": "cat",
-      "emoji": "🐱",
       "cn": "猫",
       "letters": [
         {
@@ -35,12 +33,12 @@
       "misreadings": [
         "tat",
         "kat"
-      ]
+      ],
+      "icon": "cat"
     },
     {
       "type": "word",
       "word": "dog",
-      "emoji": "🐶",
       "cn": "狗",
       "letters": [
         {
@@ -62,12 +60,12 @@
       },
       "misreadings": [
         "tog"
-      ]
+      ],
+      "icon": "dog"
     },
     {
       "type": "word",
       "word": "pig",
-      "emoji": "🐷",
       "cn": "猪",
       "letters": [
         {
@@ -89,12 +87,12 @@
       },
       "misreadings": [
         "big"
-      ]
+      ],
+      "icon": "pig"
     },
     {
       "type": "word",
       "word": "sun",
-      "emoji": "☀️",
       "cn": "太阳",
       "letters": [
         {
@@ -113,13 +111,15 @@
       "audio": {
         "audio": "sun",
         "slow": true
-      }
+      },
+      "icon": "sun"
     },
     {
       "type": "celebrate",
-      "sticker": "🧩",
+      "sticker": "star",
       "audio": "Amazing! You can blend the sounds together!"
     }
   ],
-  "parentGuide": "目标：听到分开的音能合成词（c-a-t → cat），这是拼读的核心预备技能。约 5-8 分钟。家长示范「机器人说话」式慢速分音再加速合成。日常可玩：「请把 c-u-p 拿给我」。"
+  "parentGuide": "目标：听到分开的音能合成词（c-a-t → cat），这是拼读的核心预备技能。约 5-8 分钟。家长示范「机器人说话」式慢速分音再加速合成。日常可玩：「请把 c-u-p 拿给我」。",
+  "icon": "sound"
 }

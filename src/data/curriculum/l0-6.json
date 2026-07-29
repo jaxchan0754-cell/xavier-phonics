@@ -2,7 +2,6 @@
   "id": "l0-6",
   "level": 0,
   "order": 6,
-  "emoji": "👍",
   "cn": "语音意识·最小对立对（θ-s / v-w）",
   "intro": {
     "audio": "Hi! Listen carefully! Thumb, sum. Are they the same?"
@@ -12,7 +11,6 @@
     {
       "type": "word",
       "word": "thumb",
-      "emoji": "👍",
       "cn": "大拇指（对比 sum）",
       "letters": [
         {
@@ -39,12 +37,12 @@
       "misreadings": [
         "sum",
         "fum"
-      ]
+      ],
+      "icon": "thumb"
     },
     {
       "type": "word",
       "word": "sum",
-      "emoji": "➕",
       "cn": "总和（对比 thumb）",
       "letters": [
         {
@@ -66,12 +64,12 @@
       },
       "misreadings": [
         "sam"
-      ]
+      ],
+      "icon": "sum"
     },
     {
       "type": "word",
       "word": "vet",
-      "emoji": "🧑‍⚕️",
       "cn": "兽医（对比 wet）",
       "letters": [
         {
@@ -93,12 +91,12 @@
       },
       "misreadings": [
         "wet"
-      ]
+      ],
+      "icon": "vet"
     },
     {
       "type": "word",
       "word": "wet",
-      "emoji": "💧",
       "cn": "湿的（对比 vet）",
       "letters": [
         {
@@ -117,13 +115,15 @@
       "audio": {
         "audio": "wet",
         "slow": true
-      }
+      },
+      "icon": "wet"
     },
     {
       "type": "celebrate",
-      "sticker": "👍",
+      "sticker": "star",
       "audio": "Wonderful! You can hear the little differences!"
     }
   ],
-  "parentGuide": "目标：分辨 thumb/sum、vet/wet。/θ/ 和 /v/ 是汉语没有的音。约 5 分钟。可照镜子玩「咬舌尖」（θ）和「上牙咬下唇」（v）游戏，重点是会听辨，不追求发音标准。"
+  "parentGuide": "目标：分辨 thumb/sum、vet/wet。/θ/ 和 /v/ 是汉语没有的音。约 5 分钟。可照镜子玩「咬舌尖」（θ）和「上牙咬下唇」（v）游戏，重点是会听辨，不追求发音标准。",
+  "icon": "thumb"
 }

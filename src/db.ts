@@ -58,7 +58,7 @@ export interface ReviewItem {
   interval: number // 当前间隔（天）
   due: number // 到期时间戳（ms）
   reps: number // 连续通过次数
-  data: string // JSON：快闪所需数据 {emoji, model?}（sound 带示范语音文本）
+  data: string // JSON：快闪所需数据 {icon, model?}（sound 带示范语音文本）
 }
 
 export const db = new PhonicsDB()
