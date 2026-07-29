@@ -232,16 +232,19 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
   leftArrow.onclick = () => void turnTo(pageIndex - 1)
   rightArrow.onclick = () => void turnTo(pageIndex + 1)
 
-  // 屏幕左右 1/4 边缘点按翻页（点在按钮等交互元素上不触发）
+  // 屏幕左右边缘点按翻页（点在按钮等交互元素上不触发）
+  // 窄屏（≤480px）热区收窄到 15%，避免挤压中间互动区
   viewport.addEventListener('click', (e) => {
     if ((e.target as HTMLElement).closest('button, a, input')) return
     const rect = viewport.getBoundingClientRect()
+    const edgeRatio = rect.width <= 480 ? 0.15 : 0.25
     const x = e.clientX - rect.left
-    if (x < rect.width * 0.25) void turnTo(pageIndex - 1)
-    else if (x > rect.width * 0.75) void turnTo(pageIndex + 1)
+    if (x < rect.width * edgeRatio) void turnTo(pageIndex - 1)
+    else if (x > rect.width * (1 - edgeRatio)) void turnTo(pageIndex + 1)
   })
 
-  // 水平 swipe：位移 >40px 且明显水平（忽略垂直抖动）；录音中禁用
+  // 水平 swipe：位移 >40px 且明显水平（忽略垂直抖动）；录音中禁用；
+  // 起始点距屏幕左边缘 <20px 不触发（防与 iOS Safari 浏览器后退手势冲突，PWA 无此问题）
   let swipeStart: { x: number; y: number } | null = null
   viewport.addEventListener('pointerdown', (e) => {
     swipeStart = { x: e.clientX, y: e.clientY }
@@ -251,9 +254,11 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
       swipeStart = null
       return
     }
+    const fromScreenEdge = swipeStart.x < 20
     const dx = e.clientX - swipeStart.x
     const dy = e.clientY - swipeStart.y
     swipeStart = null
+    if (fromScreenEdge) return
     if (Math.abs(dx) > SWIPE_MIN_PX && Math.abs(dx) > Math.abs(dy) * 1.5) {
       void turnTo(dx < 0 ? pageIndex + 1 : pageIndex - 1)
     }

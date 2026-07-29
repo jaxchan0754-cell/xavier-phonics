@@ -134,7 +134,7 @@ button {
 .map-topbar {
   display: flex;
   justify-content: flex-end;
-  padding: calc(env(safe-area-inset-top, 0px) + 8px) 12px 0;
+  padding: calc(env(safe-area-inset-top, 0px) + 8px) calc(env(safe-area-inset-right, 0px) + 12px) 0 calc(env(safe-area-inset-left, 0px) + 12px);
 }
 .parent-entry {
   width: 56px;
@@ -155,7 +155,7 @@ button {
   justify-content: center;
   align-content: flex-start;
   gap: 28px;
-  padding: 28px 20px 48px;
+  padding: 28px calc(env(safe-area-inset-right, 0px) + 20px) 48px calc(env(safe-area-inset-left, 0px) + 20px);
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
@@ -304,7 +304,7 @@ button {
   padding: 16px;
 }
 .cover-emoji {
-  font-size: 140px;
+  font-size: clamp(100px, 28vw, 140px);
 }
 
 /* 翻页动效：translateX + 轻微 rotateY，250-300ms ease-out，只动 transform/opacity */
@@ -377,7 +377,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 20px calc(env(safe-area-inset-bottom, 0px) + 10px);
+  padding: 10px calc(env(safe-area-inset-right, 0px) + 20px) calc(env(safe-area-inset-bottom, 0px) + 10px) calc(env(safe-area-inset-left, 0px) + 20px);
 }
 .arrow-btn {
   position: relative;
@@ -595,8 +595,8 @@ button {
   gap: 32px;
 }
 .record-btn {
-  width: 120px;
-  height: 120px;
+  width: clamp(96px, 27vw, 120px);
+  height: clamp(96px, 27vw, 120px);
   border-radius: 50%;
   background: var(--coral);
   font-size: 56px;
@@ -623,7 +623,7 @@ button {
 
 /* 拼合应用 */
 .word-emoji {
-  font-size: 110px;
+  font-size: clamp(80px, 22vw, 110px);
 }
 .letter-blocks {
   display: flex;
@@ -652,7 +652,7 @@ button {
 
 /* 庆祝 */
 .celebrate .sticker {
-  font-size: 140px;
+  font-size: clamp(96px, 26vw, 140px);
 }
 .celebrate {
   background: radial-gradient(circle at 50% 30%, rgba(255, 217, 61, 0.5), transparent 60%);
@@ -665,10 +665,10 @@ button {
   gap: 18px;
 }
 .echo-emoji {
-  font-size: 96px;
+  font-size: clamp(64px, 18vw, 96px);
 }
 .echo-text {
-  font-size: 72px;
+  font-size: clamp(44px, 12vw, 72px);
   font-weight: 700;
   color: var(--purple);
 }
@@ -798,7 +798,7 @@ button {
 .parent-screen {
   height: 100%;
   overflow-y: auto;
-  padding: calc(env(safe-area-inset-top, 0px) + 16px) 20px 40px;
+  padding: calc(env(safe-area-inset-top, 0px) + 16px) calc(env(safe-area-inset-right, 0px) + 20px) 40px calc(env(safe-area-inset-left, 0px) + 20px);
   background: var(--cream);
 }
 /* 桌面宽屏：家长端内容限宽居中，避免文字行过长 */
@@ -842,10 +842,14 @@ button {
 .parent-tabs {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin: 12px 0;
+  padding-bottom: 4px;
 }
 .parent-tab {
+  flex: none;
   background: #fff;
   border-radius: 14px;
   padding: 10px 16px;
@@ -1077,23 +1081,23 @@ button {
   gap: 28px;
 }
 .phoneme-grapheme-big {
-  font-size: 180px;
+  font-size: clamp(110px, 32vw, 180px);
   font-weight: 700;
   color: var(--purple);
   line-height: 1;
 }
 .phoneme-emoji-big {
-  font-size: 140px;
+  font-size: clamp(88px, 25vw, 140px);
   line-height: 1;
 }
 
 /* word 词页：拉开间距的字母 */
 .word-letters {
   display: flex;
-  gap: 22px;
+  gap: clamp(12px, 4vw, 22px);
 }
 .word-letter {
-  font-size: 88px;
+  font-size: clamp(52px, 15vw, 88px);
   font-weight: 700;
   color: var(--ink);
   line-height: 1;
@@ -1115,4 +1119,86 @@ button {
 }
 .asr-status.show {
   display: block;
+}
+
+/* ===== iPhone 窄屏（≤480px）适配 ===== */
+@media (max-width: 480px) {
+  /* 书架：2 列小书 */
+  .shelf {
+    gap: 16px;
+    padding-top: 16px;
+  }
+  .book {
+    width: 120px;
+    height: 158px;
+    border-left-width: 8px;
+  }
+  .book-emoji {
+    font-size: 58px;
+  }
+  .book-badge {
+    font-size: 24px;
+  }
+  .book-ribbon {
+    width: 18px;
+    height: 38px;
+    right: 10px;
+  }
+  .book-continue {
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+  }
+
+  /* 翻书页脚：箭头缩小、页图标缩小收紧 */
+  .arrow-btn {
+    width: 72px;
+    height: 72px;
+    font-size: 28px;
+  }
+  .book-footer {
+    gap: 8px;
+    padding-left: calc(env(safe-area-inset-left, 0px) + 10px);
+    padding-right: calc(env(safe-area-inset-right, 0px) + 10px);
+  }
+  .page-icons {
+    gap: 7px;
+  }
+  .page-icon {
+    font-size: 19px;
+  }
+
+  /* 页内元素收紧 */
+  .record-row {
+    gap: 20px;
+  }
+  .judge-row .btn {
+    min-width: 96px;
+    min-height: 72px;
+    font-size: 34px;
+  }
+  .big-next {
+    min-width: 128px;
+    min-height: 72px;
+    font-size: 32px;
+  }
+  .start-btn {
+    width: 120px;
+    height: 120px;
+    font-size: 56px;
+  }
+  .fox {
+    font-size: 64px;
+  }
+  .bubble {
+    font-size: 24px;
+    padding: 14px 18px;
+  }
+  .fox-row {
+    gap: 10px;
+  }
+  .stage {
+    gap: 24px;
+    padding: 10px;
+  }
 }
