@@ -10,7 +10,7 @@ import { seedReviewItems } from '../review-store'
 import { stopPlayback } from '../audio'
 import { icon } from '../icons'
 import type { Navigate } from '../types'
-import { el, guideRow, makeContext, type ActivityContext } from './common'
+import { el, makeContext, type ActivityContext } from './common'
 import type { Activity, Lesson } from './types'
 import { renderCelebrate } from './activities/celebrate'
 import { renderPhoneme } from './activities/phoneme'
@@ -75,14 +75,12 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
   // ---- DOM ----
   const screen = el('div', 'lesson-screen')
 
-  const topbar = el('div', 'lesson-topbar')
+  // Exit 放在白色书页 frame 内左上角，红色警示样式
   const exitBtn = document.createElement('button')
-  exitBtn.className = 'btn btn-ghost exit-btn'
+  exitBtn.className = 'btn btn-danger exit-btn'
   exitBtn.textContent = 'Exit'
   exitBtn.setAttribute('aria-label', '退出关卡')
   exitBtn.onclick = () => navigate('map')
-  topbar.appendChild(exitBtn)
-  screen.appendChild(topbar)
 
   const viewport = el('div', 'book-viewport')
   screen.appendChild(viewport)
@@ -132,7 +130,6 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
     const intro = lesson.intro ?? { audio: "Hello! I'm Felix! Let's go!" }
     const cover = el('div', 'book-cover-page')
     if (lesson.icon) cover.appendChild(icon(lesson.icon, 'cover-icon'))
-    cover.appendChild(guideRow(intro.text ?? '', intro.audio))
     if (lesson.trickyWords?.length) {
       const row = el('div', 'tricky-preview')
       for (const t of lesson.trickyWords) row.appendChild(el('span', 'tricky-chip', t.text))
@@ -155,6 +152,7 @@ export async function playLesson(root: HTMLElement, navigate: Navigate, lesson: 
 
   const renderPage = (i: number): HTMLElement => {
     const pageEl = el('div', 'book-page')
+    pageEl.appendChild(exitBtn) // 白色 frame 内左上角（DOM 移动，事件保留）
     if (pages[i].kind === 'cover') renderCoverPage(pageEl)
     else renderActivityPage(pageEl, i)
     return pageEl

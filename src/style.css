@@ -178,13 +178,14 @@ button {
   padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px calc(env(safe-area-inset-bottom, 0px) + 12px);
 }
 
-.lesson-topbar {
-  display: flex;
-  justify-content: flex-start;
-  padding: 4px 0;
-}
 .exit-btn {
-  font-size: 15px;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 40px;
   padding: 8px 18px;
 }
 
@@ -337,38 +338,6 @@ button {
 }
 .page-dot.active.done {
   color: #fff;
-}
-
-/* ============================================================
-   引导角色与气泡
-   ============================================================ */
-.guide-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.guide-face {
-  width: 52px;
-  height: 52px;
-  flex: none;
-  border-radius: 50%;
-  background: var(--sun);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  color: var(--ink);
-  box-shadow: var(--shadow-card);
-}
-.bubble {
-  background: var(--paper);
-  border: 2px solid var(--line);
-  border-radius: 16px;
-  padding: 10px 14px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 /* ============================================================
@@ -1127,11 +1096,6 @@ button {
     height: 20px;
     font-size: 10px;
     border-width: 1.5px;
-  }
-  .guide-face {
-    width: 44px;
-    height: 44px;
-    font-size: 25px;
   }
   .start-btn {
     font-size: 22px;

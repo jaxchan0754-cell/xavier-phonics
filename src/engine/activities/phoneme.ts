@@ -2,7 +2,7 @@
 // 自动慢速示范 1 遍（「Listen」可重听）→ 跟读 → VAD 发声确认 → 通过后常速示范 1 遍作结
 import { speakSlow } from '../../audio'
 import { icon } from '../../icons'
-import { el, guideRow, type ActivityContext } from '../common'
+import { el, type ActivityContext } from '../common'
 import { runReadLoop } from '../read-loop'
 import { audioText, type PhonemeActivity } from '../types'
 
@@ -14,8 +14,6 @@ export function renderPhoneme(
   return new Promise((resolve) => {
     const modelText = audioText(activity.audio)
     const stage = el('div', 'stage')
-
-    stage.appendChild(guideRow('', modelText))
 
     // 字母卡：超大 grapheme 是主角，锚定图标为配角
     const card = el('div', 'letter-card')

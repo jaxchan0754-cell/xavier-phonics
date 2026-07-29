@@ -3,7 +3,7 @@
 // → 跟读整词 → 词级宽松匹配确认（WebSpeech / Whisper / VAD）
 import { speakSlow } from '../../audio'
 import { icon } from '../../icons'
-import { el, guideRow, type ActivityContext } from '../common'
+import { el, type ActivityContext } from '../common'
 import { runReadLoop } from '../read-loop'
 import { audioText, type WordActivity } from '../types'
 
@@ -11,8 +11,6 @@ export function renderWord(container: HTMLElement, activity: WordActivity, ctx: 
   return new Promise((resolve) => {
     const modelText = audioText(activity.audio)
     const stage = el('div', 'stage')
-
-    stage.appendChild(guideRow('', modelText))
 
     // 视觉主角：有图标时图标在上、字母块在下；无图标（tricky/抽象词）时单词本体超大
     if (activity.icon) {

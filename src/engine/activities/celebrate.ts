@@ -1,6 +1,6 @@
 // celebrate 活动：庆祝收束（图标 + CSS 彩带 + 收束语音 + 完成按钮）
 import { icon } from '../../icons'
-import { el, guideRow, bigButton, type ActivityContext } from '../common'
+import { el, bigButton, type ActivityContext } from '../common'
 import type { CelebrateActivity } from '../types'
 
 const CONFETTI_COLORS = ['#FF6B4A', '#2EC4B6', '#FFC53D', '#7C6FF0']
@@ -27,8 +27,6 @@ export function renderCelebrate(
     const stickerWrap = el('div', 'sticker pop')
     stickerWrap.appendChild(icon(activity.sticker || 'star'))
     stage.appendChild(stickerWrap)
-
-    stage.appendChild(guideRow('', activity.audio))
 
     const doneBtn = bigButton('Done', () => resolve())
     doneBtn.setAttribute('aria-label', '完成本课')

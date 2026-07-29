@@ -1,7 +1,6 @@
 // 活动组件共享的 DOM 工具与上下文
 import { speak } from '../audio'
 import { addRecord, saveRecording } from '../db'
-import { icon } from '../icons'
 import type { Lesson } from './types'
 
 export function el(tag: string, className?: string, text?: string): HTMLElement {
@@ -35,24 +34,6 @@ export function makeContext(lesson: Lesson): ActivityContext {
   }
 }
 
-// 引导角色 + 气泡（文字为占位，正式版为语音指令；「Listen」文字按钮可重听）
-export function guideRow(text: string, audioText?: string): HTMLElement {
-  const row = el('div', 'guide-row')
-  const face = el('span', 'guide-face')
-  face.appendChild(icon('fox'))
-  const bubble = el('div', 'bubble')
-  if (text) bubble.appendChild(el('span', '', text))
-  if (audioText) {
-    const replay = document.createElement('button')
-    replay.className = 'btn btn-ghost btn-small replay-btn'
-    replay.textContent = 'Replay'
-    replay.setAttribute('aria-label', '再听一次')
-    replay.onclick = () => void speak(audioText)
-    bubble.appendChild(replay)
-  }
-  row.append(face, bubble)
-  return row
-}
 
 // 大号主按钮（文字按钮）
 export function bigButton(text: string, onClick: () => void, primary = true): HTMLButtonElement {
