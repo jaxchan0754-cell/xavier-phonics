@@ -24,21 +24,22 @@ function findWeakPoints(records: { activity: string; detail?: string; at: number
   const points = new Map<string, WeakPoint>()
 
   // echo：按内容聚合
-  const echoStats = new Map<string, { retries: number; confirmed: boolean; skipped: boolean }>()
+  const echoStats = new Map<string, { retries: number; confirmed: boolean; skipped: boolean; softpass: boolean }>()
   for (const r of records.filter((x) => x.activity === 'echo' && x.detail)) {
     const [key, result] = r.detail!.split('|')
-    const s = echoStats.get(key) ?? { retries: 0, confirmed: false, skipped: false }
+    const s = echoStats.get(key) ?? { retries: 0, confirmed: false, skipped: false, softpass: false }
     if (result === 'retry') s.retries++
     if (result === 'confirmed') s.confirmed = true
     if (result === 'skipped') s.skipped = true
+    if (result === 'softpass') s.softpass = true
     echoStats.set(key, s)
   }
   for (const [key, s] of echoStats) {
-    if (!s.confirmed && (s.skipped || s.retries >= 2)) {
+    if (!s.confirmed && (s.skipped || s.softpass || s.retries >= 2)) {
       points.set(key, {
         key,
-        reason: s.skipped ? '跟读练习中被跳过' : `跟读重练了 ${s.retries} 次`,
-        count: s.retries + (s.skipped ? 1 : 0),
+        reason: s.softpass ? '降级通过（待巩固）' : s.skipped ? '跟读练习中被跳过' : `跟读重练了 ${s.retries} 次`,
+        count: s.retries + (s.skipped || s.softpass ? 1 : 0),
       })
     }
   }

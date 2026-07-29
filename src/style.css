@@ -123,7 +123,7 @@ button {
   animation: pop 0.5s ease;
 }
 
-/* ===== 学习地图 ===== */
+/* ===== 书架首页 ===== */
 .map-screen {
   height: 100%;
   display: flex;
@@ -144,130 +144,121 @@ button {
   font-size: 26px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-.map-scroll {
+
+/* 书架：书封面横向排列、限宽居中（iPad 竖屏与 Mac 宽屏通用） */
+.shelf {
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-}
-.map-inner {
-  position: relative;
-  width: 100%;
-  /* 桌面宽屏：限制路径可视区宽度并居中，避免 SVG 虚线与节点横向拉伸失真 */
-  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 28px;
+  padding: 28px 20px 48px;
+  max-width: 1100px;
   margin: 0 auto;
-}
-.map-path {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-}
-.map-path path {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 10;
-  stroke-linecap: round;
-  stroke-dasharray: 1 26;
-  opacity: 0.9;
 }
 
-.map-node {
-  position: absolute;
-  transform: translate(-50%, 0);
-  width: 104px;
-  height: 104px;
-  border-radius: 50%;
-  font-size: 52px;
+/* 一本书（封面） */
+.book {
+  position: relative;
+  width: 150px;
+  height: 196px;
+  border-radius: 10px 18px 18px 10px;
+  border: none;
+  border-left: 10px solid rgba(0, 0, 0, 0.12); /* 书脊 */
+  background: #fff;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: none;
 }
-.node-emoji {
+.book:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+.book-emoji {
+  font-size: 76px;
   line-height: 1;
 }
-.node-badge {
+.book-badge {
   position: absolute;
-  right: -4px;
-  top: -4px;
-  font-size: 30px;
+  right: 6px;
+  top: 6px;
+  font-size: 32px;
 }
-/* 当前节点：大而闪亮 */
-.map-node.state-current {
-  width: 132px;
-  height: 132px;
-  font-size: 68px;
-  background: var(--yellow);
-  border: 6px solid #fff;
-  animation: pulse 1.6s ease-in-out infinite;
-}
-/* 已通过：贴贴纸，可重玩 */
-.map-node.state-passed {
+/* 已通过：贴满 ⭐ 可重读 */
+.book.state-passed {
   background: var(--mint);
-  border: 5px solid #fff;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
 }
-/* 未解锁：灰色剪影 */
-.map-node.state-locked {
+/* 当前课：大而闪亮 + 书签丝带 */
+.book.state-current {
+  background: var(--yellow);
+  animation: bookPulse 1.6s ease-in-out infinite;
+}
+@keyframes bookPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(255, 217, 61, 0.8);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 18px rgba(255, 217, 61, 0);
+  }
+}
+/* 书签丝带（右上角红色三角垂带） */
+.book-ribbon {
+  position: absolute;
+  right: 14px;
+  top: 0;
+  width: 22px;
+  height: 46px;
+  background: var(--coral);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+}
+.book-continue {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+}
+/* 未解锁 / 敬请期待：灰书 */
+.book.state-locked {
   background: var(--grey);
-  border: 5px solid #eee;
 }
-.map-node.state-locked .node-emoji {
+.book.state-locked .book-emoji {
   filter: grayscale(1) brightness(0.6);
   opacity: 0.55;
 }
-
-/* 复习卡 / 小测侧边节点：小而闪亮 */
-.map-node.side-node {
-  width: 88px;
-  height: 88px;
-  font-size: 44px;
-  border: 5px solid #fff;
+.book.preview {
+  background: #e6e6e6;
 }
-.review-node {
+
+/* 特殊小书：复习卡 ✨ / 小测 🏆 */
+.book.special {
+  animation: bookPulse 1.8s ease-in-out infinite;
+}
+.book.review-book {
   background: var(--purple);
-  animation: sidePulse 1.8s ease-in-out infinite;
 }
-.quiz-node {
-  background: var(--yellow);
-  animation: sidePulse 1.8s ease-in-out infinite;
-}
-@keyframes sidePulse {
-  0%,
-  100% {
-    transform: translate(-50%, 0) scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.9);
-  }
-  50% {
-    transform: translate(-50%, 0) scale(1.1);
-    box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
-  }
+.book.quiz-book {
+  background: var(--orange);
 }
 
-/* 引导角色 */
-.guide {
-  position: absolute;
-  transform: translate(-50%, 0);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  animation: floaty 2.4s ease-in-out infinite;
-}
-.guide-emoji {
-  font-size: 60px;
-}
-.guide-bubble {
-  background: #fff;
-  border-radius: 18px;
-  padding: 10px 16px;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--coral);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  white-space: nowrap;
-}
-
-/* ===== 关卡 ===== */
+/* ===== 翻书引擎 ===== */
 .lesson-screen {
   height: 100%;
   display: flex;
@@ -290,28 +281,181 @@ button {
   color: var(--ink);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-.stage-dots {
-  display: flex;
-  gap: 10px;
-}
-.dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #ddd;
-}
-.dot.done {
-  background: var(--mint);
-}
-.dot.active {
-  background: var(--coral);
-  transform: scale(1.3);
-}
-.stage-box {
+
+/* 翻书视口与书页 */
+.book-viewport {
   flex: 1;
-  display: flex;
+  position: relative;
   overflow: hidden;
 }
+.book-page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+.book-page > .stage,
+.book-cover-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px;
+}
+.cover-emoji {
+  font-size: 140px;
+}
+
+/* 翻页动效：translateX + 轻微 rotateY，250-300ms ease-out，只动 transform/opacity */
+@keyframes flipOutLeft {
+  to {
+    transform: translateX(-45%) perspective(900px) rotateY(-8deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutRight {
+  to {
+    transform: translateX(45%) perspective(900px) rotateY(8deg);
+    opacity: 0;
+  }
+}
+@keyframes flipInRight {
+  from {
+    transform: translateX(45%) perspective(900px) rotateY(-8deg);
+    opacity: 0;
+  }
+}
+@keyframes flipInLeft {
+  from {
+    transform: translateX(-45%) perspective(900px) rotateY(8deg);
+    opacity: 0;
+  }
+}
+.flip-out-left {
+  animation: flipOutLeft 0.28s ease-out forwards;
+}
+.flip-out-right {
+  animation: flipOutRight 0.28s ease-out forwards;
+}
+.flip-in-right {
+  animation: flipInRight 0.28s ease-out;
+}
+.flip-in-left {
+  animation: flipInLeft 0.28s ease-out;
+}
+/* 减弱动效偏好：降级为淡入淡出 */
+@media (prefers-reduced-motion: reduce) {
+  .flip-out-left,
+  .flip-out-right {
+    animation-name: fadeOutOnly;
+  }
+  .flip-in-right,
+  .flip-in-left {
+    animation-name: fadeInOnly;
+  }
+  .book.state-current,
+  .book.special,
+  .arrow-btn.ready {
+    animation: none;
+  }
+}
+@keyframes fadeOutOnly {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeInOnly {
+  from {
+    opacity: 0;
+  }
+}
+
+/* 页脚：翻页箭头 + 页图标 */
+.book-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 20px calc(env(safe-area-inset-bottom, 0px) + 10px);
+}
+.arrow-btn {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--sky);
+  color: #fff;
+  font-size: 36px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+  flex: none;
+}
+.arrow-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+.arrow-btn:disabled {
+  background: var(--grey);
+  box-shadow: none;
+  opacity: 0.7;
+}
+.arrow-btn.hidden {
+  visibility: hidden;
+}
+/* 未完成：置灰 + 🔒 角标 */
+.arrow-btn.locked {
+  background: var(--grey);
+  opacity: 0.7;
+}
+.arrow-btn.locked .arrow-lock {
+  display: block;
+}
+.arrow-lock {
+  display: none;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  font-size: 22px;
+}
+/* 完成解锁：呼吸脉动 */
+.arrow-btn.ready {
+  background: var(--coral);
+  animation: arrowPulse 1.4s ease-in-out infinite;
+}
+@keyframes arrowPulse {
+  0%,
+  100% {
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(255, 107, 107, 0.55);
+  }
+  50% {
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15), 0 0 0 16px rgba(255, 107, 107, 0);
+  }
+}
+
+/* 页图标：每页一个小 emoji，当前页放大高亮，已完成页点亮 */
+.page-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.page-icon {
+  font-size: 24px;
+  opacity: 0.3;
+  filter: grayscale(1);
+  transition: transform 0.2s ease-out;
+}
+.page-icon.done {
+  opacity: 1;
+  filter: none;
+}
+.page-icon.active {
+  transform: scale(1.6);
+  opacity: 1;
+  filter: none;
+}
+
 .stage {
   flex: 1;
   display: flex;
@@ -911,17 +1055,64 @@ button {
   .letter-block:hover,
   .record-btn:hover,
   .start-btn:hover:not(:disabled),
-  .map-node:not(.state-locked):hover,
-  .side-node:hover,
+  .book:not(.state-locked):hover,
+  .arrow-btn:hover:not(:disabled),
   .parent-tab:hover,
-  .guide:hover,
   .parent-entry:hover,
   .exit-btn:hover,
   .replay-btn:hover {
     filter: brightness(1.08);
   }
   .card:hover:not(:disabled),
-  .letter-block:hover {
+  .letter-block:hover,
+  .book:not(.state-locked):hover {
     transform: translateY(-3px);
   }
+}
+
+/* phoneme 音素页：超大 grapheme + 锚定大图 */
+.phoneme-big {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.phoneme-grapheme-big {
+  font-size: 180px;
+  font-weight: 700;
+  color: var(--purple);
+  line-height: 1;
+}
+.phoneme-emoji-big {
+  font-size: 140px;
+  line-height: 1;
+}
+
+/* word 词页：拉开间距的字母 */
+.word-letters {
+  display: flex;
+  gap: 22px;
+}
+.word-letter {
+  font-size: 88px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  transition:
+    transform 0.2s ease-out,
+    color 0.2s ease-out;
+}
+.word-letter.lit {
+  color: var(--coral);
+  transform: scale(1.18);
+}
+
+/* 评估状态（Whisper 首次加载等）：默认隐藏 */
+.asr-status {
+  display: none;
+  margin: 0;
+  color: #999;
+  font-size: 18px;
+}
+.asr-status.show {
+  display: block;
 }

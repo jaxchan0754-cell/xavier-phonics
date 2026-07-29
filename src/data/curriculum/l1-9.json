@@ -10,72 +10,84 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
-        {
-          "text": "a cat",
-          "model": "a cat",
-          "emoji": "🐱",
-          "cn": "一只猫"
-        },
-        {
-          "text": "a dog",
-          "model": "a dog",
-          "emoji": "🐶",
-          "cn": "一只狗"
-        },
-        {
-          "text": "I sat",
-          "model": "I sat",
-          "emoji": "🧎",
-          "cn": "我坐下了"
-        }
-      ]
+      "type": "word",
+      "word": "a cat",
+      "emoji": "🐱",
+      "cn": "一只猫",
+      "audio": {
+        "audio": "a cat",
+        "slow": true
+      }
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "a dog",
+      "emoji": "🐶",
+      "cn": "一只狗",
+      "audio": {
+        "audio": "a dog",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "I sat",
+      "emoji": "🧎",
+      "cn": "我坐下了",
+      "audio": {
+        "audio": "I sat",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "mom",
+      "emoji": "👩",
+      "cn": "妈妈",
+      "letters": [
         {
-          "word": "mom",
-          "emoji": "👩",
-          "cn": "妈妈",
-          "letters": [
-            {
-              "char": "m",
-              "audio": "mmm"
-            },
-            {
-              "char": "o",
-              "audio": "aw"
-            },
-            {
-              "char": "m",
-              "audio": "mmm"
-            }
-          ],
-          "audio": "mom"
+          "char": "m",
+          "audio": "mmm"
         },
         {
-          "word": "sad",
-          "emoji": "😢",
-          "cn": "伤心的",
-          "letters": [
-            {
-              "char": "s",
-              "audio": "sss"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "d",
-              "audio": "duh"
-            }
-          ],
-          "audio": "sad"
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "m",
+          "audio": "mmm"
         }
+      ],
+      "audio": {
+        "audio": "mom",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "sad",
+      "emoji": "😢",
+      "cn": "伤心的",
+      "letters": [
+        {
+          "char": "s",
+          "audio": "sss"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "d",
+          "audio": "duh"
+        }
+      ],
+      "audio": {
+        "audio": "sad",
+        "slow": true
+      },
+      "misreadings": [
+        "sed"
       ]
     },
     {

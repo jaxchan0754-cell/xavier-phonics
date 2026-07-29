@@ -16,167 +16,159 @@
   ],
   "activities": [
     {
-      "type": "listen",
-      "kind": "letter",
-      "rounds": [
+      "type": "phoneme",
+      "grapheme": "c",
+      "emoji": "🐱",
+      "audio": {
+        "audio": "kuh",
+        "slow": true
+      },
+      "cn": "猫（c 发 /k/）",
+      "tip": "像轻轻咳嗽的前半截"
+    },
+    {
+      "type": "phoneme",
+      "grapheme": "k",
+      "emoji": "🪁",
+      "audio": {
+        "audio": "kuh",
+        "slow": true
+      },
+      "cn": "风筝",
+      "tip": "像轻轻咳嗽的前半截"
+    },
+    {
+      "type": "word",
+      "word": "the",
+      "emoji": "📖",
+      "cn": "定冠词（tricky word，整体认读）",
+      "tricky": true,
+      "letters": [
         {
-          "prompt": "Tap the letter kuh!",
-          "target": "c",
-          "cards": [
-            {
-              "id": "c",
-              "emoji": "🐱",
-              "text": "c",
-              "audio": "kuh"
-            },
-            {
-              "id": "t",
-              "emoji": "🐯",
-              "text": "t",
-              "audio": "tuh"
-            },
-            {
-              "id": "g",
-              "emoji": "🍇",
-              "text": "g",
-              "audio": "guh"
-            }
-          ]
+          "char": "th",
+          "audio": "th"
         },
         {
-          "prompt": "Tap the letter kuh! The other kuh!",
-          "target": "k",
-          "cards": [
-            {
-              "id": "k",
-              "emoji": "🪁",
-              "text": "k",
-              "audio": "kuh"
-            },
-            {
-              "id": "c",
-              "emoji": "🐱",
-              "text": "c",
-              "audio": "kuh"
-            },
-            {
-              "id": "d",
-              "emoji": "🐶",
-              "text": "d",
-              "audio": "duh"
-            }
-          ]
+          "char": "e",
+          "audio": "eh"
         }
+      ],
+      "audio": {
+        "audio": "the",
+        "slow": true
+      },
+      "misreadings": [
+        "ze",
+        "de"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "cat",
+      "emoji": "🐱",
+      "cn": "猫",
+      "letters": [
         {
-          "text": "c",
-          "model": "kuh",
-          "emoji": "🐱",
-          "cn": "猫（c 发 /k/）"
+          "char": "c",
+          "audio": "kuh"
         },
         {
-          "text": "k",
-          "model": "kuh",
-          "emoji": "🪁",
-          "cn": "风筝"
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "text": "the",
-          "model": "the",
-          "emoji": "📖",
-          "cn": "定冠词（tricky word，整体认读）",
-          "tricky": true
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "cat",
+        "slow": true
+      },
+      "misreadings": [
+        "tat",
+        "kat"
       ]
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "cap",
+      "emoji": "🧢",
+      "cn": "帽子",
+      "letters": [
         {
-          "word": "cat",
-          "emoji": "🐱",
-          "cn": "猫",
-          "letters": [
-            {
-              "char": "c",
-              "audio": "kuh"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "t",
-              "audio": "tuh"
-            }
-          ],
-          "audio": "cat"
+          "char": "c",
+          "audio": "kuh"
         },
         {
-          "word": "cap",
-          "emoji": "🧢",
-          "cn": "帽子",
-          "letters": [
-            {
-              "char": "c",
-              "audio": "kuh"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "p",
-              "audio": "puh"
-            }
-          ],
-          "audio": "cap"
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "word": "kid",
-          "emoji": "🧒",
-          "cn": "小孩",
-          "letters": [
-            {
-              "char": "k",
-              "audio": "kuh"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "d",
-              "audio": "duh"
-            }
-          ],
-          "audio": "kid"
-        },
-        {
-          "word": "sock",
-          "emoji": "🧦",
-          "cn": "袜子",
-          "letters": [
-            {
-              "char": "s",
-              "audio": "sss"
-            },
-            {
-              "char": "o",
-              "audio": "aw"
-            },
-            {
-              "char": "ck",
-              "audio": "kuh"
-            }
-          ],
-          "audio": "sock"
+          "char": "p",
+          "audio": "puh"
         }
+      ],
+      "audio": {
+        "audio": "cap",
+        "slow": true
+      },
+      "misreadings": [
+        "kap"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "kid",
+      "emoji": "🧒",
+      "cn": "小孩",
+      "letters": [
+        {
+          "char": "k",
+          "audio": "kuh"
+        },
+        {
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "d",
+          "audio": "duh"
+        }
+      ],
+      "audio": {
+        "audio": "kid",
+        "slow": true
+      },
+      "misreadings": [
+        "kit"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "sock",
+      "emoji": "🧦",
+      "cn": "袜子",
+      "letters": [
+        {
+          "char": "s",
+          "audio": "sss"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "ck",
+          "audio": "kuh"
+        }
+      ],
+      "audio": {
+        "audio": "sock",
+        "slow": true
+      },
+      "misreadings": [
+        "sok"
       ]
     },
     {

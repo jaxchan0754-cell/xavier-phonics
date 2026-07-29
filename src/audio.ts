@@ -153,3 +153,11 @@ export async function speak(text: string): Promise<boolean> {
   if (await playSound(`tts/${key}.m4a`)) return true
   return playSound(`tts/${key}.mp3`)
 }
+
+// 慢速版示范语音（<hash>_slow.m4a，edge-tts --rate=-25% 生成）。
+// 慢速文件缺失时回退常速版，保证流程不卡。
+export async function speakSlow(text: string): Promise<boolean> {
+  const key = audioKey(text.trim())
+  if (await playSound(`tts/${key}_slow.m4a`)) return true
+  return speak(text)
+}

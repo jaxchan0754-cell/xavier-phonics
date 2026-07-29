@@ -49,35 +49,30 @@ const items: ReviewItem[] = [
   mkItem('cat', 'word', { emoji: '🐱' }),
   mkItem('dog', 'word', { emoji: '🐶' }),
 ]
-const bank = [
-  { id: 'cat', emoji: '🐱' },
-  { id: 'dog', emoji: '🐶' },
-  { id: 'pig', emoji: '🐷' },
-  { id: 'sun', emoji: '☀️' },
-  { id: 'man', emoji: '👨' },
-]
-const lesson = buildReviewLesson(items, bank)
+const lesson = buildReviewLesson(items)
 check('复习课 id', lesson.id, 'review')
-const echoAct = lesson.activities.find((a) => a.type === 'echo')
-check('sound 项进 echo 快闪', echoAct?.type === 'echo' ? echoAct.items.map((i) => i.text) : null, ['s', 'a'])
-check('echo 示范语音保留', echoAct?.type === 'echo' ? echoAct.items[0].model : null, 'sss')
-const listenAct = lesson.activities.find((a) => a.type === 'listen')
-const roundOk =
-  listenAct?.type === 'listen' &&
-  listenAct.rounds.every(
-    (r) =>
-      r.cards.length === 3 &&
-      r.cards.filter((c) => c.id === r.target).length === 1 &&
-      new Set(r.cards.map((c) => c.id)).size === 3,
-  )
-check('word 项进 listen 快闪（3 卡含目标）', roundOk, true)
+const phonemeActs = lesson.activities.filter((a) => a.type === 'phoneme')
+check('sound 项进 phoneme 快闪', phonemeActs.map((a) => (a.type === 'phoneme' ? a.grapheme : '')), ['s', 'a'])
+check(
+  'phoneme 示范语音保留（slow 声明）',
+  phonemeActs.map((a) => (a.type === 'phoneme' ? a.audio : null)),
+  [
+    { audio: 'sss', slow: true },
+    { audio: 'ah', slow: true },
+  ],
+)
+const wordActs = lesson.activities.filter((a) => a.type === 'word')
+check('word 项进 word 快闪', wordActs.map((a) => (a.type === 'word' ? a.word : '')), ['cat', 'dog'])
 check('结尾是庆祝', lesson.activities[lesson.activities.length - 1].type, 'celebrate')
 
 // 会话规模上限
 const many = Array.from({ length: 20 }, (_, i) => mkItem(`w${i}`, 'word', { emoji: '🐶' }))
-const big = buildReviewLesson(many, bank)
-const bigListen = big.activities.find((a) => a.type === 'listen')
-check('超过上限只取前 N 项', bigListen?.type === 'listen' ? bigListen.rounds.length : null, REVIEW_SESSION_SIZE)
+const big = buildReviewLesson(many)
+check(
+  '超过上限只取前 N 项',
+  big.activities.filter((a) => a.type === 'word').length,
+  REVIEW_SESSION_SIZE,
+)
 
 console.log(failed === 0 ? '\n全部通过' : `\n${failed} 项失败`)
 process.exit(failed === 0 ? 0 : 1)

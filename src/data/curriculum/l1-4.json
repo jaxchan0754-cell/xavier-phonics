@@ -16,167 +16,154 @@
   ],
   "activities": [
     {
-      "type": "listen",
-      "kind": "letter",
-      "rounds": [
+      "type": "phoneme",
+      "grapheme": "m",
+      "emoji": "🐵",
+      "audio": {
+        "audio": "mmm",
+        "slow": true
+      },
+      "cn": "猴子",
+      "tip": "闭紧嘴唇，鼻音 mmm"
+    },
+    {
+      "type": "phoneme",
+      "grapheme": "d",
+      "emoji": "🐶",
+      "audio": {
+        "audio": "duh",
+        "slow": true
+      },
+      "cn": "狗",
+      "tip": "和 t 一个位置，但喉咙要振动"
+    },
+    {
+      "type": "word",
+      "word": "no",
+      "emoji": "🙅",
+      "cn": "不（tricky word，整体认读）",
+      "tricky": true,
+      "letters": [
         {
-          "prompt": "Tap the letter mmm!",
-          "target": "m",
-          "cards": [
-            {
-              "id": "m",
-              "emoji": "🐵",
-              "text": "m",
-              "audio": "mmm"
-            },
-            {
-              "id": "n",
-              "emoji": "🥅",
-              "text": "n",
-              "audio": "nnn"
-            },
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            }
-          ]
+          "char": "n",
+          "audio": "nnn"
         },
         {
-          "prompt": "Tap the letter duh!",
-          "target": "d",
-          "cards": [
-            {
-              "id": "d",
-              "emoji": "🐶",
-              "text": "d",
-              "audio": "duh"
-            },
-            {
-              "id": "t",
-              "emoji": "🐯",
-              "text": "t",
-              "audio": "tuh"
-            },
-            {
-              "id": "p",
-              "emoji": "🐷",
-              "text": "p",
-              "audio": "puh"
-            }
-          ]
+          "char": "o",
+          "audio": "aw"
         }
+      ],
+      "audio": {
+        "audio": "no",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "man",
+      "emoji": "👨",
+      "cn": "男人",
+      "letters": [
+        {
+          "char": "m",
+          "audio": "mmm"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "n",
+          "audio": "nnn"
+        }
+      ],
+      "audio": {
+        "audio": "man",
+        "slow": true
+      },
+      "misreadings": [
+        "men"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "dad",
+      "emoji": "👨‍👦",
+      "cn": "爸爸",
+      "letters": [
         {
-          "text": "m",
-          "model": "mmm",
-          "emoji": "🐵",
-          "cn": "猴子"
+          "char": "d",
+          "audio": "duh"
         },
         {
-          "text": "d",
-          "model": "duh",
-          "emoji": "🐶",
-          "cn": "狗"
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "text": "no",
-          "model": "no",
-          "emoji": "🙅",
-          "cn": "不（tricky word，整体认读）",
-          "tricky": true
+          "char": "d",
+          "audio": "duh"
         }
+      ],
+      "audio": {
+        "audio": "dad",
+        "slow": true
+      },
+      "misreadings": [
+        "ded"
       ]
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "mad",
+      "emoji": "😠",
+      "cn": "生气的",
+      "letters": [
         {
-          "word": "man",
-          "emoji": "👨",
-          "cn": "男人",
-          "letters": [
-            {
-              "char": "m",
-              "audio": "mmm"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "n",
-              "audio": "nnn"
-            }
-          ],
-          "audio": "man"
+          "char": "m",
+          "audio": "mmm"
         },
         {
-          "word": "dad",
-          "emoji": "👨‍👦",
-          "cn": "爸爸",
-          "letters": [
-            {
-              "char": "d",
-              "audio": "duh"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "d",
-              "audio": "duh"
-            }
-          ],
-          "audio": "dad"
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "word": "mad",
-          "emoji": "😠",
-          "cn": "生气的",
-          "letters": [
-            {
-              "char": "m",
-              "audio": "mmm"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "d",
-              "audio": "duh"
-            }
-          ],
-          "audio": "mad"
-        },
-        {
-          "word": "dim",
-          "emoji": "🔅",
-          "cn": "昏暗的",
-          "letters": [
-            {
-              "char": "d",
-              "audio": "duh"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "m",
-              "audio": "mmm"
-            }
-          ],
-          "audio": "dim"
+          "char": "d",
+          "audio": "duh"
         }
+      ],
+      "audio": {
+        "audio": "mad",
+        "slow": true
+      },
+      "misreadings": [
+        "med"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "dim",
+      "emoji": "🔅",
+      "cn": "昏暗的",
+      "letters": [
+        {
+          "char": "d",
+          "audio": "duh"
+        },
+        {
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "m",
+          "audio": "mmm"
+        }
+      ],
+      "audio": {
+        "audio": "dim",
+        "slow": true
+      },
+      "misreadings": [
+        "din"
       ]
     },
     {

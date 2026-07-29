@@ -2,7 +2,7 @@
 // 通过 → 间隔按 1d/3d/7d/14d/30d 递增；失败（retry/skipped/点错）→ 重置为当天。
 // 种子：关卡完成时把该课的字母音（echo 单字母项）与词（blend 词 + tricky words）放入复习池。
 import { db, type ReviewItem } from './db'
-import type { Lesson } from './engine/types'
+import { audioText, type Lesson } from './engine/types'
 
 export const DAY_MS = 24 * 60 * 60 * 1000
 export const REVIEW_INTERVALS = [1, 3, 7, 14, 30] // 天
@@ -31,32 +31,28 @@ export interface ReviewFlashData {
 }
 
 // 关卡完成时播种复习池（已存在的 key 不动，保留其调度状态）
+// phoneme 页 → sound 项；word 页 → word 项
 export async function seedReviewItems(lesson: Lesson, now = Date.now()): Promise<void> {
   const items: ReviewItem[] = []
   for (const activity of lesson.activities) {
-    if (activity.type === 'echo') {
-      for (const item of activity.items) {
-        const isSound = !item.tricky && item.text.length === 1
-        items.push({
-          key: item.text,
-          kind: isSound ? 'sound' : 'word',
-          interval: 1,
-          due: now + DAY_MS, // 首次复习在明天
-          reps: 0,
-          data: JSON.stringify({ emoji: item.emoji, ...(isSound ? { model: item.model } : {}) }),
-        })
-      }
-    } else if (activity.type === 'blend') {
-      for (const word of activity.words) {
-        items.push({
-          key: word.word,
-          kind: 'word',
-          interval: 1,
-          due: now + DAY_MS,
-          reps: 0,
-          data: JSON.stringify({ emoji: word.emoji }),
-        })
-      }
+    if (activity.type === 'phoneme') {
+      items.push({
+        key: activity.grapheme,
+        kind: 'sound',
+        interval: 1,
+        due: now + DAY_MS, // 首次复习在明天
+        reps: 0,
+        data: JSON.stringify({ emoji: activity.emoji, model: audioText(activity.audio) }),
+      })
+    } else if (activity.type === 'word') {
+      items.push({
+        key: activity.word,
+        kind: 'word',
+        interval: 1,
+        due: now + DAY_MS,
+        reps: 0,
+        data: JSON.stringify({ emoji: activity.emoji }),
+      })
     }
   }
   if (items.length === 0) return
@@ -70,23 +66,20 @@ export async function dueReviewItems(now = Date.now()): Promise<ReviewItem[]> {
 }
 
 // 复习会话结果结算：根据会话窗口内的 records 判定每个复习项 pass/fail 并更新调度
-// - echo 快闪：有 retry/skipped → fail；confirmed 且无 retry → pass
-// - listen 快闪：目标词有任何点错 → fail；否则 pass
+// 音/词统一看 echo 跟读记录：有 retry/skipped/softpass → fail（重置当天）；
+// confirmed 且无失败记录 → pass（间隔按档推进）；未产生终态记录 → 保持原调度
 export async function processReviewResults(items: ReviewItem[], sessionStart: number, now = Date.now()): Promise<void> {
   const records = await db.records.where('at').aboveOrEqual(sessionStart).toArray()
   for (const item of items) {
     const echoRecords = records.filter((r) => r.activity === 'echo' && r.detail?.startsWith(`${item.key}|`))
-    const wrongRecords = records.filter((r) => r.activity === 'listen' && r.detail?.startsWith(`wrong|${item.key}|`))
+    const failed = echoRecords.some(
+      (r) => r.detail === `${item.key}|retry` || r.detail === `${item.key}|skipped` || r.detail === `${item.key}|softpass`,
+    )
+    const confirmed = echoRecords.some((r) => r.detail === `${item.key}|confirmed`)
     let pass: boolean | null = null
-    if (item.kind === 'sound') {
-      const failed = echoRecords.some((r) => r.detail === `${item.key}|retry` || r.detail === `${item.key}|skipped`)
-      const confirmed = echoRecords.some((r) => r.detail === `${item.key}|confirmed`)
-      if (failed) pass = false
-      else if (confirmed) pass = true
-    } else {
-      pass = wrongRecords.length === 0
-    }
-    if (pass === null) continue // 未产生终态记录（如中途退出），保持原调度
+    if (failed) pass = false
+    else if (confirmed) pass = true
+    if (pass === null) continue // 中途退出等情况，保持原调度
     const next = nextReviewState(item, pass, now)
     await db.review.update(item.key, next)
     await db.records.add({ levelId: 'review', activity: 'review', detail: `${item.key}|${pass ? 'pass' : 'fail'}`, at: now })

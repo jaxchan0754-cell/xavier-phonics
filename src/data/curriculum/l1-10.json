@@ -10,175 +10,145 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "letter",
-      "rounds": [
+      "type": "word",
+      "word": "cat",
+      "emoji": "🐱",
+      "cn": "猫",
+      "letters": [
         {
-          "prompt": "Tap the letter sss!",
-          "target": "s",
-          "cards": [
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            },
-            {
-              "id": "c",
-              "emoji": "🐱",
-              "text": "c",
-              "audio": "kuh"
-            },
-            {
-              "id": "m",
-              "emoji": "🐵",
-              "text": "m",
-              "audio": "mmm"
-            }
-          ]
+          "char": "c",
+          "audio": "kuh"
         },
         {
-          "prompt": "Tap the letter mmm!",
-          "target": "m",
-          "cards": [
-            {
-              "id": "n",
-              "emoji": "🥅",
-              "text": "n",
-              "audio": "nnn"
-            },
-            {
-              "id": "m",
-              "emoji": "🐵",
-              "text": "m",
-              "audio": "mmm"
-            },
-            {
-              "id": "g",
-              "emoji": "🍇",
-              "text": "g",
-              "audio": "guh"
-            }
-          ]
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "prompt": "Listen! Tap the picture!",
-          "stimulus": "kid",
-          "target": "kid",
-          "cards": [
-            {
-              "id": "kid",
-              "emoji": "🧒",
-              "audio": "kid",
-              "cn": "小孩"
-            },
-            {
-              "id": "cap",
-              "emoji": "🧢",
-              "audio": "cap",
-              "cn": "帽子"
-            },
-            {
-              "id": "dot",
-              "emoji": "🔵",
-              "audio": "dot",
-              "cn": "圆点"
-            }
-          ]
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "cat",
+        "slow": true
+      },
+      "misreadings": [
+        "tat",
+        "kat"
       ]
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "pin",
+      "emoji": "📌",
+      "cn": "别针",
+      "letters": [
         {
-          "word": "cat",
-          "emoji": "🐱",
-          "cn": "猫",
-          "letters": [
-            {
-              "char": "c",
-              "audio": "kuh"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "t",
-              "audio": "tuh"
-            }
-          ],
-          "audio": "cat"
+          "char": "p",
+          "audio": "puh"
         },
         {
-          "word": "pin",
-          "emoji": "📌",
-          "cn": "别针",
-          "letters": [
-            {
-              "char": "p",
-              "audio": "puh"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "n",
-              "audio": "nnn"
-            }
-          ],
-          "audio": "pin"
+          "char": "i",
+          "audio": "ih"
         },
         {
-          "word": "dog",
-          "emoji": "🐶",
-          "cn": "狗",
-          "letters": [
-            {
-              "char": "d",
-              "audio": "duh"
-            },
-            {
-              "char": "o",
-              "audio": "aw"
-            },
-            {
-              "char": "g",
-              "audio": "guh"
-            }
-          ],
-          "audio": "dog"
+          "char": "n",
+          "audio": "nnn"
         }
+      ],
+      "audio": {
+        "audio": "pin",
+        "slow": true
+      },
+      "misreadings": [
+        "bin"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "dog",
+      "emoji": "🐶",
+      "cn": "狗",
+      "letters": [
         {
-          "text": "I",
-          "model": "I",
-          "emoji": "🧒",
-          "cn": "我（tricky word）",
-          "tricky": true
+          "char": "d",
+          "audio": "duh"
         },
         {
-          "text": "no",
-          "model": "no",
-          "emoji": "🙅",
-          "cn": "不（tricky word）",
-          "tricky": true
+          "char": "o",
+          "audio": "aw"
         },
         {
-          "text": "go",
-          "model": "go",
-          "emoji": "🏃",
-          "cn": "去（tricky word）",
-          "tricky": true
+          "char": "g",
+          "audio": "guh"
         }
+      ],
+      "audio": {
+        "audio": "dog",
+        "slow": true
+      },
+      "misreadings": [
+        "tog"
       ]
+    },
+    {
+      "type": "word",
+      "word": "I",
+      "emoji": "🧒",
+      "cn": "我（tricky word）",
+      "tricky": true,
+      "letters": [
+        {
+          "char": "i",
+          "audio": "ih"
+        }
+      ],
+      "audio": {
+        "audio": "I",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "no",
+      "emoji": "🙅",
+      "cn": "不（tricky word）",
+      "tricky": true,
+      "letters": [
+        {
+          "char": "n",
+          "audio": "nnn"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        }
+      ],
+      "audio": {
+        "audio": "no",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "go",
+      "emoji": "🏃",
+      "cn": "去（tricky word）",
+      "tricky": true,
+      "letters": [
+        {
+          "char": "g",
+          "audio": "guh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        }
+      ],
+      "audio": {
+        "audio": "go",
+        "slow": true
+      }
     },
     {
       "type": "celebrate",

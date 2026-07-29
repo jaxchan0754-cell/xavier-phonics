@@ -1,5 +1,8 @@
-// 学习地图首页：蜿蜒路径 + 关卡节点（当前/已通过/未解锁三态）+ 引导角色 + 家长入口
-// 达到每日时长上限时进入休息模式（贴纸回顾，家长门可解锁继续）
+// 书架首页：每课 = 一本书，横向排列的书封面
+// - 已完成：贴 ⭐，可自由翻开重读；当前课：插书签丝带 + 继续 ▶；未解锁：灰色 🔒
+// - lessonId 为 null 的 Level 2-7：「敬请期待」灰书（🔜）
+// - 复习卡 ✨ / 小测 🏆：书架上的特殊小书（沿用 dueReviewItems / quizDue 逻辑）
+// - 保留家长入口与休息模式；首次进入播放一次语音引导
 import { speak } from '../audio'
 import { db, getLevelStates } from '../db'
 import { isRestMode } from '../stats'
@@ -14,6 +17,9 @@ interface LevelDef {
   emoji: string
   lessonId: string | null
 }
+
+const SHELF_GUIDE_KEY = 'xavier-phonics:shelf-guide-played'
+const SHELF_GUIDE_TEXT = 'Pick a book! Tap the book with the bookmark!'
 
 // 休息模式：回顾已获贴纸，提示明天再来；家长入口仍可进入解锁
 function renderRestMode(root: HTMLElement, navigate: Navigate, levels: LevelDef[], doneIds: Set<string>): void {
@@ -62,23 +68,29 @@ function renderRestMode(root: HTMLElement, navigate: Navigate, levels: LevelDef[
   void speak('Great job today! See you tomorrow!')
 }
 
-interface Point {
-  x: number // 百分比 0~100
-  y: number // px
+function makeTopbar(navigate: Navigate): HTMLElement {
+  const topbar = document.createElement('div')
+  topbar.className = 'map-topbar'
+  const parentBtn = document.createElement('button')
+  parentBtn.className = 'parent-entry'
+  parentBtn.textContent = '👪'
+  parentBtn.setAttribute('aria-label', '家长入口')
+  parentBtn.onclick = () => navigate('parent-gate')
+  topbar.appendChild(parentBtn)
+  return topbar
 }
 
-// 用二次贝塞尔把节点中心连成平滑曲线
-function buildPath(points: Point[]): string {
-  if (points.length === 0) return ''
-  let d = `M ${points[0].x} ${points[0].y}`
-  for (let i = 1; i < points.length; i++) {
-    const midX = (points[i - 1].x + points[i].x) / 2
-    const midY = (points[i - 1].y + points[i].y) / 2
-    d += ` Q ${points[i - 1].x} ${points[i - 1].y} ${midX} ${midY}`
-  }
-  const last = points[points.length - 1]
-  d += ` L ${last.x} ${last.y}`
-  return d
+// 特殊小书（复习卡 / 小测）
+function makeSpecialBook(emoji: string, cls: string, label: string, onClick: () => void): HTMLButtonElement {
+  const book = document.createElement('button')
+  book.className = `book special ${cls}`
+  book.setAttribute('aria-label', label)
+  const face = document.createElement('span')
+  face.className = 'book-emoji'
+  face.textContent = emoji
+  book.appendChild(face)
+  book.onclick = onClick
+  return book
 }
 
 export async function renderMap(root: HTMLElement, navigate: Navigate): Promise<void> {
@@ -94,139 +106,74 @@ export async function renderMap(root: HTMLElement, navigate: Navigate): Promise<
 
   const screen = document.createElement('div')
   screen.className = 'map-screen'
+  screen.appendChild(makeTopbar(navigate))
 
-  // 顶栏：右上角家长入口小图标
-  const topbar = document.createElement('div')
-  topbar.className = 'map-topbar'
-  const parentBtn = document.createElement('button')
-  parentBtn.className = 'parent-entry'
-  parentBtn.textContent = '👪'
-  parentBtn.setAttribute('aria-label', '家长入口')
-  parentBtn.onclick = () => navigate('parent-gate')
-  topbar.appendChild(parentBtn)
-  screen.appendChild(topbar)
+  const shelf = document.createElement('div')
+  shelf.className = 'shelf'
 
-  const scroll = document.createElement('div')
-  scroll.className = 'map-scroll'
-  const inner = document.createElement('div')
-  inner.className = 'map-inner'
-
-  const gapY = 190
-  const padTop = 150
-  const height = padTop + levels.length * gapY
-  inner.style.height = `${height}px`
-
-  // 正弦蜿蜒布点
-  const points: Point[] = levels.map((_, i) => ({
-    x: 50 + 26 * Math.sin(i * 1.25),
-    y: padTop + i * gapY,
-  }))
-
-  // 背景路径
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-  svg.setAttribute('class', 'map-path')
-  svg.setAttribute('viewBox', `0 0 100 ${height}`)
-  svg.setAttribute('preserveAspectRatio', 'none')
-  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-  path.setAttribute('d', buildPath(points))
-  svg.appendChild(path)
-  inner.appendChild(svg)
+  // 复习卡 ✨ / 小测 🏆 特殊小书（摆在书架最前）
+  if ((await dueReviewItems()).length > 0) {
+    shelf.appendChild(makeSpecialBook('✨', 'review-book', '复习卡', () => void runReview(root, navigate)))
+  }
+  if (await quizDue()) {
+    shelf.appendChild(makeSpecialBook('🏆', 'quiz-book', '小测', () => void runQuiz(root, navigate)))
+  }
 
   levels.forEach((level, i) => {
     const state = states.get(level.id)!
-    const node = document.createElement('button')
-    node.className = `map-node state-${state}`
-    node.style.left = `${points[i].x}%`
-    node.style.top = `${points[i].y}px`
-    node.setAttribute('aria-label', `第 ${i + 1} 关（${state}）`)
+    const isPreview = level.lessonId === null
+    const book = document.createElement('button')
+    book.className = `book state-${state}${isPreview ? ' preview' : ''}`
+    book.setAttribute('aria-label', isPreview ? `第 ${i + 1} 本（敬请期待）` : `第 ${i + 1} 本（${state}）`)
 
-    const emoji = document.createElement('span')
-    emoji.className = 'node-emoji'
-    emoji.textContent = level.emoji
-    node.appendChild(emoji)
+    const face = document.createElement('span')
+    face.className = 'book-emoji'
+    face.textContent = level.emoji
+    book.appendChild(face)
 
     if (state === 'passed') {
-      const star = document.createElement('span')
-      star.className = 'node-badge'
-      star.textContent = '⭐'
-      node.appendChild(star)
-    } else if (state === 'locked') {
-      const lock = document.createElement('span')
-      lock.className = 'node-badge'
-      // lessonId 为 null 的预告节点：敬请期待（🔜），与未解锁一致的灰态+摇摆反馈
-      lock.textContent = level.lessonId === null ? '🔜' : '🔒'
-      node.appendChild(lock)
-      if (level.lessonId === null) node.setAttribute('aria-label', `第 ${i + 1} 关（敬请期待）`)
+      const badge = document.createElement('span')
+      badge.className = 'book-badge'
+      badge.textContent = '⭐'
+      book.appendChild(badge)
+    } else if (state === 'current') {
+      // 书签丝带 + 继续 ▶
+      const ribbon = document.createElement('span')
+      ribbon.className = 'book-ribbon'
+      book.appendChild(ribbon)
+      const cont = document.createElement('span')
+      cont.className = 'book-continue'
+      cont.textContent = '▶'
+      book.appendChild(cont)
+    } else {
+      const badge = document.createElement('span')
+      badge.className = 'book-badge'
+      badge.textContent = isPreview ? '🔜' : '🔒'
+      book.appendChild(badge)
     }
 
-    node.onclick = () => {
-      if (state === 'locked') {
-        // 未解锁：摇摆提示，不说"错"
-        node.classList.add('wiggle')
-        setTimeout(() => node.classList.remove('wiggle'), 450)
+    book.onclick = () => {
+      if (state === 'locked' || isPreview) {
+        // 未解锁/预告：摇摆提示，不说"错"
+        book.classList.add('wiggle')
+        setTimeout(() => book.classList.remove('wiggle'), 450)
         return
       }
       if (level.lessonId) navigate('lesson', level.lessonId)
     }
-    inner.appendChild(node)
+    shelf.appendChild(book)
   })
 
-  // 引导角色 Felix 🦊 站在当前节点旁，点击播放问候语音
-  const currentIdx = levels.findIndex((l) => states.get(l.id) === 'current')
-  if (currentIdx >= 0) {
-    const guide = document.createElement('button')
-    guide.className = 'guide'
-    guide.style.left = `${Math.min(points[currentIdx].x + 20, 82)}%`
-    guide.style.top = `${points[currentIdx].y - 40}px`
-    const fox = document.createElement('span')
-    fox.className = 'guide-emoji'
-    fox.textContent = '🦊'
-    const bubble = document.createElement('span')
-    bubble.className = 'guide-bubble'
-    bubble.textContent = "Let's go!"
-    guide.append(fox, bubble)
-    guide.onclick = () => void speak("Hello! I'm Felix the fox! Tap the star to play!")
-    inner.appendChild(guide)
-  }
-
-  // 参考位置：有当前节点用当前节点，否则用最末尾节点（全部完成时）
-  const anchorIdx = currentIdx >= 0 ? currentIdx : levels.length - 1
-  const anchor = points[anchorIdx]
-
-  // 复习卡入口：仅当有到期复习项时出现（闪亮小卡片，位于当前节点之前的路径上）
-  if (anchor && (await dueReviewItems()).length > 0) {
-    const reviewNode = document.createElement('button')
-    reviewNode.className = 'map-node side-node review-node'
-    reviewNode.style.left = `${Math.min(Math.max(anchor.x + 18, 15), 85)}%`
-    reviewNode.style.top = `${anchor.y - 100}px`
-    reviewNode.setAttribute('aria-label', '复习卡')
-    const emoji = document.createElement('span')
-    emoji.className = 'node-emoji'
-    emoji.textContent = '✨'
-    reviewNode.appendChild(emoji)
-    reviewNode.onclick = () => void runReview(root, navigate)
-    inner.appendChild(reviewNode)
-  }
-
-  // 双周小测节点：到期时出现（奖杯，位于当前节点另一侧）
-  if (anchor && (await quizDue())) {
-    const quizNode = document.createElement('button')
-    quizNode.className = 'map-node side-node quiz-node'
-    quizNode.style.left = `${Math.min(Math.max(anchor.x - 18, 15), 85)}%`
-    quizNode.style.top = `${anchor.y - 100}px`
-    quizNode.setAttribute('aria-label', '小测')
-    const emoji = document.createElement('span')
-    emoji.className = 'node-emoji'
-    emoji.textContent = '🏆'
-    quizNode.appendChild(emoji)
-    quizNode.onclick = () => void runQuiz(root, navigate)
-    inner.appendChild(quizNode)
-  }
-
-  scroll.appendChild(inner)
-  screen.appendChild(scroll)
+  screen.appendChild(shelf)
   root.appendChild(screen)
 
-  // 初始滚动到当前节点
-  if (currentIdx >= 0) scroll.scrollTop = Math.max(0, points[currentIdx].y - 260)
+  // 首次进入书架：在用户首次触碰时播放一次语音引导（手势内播放，iOS 合规）
+  if (!localStorage.getItem(SHELF_GUIDE_KEY)) {
+    const once = () => {
+      localStorage.setItem(SHELF_GUIDE_KEY, '1')
+      void speak(SHELF_GUIDE_TEXT)
+      screen.removeEventListener('pointerdown', once)
+    }
+    screen.addEventListener('pointerdown', once)
+  }
 }

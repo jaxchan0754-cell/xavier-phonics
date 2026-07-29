@@ -10,110 +10,108 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "environment",
-      "rounds": [
+      "type": "word",
+      "word": "car",
+      "emoji": "🚗",
+      "cn": "汽车",
+      "letters": [
         {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "vroom vroom",
-          "target": "car",
-          "cards": [
-            {
-              "id": "car",
-              "emoji": "🚗",
-              "audio": "car",
-              "cn": "汽车"
-            },
-            {
-              "id": "phone",
-              "emoji": "📱",
-              "audio": "phone",
-              "cn": "电话"
-            },
-            {
-              "id": "bell",
-              "emoji": "🔔",
-              "audio": "bell",
-              "cn": "铃铛"
-            }
-          ]
+          "char": "c",
+          "audio": "kuh"
         },
         {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "ring ring",
-          "target": "phone",
-          "cards": [
-            {
-              "id": "bell",
-              "emoji": "🔔",
-              "audio": "bell",
-              "cn": "铃铛"
-            },
-            {
-              "id": "phone",
-              "emoji": "📱",
-              "audio": "phone",
-              "cn": "电话"
-            },
-            {
-              "id": "baby",
-              "emoji": "👶",
-              "audio": "baby",
-              "cn": "婴儿"
-            }
-          ]
-        },
-        {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "ding dong",
-          "target": "bell",
-          "cards": [
-            {
-              "id": "baby",
-              "emoji": "👶",
-              "audio": "baby",
-              "cn": "婴儿"
-            },
-            {
-              "id": "bell",
-              "emoji": "🔔",
-              "audio": "bell",
-              "cn": "铃铛"
-            },
-            {
-              "id": "car",
-              "emoji": "🚗",
-              "audio": "car",
-              "cn": "汽车"
-            }
-          ]
-        },
-        {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "wah wah",
-          "target": "baby",
-          "cards": [
-            {
-              "id": "phone",
-              "emoji": "📱",
-              "audio": "phone",
-              "cn": "电话"
-            },
-            {
-              "id": "baby",
-              "emoji": "👶",
-              "audio": "baby",
-              "cn": "婴儿"
-            },
-            {
-              "id": "bell",
-              "emoji": "🔔",
-              "audio": "bell",
-              "cn": "铃铛"
-            }
-          ]
+          "char": "ar",
+          "audio": "ar"
         }
-      ]
+      ],
+      "audio": {
+        "audio": "car",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "phone",
+      "emoji": "📱",
+      "cn": "电话",
+      "letters": [
+        {
+          "char": "p",
+          "audio": "puh"
+        },
+        {
+          "char": "h",
+          "audio": "hhh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "n",
+          "audio": "nnn"
+        },
+        {
+          "char": "e",
+          "audio": "eh"
+        }
+      ],
+      "audio": {
+        "audio": "phone",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "bell",
+      "emoji": "🔔",
+      "cn": "铃铛",
+      "letters": [
+        {
+          "char": "b",
+          "audio": "buh"
+        },
+        {
+          "char": "e",
+          "audio": "eh"
+        },
+        {
+          "char": "ll",
+          "audio": "lll"
+        }
+      ],
+      "audio": {
+        "audio": "bell",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "baby",
+      "emoji": "👶",
+      "cn": "婴儿",
+      "letters": [
+        {
+          "char": "b",
+          "audio": "buh"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "b",
+          "audio": "buh"
+        },
+        {
+          "char": "y",
+          "audio": "yuh"
+        }
+      ],
+      "audio": {
+        "audio": "baby",
+        "slow": true
+      }
     },
     {
       "type": "celebrate",

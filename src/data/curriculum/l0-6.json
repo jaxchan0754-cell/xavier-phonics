@@ -10,90 +10,114 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "minimal-pair",
-      "rounds": [
+      "type": "word",
+      "word": "thumb",
+      "emoji": "👍",
+      "cn": "大拇指（对比 sum）",
+      "letters": [
         {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "thumb",
-          "target": "thumb",
-          "pair": "θ-s",
-          "cards": [
-            {
-              "id": "thumb",
-              "emoji": "👍",
-              "audio": "thumb",
-              "cn": "大拇指"
-            },
-            {
-              "id": "sum",
-              "emoji": "➕",
-              "audio": "sum",
-              "cn": "总和"
-            }
-          ]
+          "char": "th",
+          "audio": "th"
         },
         {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "sum",
-          "target": "sum",
-          "pair": "θ-s",
-          "cards": [
-            {
-              "id": "sum",
-              "emoji": "➕",
-              "audio": "sum",
-              "cn": "总和"
-            },
-            {
-              "id": "thumb",
-              "emoji": "👍",
-              "audio": "thumb",
-              "cn": "大拇指"
-            }
-          ]
+          "char": "u",
+          "audio": "uh"
         },
         {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "vet",
-          "target": "vet",
-          "pair": "v-w",
-          "cards": [
-            {
-              "id": "vet",
-              "emoji": "🧑‍⚕️",
-              "audio": "vet",
-              "cn": "兽医"
-            },
-            {
-              "id": "wet",
-              "emoji": "💧",
-              "audio": "wet",
-              "cn": "湿的"
-            }
-          ]
+          "char": "m",
+          "audio": "mmm"
         },
         {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "wet",
-          "target": "wet",
-          "pair": "v-w",
-          "cards": [
-            {
-              "id": "wet",
-              "emoji": "💧",
-              "audio": "wet",
-              "cn": "湿的"
-            },
-            {
-              "id": "vet",
-              "emoji": "🧑‍⚕️",
-              "audio": "vet",
-              "cn": "兽医"
-            }
-          ]
+          "char": "b",
+          "audio": "buh"
         }
+      ],
+      "audio": {
+        "audio": "thumb",
+        "slow": true
+      },
+      "misreadings": [
+        "sum",
+        "fum"
       ]
+    },
+    {
+      "type": "word",
+      "word": "sum",
+      "emoji": "➕",
+      "cn": "总和（对比 thumb）",
+      "letters": [
+        {
+          "char": "s",
+          "audio": "sss"
+        },
+        {
+          "char": "u",
+          "audio": "uh"
+        },
+        {
+          "char": "m",
+          "audio": "mmm"
+        }
+      ],
+      "audio": {
+        "audio": "sum",
+        "slow": true
+      },
+      "misreadings": [
+        "sam"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "vet",
+      "emoji": "🧑‍⚕️",
+      "cn": "兽医（对比 wet）",
+      "letters": [
+        {
+          "char": "v",
+          "audio": "vuh"
+        },
+        {
+          "char": "e",
+          "audio": "eh"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
+        }
+      ],
+      "audio": {
+        "audio": "vet",
+        "slow": true
+      },
+      "misreadings": [
+        "wet"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "wet",
+      "emoji": "💧",
+      "cn": "湿的（对比 vet）",
+      "letters": [
+        {
+          "char": "w",
+          "audio": "wuh"
+        },
+        {
+          "char": "e",
+          "audio": "eh"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
+        }
+      ],
+      "audio": {
+        "audio": "wet",
+        "slow": true
+      }
     },
     {
       "type": "celebrate",

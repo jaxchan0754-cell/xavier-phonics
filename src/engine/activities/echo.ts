@@ -80,6 +80,7 @@ export function renderEcho(
           const resetRecording = () => {
             if (!recording) return
             recording = false
+            ctx.setBusy?.(false)
             recordBtn.classList.remove('recording')
             hint.textContent = '录音被打断了，请再录一次'
           }
@@ -95,6 +96,7 @@ export function renderEcho(
           recorder.onstop = () => {
             document.removeEventListener('visibilitychange', onHidden)
             recording = false
+            ctx.setBusy?.(false)
             recordBtn.classList.remove('recording')
             stream?.getTracks().forEach((t) => t.stop())
             stream = null
@@ -107,6 +109,11 @@ export function renderEcho(
           }
           recorder.start()
           recording = true
+          ctx.setBusy?.(true) // 录音中：禁用 swipe 翻页
+          // 翻页离开时在录音：引擎触发清理，主动停止（走正常 onstop 保存）
+          ctx.onCleanup?.(() => {
+            if (recording && recorder && recorder.state !== 'inactive') recorder.stop()
+          })
           recordBtn.classList.add('recording')
           hint.textContent = ''
         } catch (e) {

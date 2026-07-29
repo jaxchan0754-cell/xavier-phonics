@@ -10,128 +10,137 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "environment",
-      "rounds": [
+      "type": "word",
+      "word": "dog",
+      "emoji": "🐶",
+      "cn": "狗",
+      "letters": [
         {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "woof woof",
-          "target": "dog",
-          "cards": [
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            },
-            {
-              "id": "cat",
-              "emoji": "🐱",
-              "audio": "cat",
-              "cn": "猫"
-            },
-            {
-              "id": "duck",
-              "emoji": "🦆",
-              "audio": "duck",
-              "cn": "鸭子"
-            }
-          ]
+          "char": "d",
+          "audio": "duh"
         },
         {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "meow",
-          "target": "cat",
-          "cards": [
-            {
-              "id": "cow",
-              "emoji": "🐮",
-              "audio": "cow",
-              "cn": "奶牛"
-            },
-            {
-              "id": "cat",
-              "emoji": "🐱",
-              "audio": "cat",
-              "cn": "猫"
-            },
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            }
-          ]
+          "char": "o",
+          "audio": "aw"
         },
         {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "moo",
-          "target": "cow",
-          "cards": [
-            {
-              "id": "duck",
-              "emoji": "🦆",
-              "audio": "duck",
-              "cn": "鸭子"
-            },
-            {
-              "id": "cow",
-              "emoji": "🐮",
-              "audio": "cow",
-              "cn": "奶牛"
-            },
-            {
-              "id": "pig",
-              "emoji": "🐷",
-              "audio": "pig",
-              "cn": "猪"
-            }
-          ]
-        },
-        {
-          "prompt": "Listen! What do you hear?",
-          "stimulus": "quack quack",
-          "target": "duck",
-          "cards": [
-            {
-              "id": "pig",
-              "emoji": "🐷",
-              "audio": "pig",
-              "cn": "猪"
-            },
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            },
-            {
-              "id": "duck",
-              "emoji": "🦆",
-              "audio": "duck",
-              "cn": "鸭子"
-            }
-          ]
+          "char": "g",
+          "audio": "guh"
         }
+      ],
+      "audio": {
+        "audio": "dog",
+        "slow": true
+      },
+      "misreadings": [
+        "tog"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "cat",
+      "emoji": "🐱",
+      "cn": "猫",
+      "letters": [
         {
-          "text": "woof woof",
-          "model": "woof woof",
-          "emoji": "🐶",
-          "cn": "狗叫声"
+          "char": "c",
+          "audio": "kuh"
         },
         {
-          "text": "meow",
-          "model": "meow",
-          "emoji": "🐱",
-          "cn": "猫叫声"
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "cat",
+        "slow": true
+      },
+      "misreadings": [
+        "tat",
+        "kat"
       ]
+    },
+    {
+      "type": "word",
+      "word": "cow",
+      "emoji": "🐮",
+      "cn": "奶牛",
+      "letters": [
+        {
+          "char": "c",
+          "audio": "kuh"
+        },
+        {
+          "char": "ow",
+          "audio": "ow"
+        }
+      ],
+      "audio": {
+        "audio": "cow",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "duck",
+      "emoji": "🦆",
+      "cn": "鸭子",
+      "letters": [
+        {
+          "char": "d",
+          "audio": "duh"
+        },
+        {
+          "char": "u",
+          "audio": "uh"
+        },
+        {
+          "char": "ck",
+          "audio": "kuh"
+        }
+      ],
+      "audio": {
+        "audio": "duck",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "woof woof",
+      "emoji": "🐶",
+      "cn": "狗叫声",
+      "audio": {
+        "audio": "woof woof",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "meow",
+      "emoji": "🐱",
+      "cn": "猫叫声",
+      "letters": [
+        {
+          "char": "m",
+          "audio": "mmm"
+        },
+        {
+          "char": "e",
+          "audio": "eh"
+        },
+        {
+          "char": "ow",
+          "audio": "ow"
+        }
+      ],
+      "audio": {
+        "audio": "meow",
+        "slow": true
+      }
     },
     {
       "type": "celebrate",

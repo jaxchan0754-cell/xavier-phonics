@@ -16,168 +16,148 @@
   ],
   "activities": [
     {
-      "type": "listen",
-      "kind": "letter",
-      "rounds": [
+      "type": "phoneme",
+      "grapheme": "i",
+      "emoji": "✒️",
+      "audio": {
+        "audio": "ih",
+        "slow": true
+      },
+      "cn": "墨水",
+      "tip": "短短的'诶'，不要读成'衣'"
+    },
+    {
+      "type": "phoneme",
+      "grapheme": "n",
+      "emoji": "🥅",
+      "audio": {
+        "audio": "nnn",
+        "slow": true
+      },
+      "cn": "网",
+      "tip": "舌尖抵上牙龈，鼻音 nnn"
+    },
+    {
+      "type": "word",
+      "word": "I",
+      "emoji": "🧒",
+      "cn": "我（tricky word，整体认读）",
+      "tricky": true,
+      "letters": [
         {
-          "prompt": "Tap the letter ih!",
-          "target": "i",
-          "cards": [
-            {
-              "id": "i",
-              "emoji": "✒️",
-              "text": "i",
-              "audio": "ih"
-            },
-            {
-              "id": "t",
-              "emoji": "🐯",
-              "text": "t",
-              "audio": "tuh"
-            },
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            }
-          ]
+          "char": "i",
+          "audio": "ih"
+        }
+      ],
+      "audio": {
+        "audio": "I",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "pin",
+      "emoji": "📌",
+      "cn": "别针",
+      "letters": [
+        {
+          "char": "p",
+          "audio": "puh"
         },
         {
-          "prompt": "Tap the letter nnn!",
-          "target": "n",
-          "cards": [
-            {
-              "id": "n",
-              "emoji": "🥅",
-              "text": "n",
-              "audio": "nnn"
-            },
-            {
-              "id": "i",
-              "emoji": "✒️",
-              "text": "i",
-              "audio": "ih"
-            },
-            {
-              "id": "p",
-              "emoji": "🐷",
-              "text": "p",
-              "audio": "puh"
-            }
-          ]
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "n",
+          "audio": "nnn"
         }
+      ],
+      "audio": {
+        "audio": "pin",
+        "slow": true
+      },
+      "misreadings": [
+        "bin"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "sit",
+      "emoji": "🪑",
+      "cn": "坐",
+      "letters": [
         {
-          "text": "i",
-          "model": "ih",
-          "emoji": "✒️",
-          "cn": "墨水"
+          "char": "s",
+          "audio": "sss"
         },
         {
-          "text": "n",
-          "model": "nnn",
-          "emoji": "🥅",
-          "cn": "网"
+          "char": "i",
+          "audio": "ih"
         },
         {
-          "text": "I",
-          "model": "I",
-          "emoji": "🧒",
-          "cn": "我（tricky word，整体认读）",
-          "tricky": true
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "sit",
+        "slow": true
+      },
+      "misreadings": [
+        "zit"
       ]
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "tip",
+      "emoji": "☝️",
+      "cn": "尖端",
+      "letters": [
         {
-          "word": "pin",
-          "emoji": "📌",
-          "cn": "别针",
-          "letters": [
-            {
-              "char": "p",
-              "audio": "puh"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "n",
-              "audio": "nnn"
-            }
-          ],
-          "audio": "pin"
+          "char": "t",
+          "audio": "tuh"
         },
         {
-          "word": "sit",
-          "emoji": "🪑",
-          "cn": "坐",
-          "letters": [
-            {
-              "char": "s",
-              "audio": "sss"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "t",
-              "audio": "tuh"
-            }
-          ],
-          "audio": "sit"
+          "char": "i",
+          "audio": "ih"
         },
         {
-          "word": "tip",
-          "emoji": "☝️",
-          "cn": "尖端",
-          "letters": [
-            {
-              "char": "t",
-              "audio": "tuh"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "p",
-              "audio": "puh"
-            }
-          ],
-          "audio": "tip"
-        },
-        {
-          "word": "nap",
-          "emoji": "😴",
-          "cn": "小睡",
-          "letters": [
-            {
-              "char": "n",
-              "audio": "nnn"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "p",
-              "audio": "puh"
-            }
-          ],
-          "audio": "nap"
+          "char": "p",
+          "audio": "puh"
         }
+      ],
+      "audio": {
+        "audio": "tip",
+        "slow": true
+      },
+      "misreadings": [
+        "dip"
       ]
+    },
+    {
+      "type": "word",
+      "word": "nap",
+      "emoji": "😴",
+      "cn": "小睡",
+      "letters": [
+        {
+          "char": "n",
+          "audio": "nnn"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "p",
+          "audio": "puh"
+        }
+      ],
+      "audio": {
+        "audio": "nap",
+        "slow": true
+      }
     },
     {
       "type": "celebrate",

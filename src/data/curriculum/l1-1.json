@@ -10,106 +10,37 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "letter",
-      "rounds": [
-        {
-          "prompt": "Tap the letter sss!",
-          "target": "s",
-          "cards": [
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            },
-            {
-              "id": "a",
-              "emoji": "🍎",
-              "text": "a",
-              "audio": "ah"
-            },
-            {
-              "id": "t",
-              "emoji": "🐯",
-              "text": "t",
-              "audio": "tuh"
-            }
-          ]
-        },
-        {
-          "prompt": "Tap the letter ah!",
-          "target": "a",
-          "cards": [
-            {
-              "id": "t",
-              "emoji": "🐯",
-              "text": "t",
-              "audio": "tuh"
-            },
-            {
-              "id": "a",
-              "emoji": "🍎",
-              "text": "a",
-              "audio": "ah"
-            },
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            }
-          ]
-        },
-        {
-          "prompt": "Tap the letter tuh!",
-          "target": "t",
-          "cards": [
-            {
-              "id": "a",
-              "emoji": "🍎",
-              "text": "a",
-              "audio": "ah"
-            },
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            },
-            {
-              "id": "t",
-              "emoji": "🐯",
-              "text": "t",
-              "audio": "tuh"
-            }
-          ]
-        }
-      ]
+      "type": "phoneme",
+      "grapheme": "s",
+      "emoji": "🐍",
+      "audio": {
+        "audio": "sss",
+        "slow": true
+      },
+      "cn": "蛇",
+      "tip": "牙齿并拢，像小蛇一样嘶——"
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
-        {
-          "text": "s",
-          "model": "sss",
-          "emoji": "🐍",
-          "cn": "蛇"
-        },
-        {
-          "text": "a",
-          "model": "ah",
-          "emoji": "🍎",
-          "cn": "苹果"
-        },
-        {
-          "text": "t",
-          "model": "tuh",
-          "emoji": "🐯",
-          "cn": "老虎"
-        }
-      ]
+      "type": "phoneme",
+      "grapheme": "a",
+      "emoji": "🍎",
+      "audio": {
+        "audio": "ah",
+        "slow": true
+      },
+      "cn": "苹果",
+      "tip": "嘴巴张得大大的，像咬大苹果"
+    },
+    {
+      "type": "phoneme",
+      "grapheme": "t",
+      "emoji": "🐯",
+      "audio": {
+        "audio": "tuh",
+        "slow": true
+      },
+      "cn": "老虎",
+      "tip": "舌尖抵住上牙龈，轻轻弹开"
     },
     {
       "type": "celebrate",

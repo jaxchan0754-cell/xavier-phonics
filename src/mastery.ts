@@ -44,7 +44,8 @@ export function computeMasteryFromData(
     const lessonRecords = records.filter((r) => p.lessons.includes(r.levelId))
     const completed = p.lessons.some((id) => completedLessonIds.has(id))
 
-    // 该音素相关 echo 记录的最新结果：skipped 或「重练≥2 且之后未确认」视为挣扎
+    // 该音素相关 echo 记录的最新结果：skipped/softpass 或「重练≥2 且之后未确认」视为挣扎
+    // （softpass = 降级通过，视为「在学」而非「已会」）
     let struggling = false
     for (const key of p.echoKeys) {
       const echoRecords = lessonRecords
@@ -54,7 +55,8 @@ export function computeMasteryFromData(
       const last = echoRecords[echoRecords.length - 1]
       const retries = echoRecords.filter((r) => r.detail === `${key}|retry`).length
       const confirmed = echoRecords.some((r) => r.detail === `${key}|confirmed`)
-      if (last.detail === `${key}|skipped` || (retries >= 2 && !confirmed)) struggling = true
+      if (last.detail === `${key}|skipped` || last.detail === `${key}|softpass` || (retries >= 2 && !confirmed))
+        struggling = true
     }
 
     if (completed && !struggling) result.set(p.id, 'mastered')

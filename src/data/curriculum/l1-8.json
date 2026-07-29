@@ -16,158 +16,195 @@
   ],
   "activities": [
     {
-      "type": "listen",
-      "kind": "word",
-      "rounds": [
+      "type": "word",
+      "word": "pig",
+      "emoji": "🐷",
+      "cn": "猪",
+      "letters": [
         {
-          "prompt": "Listen! Tap the picture!",
-          "stimulus": "pig",
-          "target": "pig",
-          "cards": [
-            {
-              "id": "pig",
-              "emoji": "🐷",
-              "audio": "pig",
-              "cn": "猪"
-            },
-            {
-              "id": "pot",
-              "emoji": "🍲",
-              "audio": "pot",
-              "cn": "锅"
-            },
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            }
-          ]
+          "char": "p",
+          "audio": "puh"
         },
         {
-          "prompt": "Listen! Tap the picture!",
-          "stimulus": "pot",
-          "target": "pot",
-          "cards": [
-            {
-              "id": "cap",
-              "emoji": "🧢",
-              "audio": "cap",
-              "cn": "帽子"
-            },
-            {
-              "id": "pot",
-              "emoji": "🍲",
-              "audio": "pot",
-              "cn": "锅"
-            },
-            {
-              "id": "sock",
-              "emoji": "🧦",
-              "audio": "sock",
-              "cn": "袜子"
-            }
-          ]
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
         }
+      ],
+      "audio": {
+        "audio": "pig",
+        "slow": true
+      },
+      "misreadings": [
+        "big"
       ]
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "pot",
+      "emoji": "🍲",
+      "cn": "锅",
+      "letters": [
         {
-          "word": "pig",
-          "emoji": "🐷",
-          "cn": "猪",
-          "letters": [
-            {
-              "char": "p",
-              "audio": "puh"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "g",
-              "audio": "guh"
-            }
-          ],
-          "audio": "pig"
+          "char": "p",
+          "audio": "puh"
         },
         {
-          "word": "pot",
-          "emoji": "🍲",
-          "cn": "锅",
-          "letters": [
-            {
-              "char": "p",
-              "audio": "puh"
-            },
-            {
-              "char": "o",
-              "audio": "aw"
-            },
-            {
-              "char": "t",
-              "audio": "tuh"
-            }
-          ],
-          "audio": "pot"
+          "char": "o",
+          "audio": "aw"
         },
         {
-          "word": "sock",
-          "emoji": "🧦",
-          "cn": "袜子",
-          "letters": [
-            {
-              "char": "s",
-              "audio": "sss"
-            },
-            {
-              "char": "o",
-              "audio": "aw"
-            },
-            {
-              "char": "ck",
-              "audio": "kuh"
-            }
-          ],
-          "audio": "sock"
-        },
-        {
-          "word": "cap",
-          "emoji": "🧢",
-          "cn": "帽子",
-          "letters": [
-            {
-              "char": "c",
-              "audio": "kuh"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "p",
-              "audio": "puh"
-            }
-          ],
-          "audio": "cap"
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "pot",
+        "slow": true
+      },
+      "misreadings": [
+        "bot"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "pig",
+      "emoji": "🐷",
+      "cn": "猪",
+      "letters": [
         {
-          "text": "into",
-          "model": "into",
-          "emoji": "📥",
-          "cn": "进入（tricky word，整体认读）",
-          "tricky": true
+          "char": "p",
+          "audio": "puh"
+        },
+        {
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
         }
+      ],
+      "audio": {
+        "audio": "pig",
+        "slow": true
+      },
+      "misreadings": [
+        "big"
       ]
+    },
+    {
+      "type": "word",
+      "word": "pot",
+      "emoji": "🍲",
+      "cn": "锅",
+      "letters": [
+        {
+          "char": "p",
+          "audio": "puh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
+        }
+      ],
+      "audio": {
+        "audio": "pot",
+        "slow": true
+      },
+      "misreadings": [
+        "bot"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "sock",
+      "emoji": "🧦",
+      "cn": "袜子",
+      "letters": [
+        {
+          "char": "s",
+          "audio": "sss"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "ck",
+          "audio": "kuh"
+        }
+      ],
+      "audio": {
+        "audio": "sock",
+        "slow": true
+      },
+      "misreadings": [
+        "sok"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "cap",
+      "emoji": "🧢",
+      "cn": "帽子",
+      "letters": [
+        {
+          "char": "c",
+          "audio": "kuh"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "p",
+          "audio": "puh"
+        }
+      ],
+      "audio": {
+        "audio": "cap",
+        "slow": true
+      },
+      "misreadings": [
+        "kap"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "into",
+      "emoji": "📥",
+      "cn": "进入（tricky word，整体认读）",
+      "tricky": true,
+      "letters": [
+        {
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "n",
+          "audio": "nnn"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        }
+      ],
+      "audio": {
+        "audio": "into",
+        "slow": true
+      }
     },
     {
       "type": "celebrate",

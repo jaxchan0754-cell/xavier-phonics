@@ -10,106 +10,110 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "oral-blend",
-      "rounds": [
+      "type": "word",
+      "word": "cat",
+      "emoji": "🐱",
+      "cn": "猫",
+      "letters": [
         {
-          "prompt": "Listen! kuh, ah, tuh. What word is it?",
-          "target": "cat",
-          "cards": [
-            {
-              "id": "cat",
-              "emoji": "🐱",
-              "audio": "cat",
-              "cn": "猫"
-            },
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            },
-            {
-              "id": "pig",
-              "emoji": "🐷",
-              "audio": "pig",
-              "cn": "猪"
-            }
-          ]
+          "char": "c",
+          "audio": "kuh"
         },
         {
-          "prompt": "Listen! duh, aw, guh. What word is it?",
-          "target": "dog",
-          "cards": [
-            {
-              "id": "sun",
-              "emoji": "☀️",
-              "audio": "sun",
-              "cn": "太阳"
-            },
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            },
-            {
-              "id": "cat",
-              "emoji": "🐱",
-              "audio": "cat",
-              "cn": "猫"
-            }
-          ]
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "prompt": "Listen! puh, ih, guh. What word is it?",
-          "target": "pig",
-          "cards": [
-            {
-              "id": "pig",
-              "emoji": "🐷",
-              "audio": "pig",
-              "cn": "猪"
-            },
-            {
-              "id": "sun",
-              "emoji": "☀️",
-              "audio": "sun",
-              "cn": "太阳"
-            },
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            }
-          ]
-        },
-        {
-          "prompt": "Listen! sss, ah, nnn. What word is it?",
-          "target": "sun",
-          "cards": [
-            {
-              "id": "cat",
-              "emoji": "🐱",
-              "audio": "cat",
-              "cn": "猫"
-            },
-            {
-              "id": "sun",
-              "emoji": "☀️",
-              "audio": "sun",
-              "cn": "太阳"
-            },
-            {
-              "id": "pig",
-              "emoji": "🐷",
-              "audio": "pig",
-              "cn": "猪"
-            }
-          ]
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "cat",
+        "slow": true
+      },
+      "misreadings": [
+        "tat",
+        "kat"
       ]
+    },
+    {
+      "type": "word",
+      "word": "dog",
+      "emoji": "🐶",
+      "cn": "狗",
+      "letters": [
+        {
+          "char": "d",
+          "audio": "duh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
+        }
+      ],
+      "audio": {
+        "audio": "dog",
+        "slow": true
+      },
+      "misreadings": [
+        "tog"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "pig",
+      "emoji": "🐷",
+      "cn": "猪",
+      "letters": [
+        {
+          "char": "p",
+          "audio": "puh"
+        },
+        {
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
+        }
+      ],
+      "audio": {
+        "audio": "pig",
+        "slow": true
+      },
+      "misreadings": [
+        "big"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "sun",
+      "emoji": "☀️",
+      "cn": "太阳",
+      "letters": [
+        {
+          "char": "s",
+          "audio": "sss"
+        },
+        {
+          "char": "u",
+          "audio": "uh"
+        },
+        {
+          "char": "n",
+          "audio": "nnn"
+        }
+      ],
+      "audio": {
+        "audio": "sun",
+        "slow": true
+      }
     },
     {
       "type": "celebrate",

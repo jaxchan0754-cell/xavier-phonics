@@ -10,134 +10,95 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "letter",
-      "rounds": [
+      "type": "phoneme",
+      "grapheme": "p",
+      "emoji": "🐷",
+      "audio": {
+        "audio": "puh",
+        "slow": true
+      },
+      "cn": "猪",
+      "tip": "双唇紧闭，然后吹开"
+    },
+    {
+      "type": "word",
+      "word": "sat",
+      "emoji": "🧎",
+      "cn": "坐（过去式）",
+      "letters": [
         {
-          "prompt": "Tap the letter puh!",
-          "target": "p",
-          "cards": [
-            {
-              "id": "p",
-              "emoji": "🐷",
-              "text": "p",
-              "audio": "puh"
-            },
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            },
-            {
-              "id": "t",
-              "emoji": "🐯",
-              "text": "t",
-              "audio": "tuh"
-            }
-          ]
+          "char": "s",
+          "audio": "sss"
         },
         {
-          "prompt": "Tap the letter sss!",
-          "target": "s",
-          "cards": [
-            {
-              "id": "a",
-              "emoji": "🍎",
-              "text": "a",
-              "audio": "ah"
-            },
-            {
-              "id": "p",
-              "emoji": "🐷",
-              "text": "p",
-              "audio": "puh"
-            },
-            {
-              "id": "s",
-              "emoji": "🐍",
-              "text": "s",
-              "audio": "sss"
-            }
-          ]
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "sat",
+        "slow": true
+      },
+      "misreadings": [
+        "set"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "pat",
+      "emoji": "👋",
+      "cn": "轻拍",
+      "letters": [
         {
-          "text": "p",
-          "model": "puh",
-          "emoji": "🐷",
-          "cn": "猪"
+          "char": "p",
+          "audio": "puh"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "pat",
+        "slow": true
+      },
+      "misreadings": [
+        "bat"
       ]
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "tap",
+      "emoji": "🚰",
+      "cn": "水龙头",
+      "letters": [
         {
-          "word": "sat",
-          "emoji": "🧎",
-          "cn": "坐（过去式）",
-          "letters": [
-            {
-              "char": "s",
-              "audio": "sss"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "t",
-              "audio": "tuh"
-            }
-          ],
-          "audio": "sat"
+          "char": "t",
+          "audio": "tuh"
         },
         {
-          "word": "pat",
-          "emoji": "👋",
-          "cn": "轻拍",
-          "letters": [
-            {
-              "char": "p",
-              "audio": "puh"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "t",
-              "audio": "tuh"
-            }
-          ],
-          "audio": "pat"
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "word": "tap",
-          "emoji": "🚰",
-          "cn": "水龙头",
-          "letters": [
-            {
-              "char": "t",
-              "audio": "tuh"
-            },
-            {
-              "char": "a",
-              "audio": "ah"
-            },
-            {
-              "char": "p",
-              "audio": "puh"
-            }
-          ],
-          "audio": "tap"
+          "char": "p",
+          "audio": "puh"
         }
+      ],
+      "audio": {
+        "audio": "tap",
+        "slow": true
+      },
+      "misreadings": [
+        "dap"
       ]
     },
     {

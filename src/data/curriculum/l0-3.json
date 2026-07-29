@@ -10,105 +10,109 @@
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "rhyme",
-      "rounds": [
+      "type": "word",
+      "word": "hat",
+      "emoji": "🎩",
+      "cn": "帽子",
+      "letters": [
         {
-          "prompt": "Cat! Which one rhymes with cat?",
-          "target": "hat",
-          "cards": [
-            {
-              "id": "hat",
-              "emoji": "🎩",
-              "audio": "hat",
-              "cn": "帽子"
-            },
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            },
-            {
-              "id": "sun",
-              "emoji": "☀️",
-              "audio": "sun",
-              "cn": "太阳"
-            }
-          ]
+          "char": "h",
+          "audio": "hhh"
         },
         {
-          "prompt": "Dog! Which one rhymes with dog?",
-          "target": "frog",
-          "cards": [
-            {
-              "id": "pig",
-              "emoji": "🐷",
-              "audio": "pig",
-              "cn": "猪"
-            },
-            {
-              "id": "frog",
-              "emoji": "🐸",
-              "audio": "frog",
-              "cn": "青蛙"
-            },
-            {
-              "id": "man",
-              "emoji": "👨",
-              "audio": "man",
-              "cn": "男人"
-            }
-          ]
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "prompt": "Sun! Which one rhymes with sun?",
-          "target": "bun",
-          "cards": [
-            {
-              "id": "car",
-              "emoji": "🚗",
-              "audio": "car",
-              "cn": "汽车"
-            },
-            {
-              "id": "egg",
-              "emoji": "🥚",
-              "audio": "egg",
-              "cn": "鸡蛋"
-            },
-            {
-              "id": "bun",
-              "emoji": "🍞",
-              "audio": "bun",
-              "cn": "小圆面包"
-            }
-          ]
-        },
-        {
-          "prompt": "Log! Which one rhymes with log?",
-          "target": "dog",
-          "cards": [
-            {
-              "id": "dog",
-              "emoji": "🐶",
-              "audio": "dog",
-              "cn": "狗"
-            },
-            {
-              "id": "cat",
-              "emoji": "🐱",
-              "audio": "cat",
-              "cn": "猫"
-            },
-            {
-              "id": "duck",
-              "emoji": "🦆",
-              "audio": "duck",
-              "cn": "鸭子"
-            }
-          ]
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "hat",
+        "slow": true
+      },
+      "misreadings": [
+        "het"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "frog",
+      "emoji": "🐸",
+      "cn": "青蛙",
+      "letters": [
+        {
+          "char": "f",
+          "audio": "fff"
+        },
+        {
+          "char": "r",
+          "audio": "rrr"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
+        }
+      ],
+      "audio": {
+        "audio": "frog",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "bun",
+      "emoji": "🍞",
+      "cn": "小圆面包",
+      "letters": [
+        {
+          "char": "b",
+          "audio": "buh"
+        },
+        {
+          "char": "u",
+          "audio": "uh"
+        },
+        {
+          "char": "n",
+          "audio": "nnn"
+        }
+      ],
+      "audio": {
+        "audio": "bun",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "dog",
+      "emoji": "🐶",
+      "cn": "狗",
+      "letters": [
+        {
+          "char": "d",
+          "audio": "duh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
+        }
+      ],
+      "audio": {
+        "audio": "dog",
+        "slow": true
+      },
+      "misreadings": [
+        "tog"
       ]
     },
     {

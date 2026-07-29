@@ -1,855 +1,1353 @@
 {
-  "generatedAt": "2026-07-28T17:22:19.337Z",
+  "generatedAt": "2026-07-29T08:57:18.672Z",
   "engine": "edge-tts",
   "voice": "en-US-AnaNeural",
-  "count": 141,
-  "totalBytes": 2111341,
+  "count": 192,
+  "totalBytes": 2323495,
   "items": [
     {
       "key": "95e00b20",
       "text": "Amazing ears! You can hear all the tricky sounds!",
+      "variant": "normal",
       "file": "tts/95e00b20.m4a",
       "status": "exists"
     },
     {
       "key": "a3ffd4d3",
       "text": "Amazing! You can blend the sounds together!",
+      "variant": "normal",
       "file": "tts/a3ffd4d3.m4a",
       "status": "exists"
     },
     {
       "key": "b5cf343b",
       "text": "Amazing! You can read sentences now!",
+      "variant": "normal",
       "file": "tts/b5cf343b.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "09dcab98",
-      "text": "Cat! Which one rhymes with cat?",
-      "file": "tts/09dcab98.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "7d41aa84",
-      "text": "Dog! Which one rhymes with dog?",
-      "file": "tts/7d41aa84.m4a",
       "status": "exists"
     },
     {
       "key": "a054e007",
       "text": "Fantastic! You can read so many words!",
+      "variant": "normal",
       "file": "tts/a054e007.m4a",
       "status": "exists"
     },
     {
       "key": "435422c0",
       "text": "Great ears! Ship and sheep are different!",
+      "variant": "normal",
       "file": "tts/435422c0.m4a",
       "status": "exists"
     },
     {
       "key": "0f4c4595",
       "text": "Great job today! See you tomorrow!",
+      "variant": "normal",
       "file": "tts/0f4c4595.m4a",
       "status": "exists"
     },
     {
       "key": "48f47664",
       "text": "Great job! Dog, dig, dot!",
+      "variant": "normal",
       "file": "tts/48f47664.m4a",
       "status": "exists"
     },
     {
       "key": "8b661876",
       "text": "Great job! You can hear the little sounds at the end!",
+      "variant": "normal",
       "file": "tts/8b661876.m4a",
       "status": "exists"
     },
     {
       "key": "175d244f",
       "text": "Great job! You finished the review!",
+      "variant": "normal",
       "file": "tts/175d244f.m4a",
       "status": "exists"
     },
     {
       "key": "596148cc",
       "text": "Great job! You know sss, ah, tuh!",
+      "variant": "normal",
       "file": "tts/596148cc.m4a",
       "status": "exists"
     },
     {
       "key": "646c8008",
       "text": "Great job! You know the animal sounds!",
+      "variant": "normal",
       "file": "tts/646c8008.m4a",
       "status": "exists"
     },
     {
       "key": "46e89521",
       "text": "Great reading! Man, dad, mad, dim!",
+      "variant": "normal",
       "file": "tts/46e89521.m4a",
       "status": "exists"
     },
     {
       "key": "b096879a",
       "text": "Hello! I'm Felix the fox! Tap the star to play!",
+      "variant": "normal",
       "file": "tts/b096879a.m4a",
       "status": "exists"
     },
     {
       "key": "b9051f90",
       "text": "Hello! I'm Felix! Listen! What animal is it?",
+      "variant": "normal",
       "file": "tts/b9051f90.m4a",
       "status": "exists"
     },
     {
       "key": "3bf4d0fa",
       "text": "Hello! I'm Felix! Today we learn three sounds! sss, ah, tuh!",
+      "variant": "normal",
       "file": "tts/3bf4d0fa.m4a",
       "status": "exists"
     },
     {
       "key": "9daf10d6",
       "text": "Hello! Let's play the rhyming game! Cat, hat, bat!",
+      "variant": "normal",
       "file": "tts/9daf10d6.m4a",
       "status": "exists"
     },
     {
       "key": "53f81bff",
       "text": "Hello! Let's review! Listen to the words!",
+      "variant": "normal",
       "file": "tts/53f81bff.m4a",
       "status": "exists"
     },
     {
       "key": "c457780a",
       "text": "Hello! Listen carefully! Ship, sheep. Are they the same?",
+      "variant": "normal",
       "file": "tts/c457780a.m4a",
       "status": "exists"
     },
     {
       "key": "f252d958",
       "text": "Hello! Today we learn ih and nnn! Let's read more words!",
+      "variant": "normal",
       "file": "tts/f252d958.m4a",
       "status": "exists"
     },
     {
       "key": "480932df",
       "text": "Hello! Today we learn kuh! Two letters make kuh: c and k!",
+      "variant": "normal",
       "file": "tts/480932df.m4a",
       "status": "exists"
     },
     {
       "key": "687e6374",
       "text": "Hello! Today we read little sentences! A cat! A dog!",
+      "variant": "normal",
       "file": "tts/687e6374.m4a",
       "status": "exists"
     },
     {
       "key": "b680c964",
       "text": "Hi! I'm Felix! Listen! What sound is it?",
+      "variant": "normal",
       "file": "tts/b680c964.m4a",
       "status": "exists"
     },
     {
       "key": "c5b187a9",
       "text": "Hi! Let's play the blending game! Listen to the sounds!",
+      "variant": "normal",
       "file": "tts/c5b187a9.m4a",
       "status": "exists"
     },
     {
       "key": "098371e0",
       "text": "Hi! Let's read more words! You are a reading star!",
+      "variant": "normal",
       "file": "tts/098371e0.m4a",
       "status": "exists"
     },
     {
       "key": "69076ad3",
       "text": "Hi! Listen carefully! Thumb, sum. Are they the same?",
+      "variant": "normal",
       "file": "tts/69076ad3.m4a",
       "status": "exists"
     },
     {
       "key": "c0d357cc",
       "text": "Hi! Today we learn guh and aw!",
+      "variant": "normal",
       "file": "tts/c0d357cc.m4a",
       "status": "exists"
     },
     {
       "key": "b20f5fbe",
       "text": "Hi! Today we learn mmm and duh!",
+      "variant": "normal",
       "file": "tts/b20f5fbe.m4a",
       "status": "exists"
     },
     {
       "key": "b41d5373",
       "text": "Hi! Today we learn puh! And we can read words!",
+      "variant": "normal",
       "file": "tts/b41d5373.m4a",
       "status": "exists"
     },
     {
       "key": "43ca75c4",
       "text": "Hi, superstar! Let's review everything! Are you ready?",
+      "variant": "normal",
       "file": "tts/43ca75c4.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "cc0c0364",
-      "text": "I",
-      "file": "tts/cc0c0364.m4a",
       "status": "exists"
     },
     {
       "key": "d7fb9830",
       "text": "I sat",
+      "variant": "normal",
       "file": "tts/d7fb9830.m4a",
       "status": "exists"
     },
     {
+      "key": "d7fb9830",
+      "text": "I sat",
+      "variant": "slow",
+      "file": "tts/d7fb9830_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "cc0c0364",
+      "text": "I",
+      "variant": "normal",
+      "file": "tts/cc0c0364.m4a",
+      "status": "exists"
+    },
+    {
+      "key": "cc0c0364",
+      "text": "I",
+      "variant": "slow",
+      "file": "tts/cc0c0364_slow.m4a",
+      "status": "generated"
+    },
+    {
       "key": "924f8ad6",
       "text": "Let's review! Are you ready?",
+      "variant": "normal",
       "file": "tts/924f8ad6.m4a",
       "status": "exists"
     },
     {
       "key": "47a50fba",
       "text": "Listen carefully! Ship or sheep? Thumb or sum? You have super ears!",
+      "variant": "normal",
       "file": "tts/47a50fba.m4a",
       "status": "exists"
     },
     {
       "key": "aeb2044a",
       "text": "Listen for the last sound! Cat! Can you hear the little tuh at the end?",
+      "variant": "normal",
       "file": "tts/aeb2044a.m4a",
       "status": "exists"
     },
     {
-      "key": "33420a4c",
-      "text": "Listen to the last sound, then you say it!",
-      "file": "tts/33420a4c.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "c26f0adc",
-      "text": "Listen! Tap the picture!",
-      "file": "tts/c26f0adc.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "e6705920",
-      "text": "Listen! What do you hear?",
-      "file": "tts/e6705920.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "acda833f",
-      "text": "Listen! Which word do you hear?",
-      "file": "tts/acda833f.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "8ebefef2",
-      "text": "Listen! duh, aw, guh. What word is it?",
-      "file": "tts/8ebefef2.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "e416e763",
-      "text": "Listen! kuh, ah, tuh. What word is it?",
-      "file": "tts/e416e763.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "aa31128d",
-      "text": "Listen! puh, ih, guh. What word is it?",
-      "file": "tts/aa31128d.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "adf78a6d",
-      "text": "Listen! sss, ah, nnn. What word is it?",
-      "file": "tts/adf78a6d.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "f7703aa1",
-      "text": "Listen, then you say it!",
-      "file": "tts/f7703aa1.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "73aa5ed4",
-      "text": "Log! Which one rhymes with log?",
-      "file": "tts/73aa5ed4.m4a",
+      "key": "c0508106",
+      "text": "Pick a book! Tap the book with the bookmark!",
+      "variant": "normal",
+      "file": "tts/c0508106.m4a",
       "status": "exists"
     },
     {
       "key": "005acf8d",
       "text": "Purr-fect! Cat, cap, kid, sock!",
+      "variant": "normal",
       "file": "tts/005acf8d.m4a",
       "status": "exists"
     },
     {
       "key": "cea0d5a0",
       "text": "Quiz time! Show me what you know!",
+      "variant": "normal",
       "file": "tts/cea0d5a0.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "df0140e4",
-      "text": "Sun! Which one rhymes with sun?",
-      "file": "tts/df0140e4.m4a",
       "status": "exists"
     },
     {
       "key": "d76f43b7",
       "text": "Super! Cat, hat, bat! You can rhyme!",
+      "variant": "normal",
       "file": "tts/d76f43b7.m4a",
       "status": "exists"
     },
     {
       "key": "01c80eea",
       "text": "Super! You can read pin, sit, tip, nap!",
+      "variant": "normal",
       "file": "tts/01c80eea.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "a0bfc5b3",
-      "text": "Tap the letter ah!",
-      "file": "tts/a0bfc5b3.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "390c9544",
-      "text": "Tap the letter aw!",
-      "file": "tts/390c9544.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "a0618901",
-      "text": "Tap the letter duh!",
-      "file": "tts/a0618901.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "67d04f2a",
-      "text": "Tap the letter guh!",
-      "file": "tts/67d04f2a.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "4a50076b",
-      "text": "Tap the letter ih!",
-      "file": "tts/4a50076b.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "f39db8c6",
-      "text": "Tap the letter kuh!",
-      "file": "tts/f39db8c6.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "275cb8e2",
-      "text": "Tap the letter kuh! The other kuh!",
-      "file": "tts/275cb8e2.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "a6eb4bf1",
-      "text": "Tap the letter mmm!",
-      "file": "tts/a6eb4bf1.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "a82302b4",
-      "text": "Tap the letter nnn!",
-      "file": "tts/a82302b4.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "749929b5",
-      "text": "Tap the letter puh!",
-      "file": "tts/749929b5.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "4b762437",
-      "text": "Tap the letter sss!",
-      "file": "tts/4b762437.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "cf4957d1",
-      "text": "Tap the letter tuh!",
-      "file": "tts/cf4957d1.m4a",
       "status": "exists"
     },
     {
       "key": "614d8372",
       "text": "Tap the sounds!",
+      "variant": "normal",
       "file": "tts/614d8372.m4a",
-      "status": "generated"
+      "status": "exists"
     },
     {
       "key": "08912f1a",
       "text": "Well done! You have super ears!",
+      "variant": "normal",
       "file": "tts/08912f1a.m4a",
       "status": "exists"
     },
     {
       "key": "a9cfb00b",
       "text": "Well done! You remember all the sounds!",
+      "variant": "normal",
       "file": "tts/a9cfb00b.m4a",
       "status": "exists"
     },
     {
       "key": "7d63c42f",
       "text": "Wonderful! You can hear the little differences!",
+      "variant": "normal",
       "file": "tts/7d63c42f.m4a",
       "status": "exists"
     },
     {
       "key": "4586617e",
       "text": "Wow! Quiz complete! You are a superstar!",
+      "variant": "normal",
       "file": "tts/4586617e.m4a",
       "status": "exists"
     },
     {
       "key": "c6a2242f",
       "text": "Wow! You can read sat, pat, tap!",
+      "variant": "normal",
       "file": "tts/c6a2242f.m4a",
+      "status": "exists"
+    },
+    {
+      "key": "f54a3ff9",
+      "text": "Yay!",
+      "variant": "normal",
+      "file": "tts/f54a3ff9.m4a",
       "status": "exists"
     },
     {
       "key": "987acea4",
       "text": "You did it! Level one complete! You are a reading star!",
+      "variant": "normal",
       "file": "tts/987acea4.m4a",
       "status": "exists"
     },
     {
       "key": "de147448",
       "text": "a cat",
+      "variant": "normal",
       "file": "tts/de147448.m4a",
+      "status": "exists"
+    },
+    {
+      "key": "de147448",
+      "text": "a cat",
+      "variant": "slow",
+      "file": "tts/de147448_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "f6ede5ae",
+      "text": "a dog",
+      "variant": "normal",
+      "file": "tts/f6ede5ae.m4a",
       "status": "exists"
     },
     {
       "key": "f6ede5ae",
       "text": "a dog",
-      "file": "tts/f6ede5ae.m4a",
+      "variant": "slow",
+      "file": "tts/f6ede5ae_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "4324f60c",
+      "text": "ah",
+      "variant": "normal",
+      "file": "tts/4324f60c.m4a",
       "status": "exists"
     },
     {
       "key": "4324f60c",
       "text": "ah",
-      "file": "tts/4324f60c.m4a",
+      "variant": "slow",
+      "file": "tts/4324f60c_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "5d251efa",
+      "text": "ar",
+      "variant": "normal",
+      "file": "tts/5d251efa.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "5a251a41",
+      "text": "aw",
+      "variant": "normal",
+      "file": "tts/5a251a41.m4a",
       "status": "exists"
     },
     {
       "key": "5a251a41",
       "text": "aw",
-      "file": "tts/5a251a41.m4a",
+      "variant": "slow",
+      "file": "tts/5a251a41_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "45b1c069",
+      "text": "baby",
+      "variant": "normal",
+      "file": "tts/45b1c069.m4a",
       "status": "exists"
     },
     {
       "key": "45b1c069",
       "text": "baby",
-      "file": "tts/45b1c069.m4a",
+      "variant": "slow",
+      "file": "tts/45b1c069_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "826e1638",
+      "text": "bell",
+      "variant": "normal",
+      "file": "tts/826e1638.m4a",
       "status": "exists"
     },
     {
       "key": "826e1638",
       "text": "bell",
-      "file": "tts/826e1638.m4a",
+      "variant": "slow",
+      "file": "tts/826e1638_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "74d58f08",
+      "text": "buh",
+      "variant": "normal",
+      "file": "tts/74d58f08.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "7ad5987a",
+      "text": "bun",
+      "variant": "normal",
+      "file": "tts/7ad5987a.m4a",
       "status": "exists"
     },
     {
       "key": "7ad5987a",
       "text": "bun",
-      "file": "tts/7ad5987a.m4a",
+      "variant": "slow",
+      "file": "tts/7ad5987a_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "027455bb",
+      "text": "cap",
+      "variant": "normal",
+      "file": "tts/027455bb.m4a",
       "status": "exists"
     },
     {
       "key": "027455bb",
       "text": "cap",
-      "file": "tts/027455bb.m4a",
+      "variant": "slow",
+      "file": "tts/027455bb_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "047458e1",
+      "text": "car",
+      "variant": "normal",
+      "file": "tts/047458e1.m4a",
       "status": "exists"
     },
     {
       "key": "047458e1",
       "text": "car",
-      "file": "tts/047458e1.m4a",
+      "variant": "slow",
+      "file": "tts/047458e1_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "06745c07",
+      "text": "cat",
+      "variant": "normal",
+      "file": "tts/06745c07.m4a",
       "status": "exists"
     },
     {
       "key": "06745c07",
       "text": "cat",
-      "file": "tts/06745c07.m4a",
+      "variant": "slow",
+      "file": "tts/06745c07_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "f78ddc50",
+      "text": "cow",
+      "variant": "normal",
+      "file": "tts/f78ddc50.m4a",
       "status": "exists"
     },
     {
       "key": "f78ddc50",
       "text": "cow",
-      "file": "tts/f78ddc50.m4a",
+      "variant": "slow",
+      "file": "tts/f78ddc50_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "e74f26b6",
+      "text": "dad",
+      "variant": "normal",
+      "file": "tts/e74f26b6.m4a",
       "status": "exists"
     },
     {
       "key": "e74f26b6",
       "text": "dad",
-      "file": "tts/e74f26b6.m4a",
+      "variant": "slow",
+      "file": "tts/e74f26b6_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "d66293ab",
+      "text": "dig",
+      "variant": "normal",
+      "file": "tts/d66293ab.m4a",
       "status": "exists"
     },
     {
       "key": "d66293ab",
       "text": "dig",
-      "file": "tts/d66293ab.m4a",
+      "variant": "slow",
+      "file": "tts/d66293ab_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "d0628a39",
+      "text": "dim",
+      "variant": "normal",
+      "file": "tts/d0628a39.m4a",
       "status": "exists"
     },
     {
       "key": "d0628a39",
       "text": "dim",
-      "file": "tts/d0628a39.m4a",
-      "status": "exists"
+      "variant": "slow",
+      "file": "tts/d0628a39_slow.m4a",
+      "status": "generated"
     },
     {
-      "key": "29a996d1",
-      "text": "ding dong",
-      "file": "tts/29a996d1.m4a",
+      "key": "eb62b4ba",
+      "text": "dip",
+      "variant": "normal",
+      "file": "tts/eb62b4ba.m4a",
       "status": "exists"
     },
     {
       "key": "eb62b4ba",
       "text": "dip",
-      "file": "tts/eb62b4ba.m4a",
+      "variant": "slow",
+      "file": "tts/eb62b4ba_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "e668bd09",
+      "text": "dog",
+      "variant": "normal",
+      "file": "tts/e668bd09.m4a",
       "status": "exists"
     },
     {
       "key": "e668bd09",
       "text": "dog",
-      "file": "tts/e668bd09.m4a",
+      "variant": "slow",
+      "file": "tts/e668bd09_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "d3689f20",
+      "text": "dot",
+      "variant": "normal",
+      "file": "tts/d3689f20.m4a",
       "status": "exists"
     },
     {
       "key": "d3689f20",
       "text": "dot",
-      "file": "tts/d3689f20.m4a",
+      "variant": "slow",
+      "file": "tts/d3689f20_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "bb323378",
+      "text": "duck",
+      "variant": "normal",
+      "file": "tts/bb323378.m4a",
       "status": "exists"
     },
     {
       "key": "bb323378",
       "text": "duck",
-      "file": "tts/bb323378.m4a",
+      "variant": "slow",
+      "file": "tts/bb323378_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "eb3117ee",
+      "text": "duh",
+      "variant": "normal",
+      "file": "tts/eb3117ee.m4a",
       "status": "exists"
     },
     {
       "key": "eb3117ee",
       "text": "duh",
-      "file": "tts/eb3117ee.m4a",
-      "status": "exists"
+      "variant": "slow",
+      "file": "tts/eb3117ee_slow.m4a",
+      "status": "generated"
     },
     {
-      "key": "597d11c6",
-      "text": "egg",
-      "file": "tts/597d11c6.m4a",
+      "key": "381a575f",
+      "text": "ee",
+      "variant": "normal",
+      "file": "tts/381a575f.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "3b1a5c18",
+      "text": "eh",
+      "variant": "normal",
+      "file": "tts/3b1a5c18.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "b3095351",
+      "text": "fff",
+      "variant": "normal",
+      "file": "tts/b3095351.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "9bcd89e7",
+      "text": "frog",
+      "variant": "normal",
+      "file": "tts/9bcd89e7.m4a",
       "status": "exists"
     },
     {
       "key": "9bcd89e7",
       "text": "frog",
-      "file": "tts/9bcd89e7.m4a",
+      "variant": "slow",
+      "file": "tts/9bcd89e7_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "4220774b",
+      "text": "go",
+      "variant": "normal",
+      "file": "tts/4220774b.m4a",
       "status": "exists"
     },
     {
       "key": "4220774b",
       "text": "go",
-      "file": "tts/4220774b.m4a",
+      "variant": "slow",
+      "file": "tts/4220774b_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "38351db3",
+      "text": "guh",
+      "variant": "normal",
+      "file": "tts/38351db3.m4a",
       "status": "exists"
     },
     {
       "key": "38351db3",
       "text": "guh",
-      "file": "tts/38351db3.m4a",
+      "variant": "slow",
+      "file": "tts/38351db3_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "f2bf17c2",
+      "text": "hat",
+      "variant": "normal",
+      "file": "tts/f2bf17c2.m4a",
       "status": "exists"
     },
     {
       "key": "f2bf17c2",
       "text": "hat",
-      "file": "tts/f2bf17c2.m4a",
+      "variant": "slow",
+      "file": "tts/f2bf17c2_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "ecd4d49f",
+      "text": "hhh",
+      "variant": "normal",
+      "file": "tts/ecd4d49f.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "43387dc4",
+      "text": "ih",
+      "variant": "normal",
+      "file": "tts/43387dc4.m4a",
       "status": "exists"
     },
     {
       "key": "43387dc4",
       "text": "ih",
-      "file": "tts/43387dc4.m4a",
+      "variant": "slow",
+      "file": "tts/43387dc4_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "2f91a723",
+      "text": "into",
+      "variant": "normal",
+      "file": "tts/2f91a723.m4a",
       "status": "exists"
     },
     {
       "key": "2f91a723",
       "text": "into",
-      "file": "tts/2f91a723.m4a",
+      "variant": "slow",
+      "file": "tts/2f91a723_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "7cf7d467",
+      "text": "kid",
+      "variant": "normal",
+      "file": "tts/7cf7d467.m4a",
       "status": "exists"
     },
     {
       "key": "7cf7d467",
       "text": "kid",
-      "file": "tts/7cf7d467.m4a",
+      "variant": "slow",
+      "file": "tts/7cf7d467_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "593cc03f",
+      "text": "kuh",
+      "variant": "normal",
+      "file": "tts/593cc03f.m4a",
       "status": "exists"
     },
     {
       "key": "593cc03f",
       "text": "kuh",
-      "file": "tts/593cc03f.m4a",
+      "variant": "slow",
+      "file": "tts/593cc03f_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "365991eb",
+      "text": "lll",
+      "variant": "normal",
+      "file": "tts/365991eb.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "ef0d7842",
+      "text": "lock",
+      "variant": "normal",
+      "file": "tts/ef0d7842.m4a",
       "status": "exists"
     },
     {
       "key": "ef0d7842",
       "text": "lock",
-      "file": "tts/ef0d7842.m4a",
+      "variant": "slow",
+      "file": "tts/ef0d7842_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "f3a30f2d",
+      "text": "mad",
+      "variant": "normal",
+      "file": "tts/f3a30f2d.m4a",
       "status": "exists"
     },
     {
       "key": "f3a30f2d",
       "text": "mad",
-      "file": "tts/f3a30f2d.m4a",
+      "variant": "slow",
+      "file": "tts/f3a30f2d_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "e9a2ff6f",
+      "text": "man",
+      "variant": "normal",
+      "file": "tts/e9a2ff6f.m4a",
       "status": "exists"
     },
     {
       "key": "e9a2ff6f",
       "text": "man",
-      "file": "tts/e9a2ff6f.m4a",
+      "variant": "slow",
+      "file": "tts/e9a2ff6f_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "e3a2f5fd",
+      "text": "mat",
+      "variant": "normal",
+      "file": "tts/e3a2f5fd.m4a",
       "status": "exists"
     },
     {
       "key": "e3a2f5fd",
       "text": "mat",
-      "file": "tts/e3a2f5fd.m4a",
+      "variant": "slow",
+      "file": "tts/e3a2f5fd_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "97e29b7d",
+      "text": "meow",
+      "variant": "normal",
+      "file": "tts/97e29b7d.m4a",
       "status": "exists"
     },
     {
       "key": "97e29b7d",
       "text": "meow",
-      "file": "tts/97e29b7d.m4a",
+      "variant": "slow",
+      "file": "tts/97e29b7d_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "ca99d446",
+      "text": "mmm",
+      "variant": "normal",
+      "file": "tts/ca99d446.m4a",
       "status": "exists"
     },
     {
       "key": "ca99d446",
       "text": "mmm",
-      "file": "tts/ca99d446.m4a",
+      "variant": "slow",
+      "file": "tts/ca99d446_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "e69e7d88",
+      "text": "mom",
+      "variant": "normal",
+      "file": "tts/e69e7d88.m4a",
       "status": "exists"
     },
     {
       "key": "e69e7d88",
       "text": "mom",
-      "file": "tts/e69e7d88.m4a",
-      "status": "exists"
+      "variant": "slow",
+      "file": "tts/e69e7d88_slow.m4a",
+      "status": "generated"
     },
     {
-      "key": "e89e80ae",
-      "text": "moo",
-      "file": "tts/e89e80ae.m4a",
+      "key": "118ee480",
+      "text": "nap",
+      "variant": "normal",
+      "file": "tts/118ee480.m4a",
       "status": "exists"
     },
     {
       "key": "118ee480",
       "text": "nap",
-      "file": "tts/118ee480.m4a",
+      "variant": "slow",
+      "file": "tts/118ee480_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "11b54859",
+      "text": "nnn",
+      "variant": "normal",
+      "file": "tts/11b54859.m4a",
       "status": "exists"
     },
     {
       "key": "11b54859",
       "text": "nnn",
-      "file": "tts/11b54859.m4a",
+      "variant": "slow",
+      "file": "tts/11b54859_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "62366ffa",
+      "text": "no",
+      "variant": "normal",
+      "file": "tts/62366ffa.m4a",
       "status": "exists"
     },
     {
       "key": "62366ffa",
       "text": "no",
-      "file": "tts/62366ffa.m4a",
+      "variant": "slow",
+      "file": "tts/62366ffa_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "5a3424cb",
+      "text": "ow",
+      "variant": "normal",
+      "file": "tts/5a3424cb.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "4f55eeec",
+      "text": "pan",
+      "variant": "normal",
+      "file": "tts/4f55eeec.m4a",
       "status": "exists"
     },
     {
       "key": "4f55eeec",
       "text": "pan",
-      "file": "tts/4f55eeec.m4a",
+      "variant": "slow",
+      "file": "tts/4f55eeec_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "695617da",
+      "text": "pat",
+      "variant": "normal",
+      "file": "tts/695617da.m4a",
       "status": "exists"
     },
     {
       "key": "695617da",
       "text": "pat",
-      "file": "tts/695617da.m4a",
+      "variant": "slow",
+      "file": "tts/695617da_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "773611af",
+      "text": "phone",
+      "variant": "normal",
+      "file": "tts/773611af.m4a",
       "status": "exists"
     },
     {
       "key": "773611af",
       "text": "phone",
-      "file": "tts/773611af.m4a",
+      "variant": "slow",
+      "file": "tts/773611af_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "6840fb8f",
+      "text": "pig",
+      "variant": "normal",
+      "file": "tts/6840fb8f.m4a",
       "status": "exists"
     },
     {
       "key": "6840fb8f",
       "text": "pig",
-      "file": "tts/6840fb8f.m4a",
+      "variant": "slow",
+      "file": "tts/6840fb8f_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "6f410694",
+      "text": "pin",
+      "variant": "normal",
+      "file": "tts/6f410694.m4a",
       "status": "exists"
     },
     {
       "key": "6f410694",
       "text": "pin",
-      "file": "tts/6f410694.m4a",
+      "variant": "slow",
+      "file": "tts/6f410694_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "5533661c",
+      "text": "pot",
+      "variant": "normal",
+      "file": "tts/5533661c.m4a",
       "status": "exists"
     },
     {
       "key": "5533661c",
       "text": "pot",
-      "file": "tts/5533661c.m4a",
+      "variant": "slow",
+      "file": "tts/5533661c_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "55727a72",
+      "text": "puh",
+      "variant": "normal",
+      "file": "tts/55727a72.m4a",
       "status": "exists"
     },
     {
       "key": "55727a72",
       "text": "puh",
-      "file": "tts/55727a72.m4a",
-      "status": "exists"
+      "variant": "slow",
+      "file": "tts/55727a72_slow.m4a",
+      "status": "generated"
     },
     {
-      "key": "c77c2b0b",
-      "text": "quack quack",
-      "file": "tts/c77c2b0b.m4a",
-      "status": "exists"
-    },
-    {
-      "key": "e9361f07",
-      "text": "ring ring",
-      "file": "tts/e9361f07.m4a",
+      "key": "3a1b4ab4",
+      "text": "rock",
+      "variant": "normal",
+      "file": "tts/3a1b4ab4.m4a",
       "status": "exists"
     },
     {
       "key": "3a1b4ab4",
       "text": "rock",
-      "file": "tts/3a1b4ab4.m4a",
+      "variant": "slow",
+      "file": "tts/3a1b4ab4_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "38deadf5",
+      "text": "rrr",
+      "variant": "normal",
+      "file": "tts/38deadf5.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "e61cac07",
+      "text": "sad",
+      "variant": "normal",
+      "file": "tts/e61cac07.m4a",
       "status": "exists"
     },
     {
       "key": "e61cac07",
       "text": "sad",
-      "file": "tts/e61cac07.m4a",
+      "variant": "slow",
+      "file": "tts/e61cac07_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "d61c92d7",
+      "text": "sat",
+      "variant": "normal",
+      "file": "tts/d61c92d7.m4a",
       "status": "exists"
     },
     {
       "key": "d61c92d7",
       "text": "sat",
-      "file": "tts/d61c92d7.m4a",
+      "variant": "slow",
+      "file": "tts/d61c92d7_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "3f520f5e",
+      "text": "sh",
+      "variant": "normal",
+      "file": "tts/3f520f5e.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "07cc25f4",
+      "text": "sheep",
+      "variant": "normal",
+      "file": "tts/07cc25f4.m4a",
       "status": "exists"
     },
     {
       "key": "07cc25f4",
       "text": "sheep",
-      "file": "tts/07cc25f4.m4a",
+      "variant": "slow",
+      "file": "tts/07cc25f4_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "ac56f17f",
+      "text": "ship",
+      "variant": "normal",
+      "file": "tts/ac56f17f.m4a",
       "status": "exists"
     },
     {
       "key": "ac56f17f",
       "text": "ship",
-      "file": "tts/ac56f17f.m4a",
+      "variant": "slow",
+      "file": "tts/ac56f17f_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "c630015f",
+      "text": "sit",
+      "variant": "normal",
+      "file": "tts/c630015f.m4a",
       "status": "exists"
     },
     {
       "key": "c630015f",
       "text": "sit",
-      "file": "tts/c630015f.m4a",
+      "variant": "slow",
+      "file": "tts/c630015f_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "0d523ad5",
+      "text": "sock",
+      "variant": "normal",
+      "file": "tts/0d523ad5.m4a",
       "status": "exists"
     },
     {
       "key": "0d523ad5",
       "text": "sock",
-      "file": "tts/0d523ad5.m4a",
+      "variant": "slow",
+      "file": "tts/0d523ad5_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "c33f0730",
+      "text": "sss",
+      "variant": "normal",
+      "file": "tts/c33f0730.m4a",
       "status": "exists"
     },
     {
       "key": "c33f0730",
       "text": "sss",
-      "file": "tts/c33f0730.m4a",
+      "variant": "slow",
+      "file": "tts/c33f0730_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "dd4e3aa8",
+      "text": "sum",
+      "variant": "normal",
+      "file": "tts/dd4e3aa8.m4a",
       "status": "exists"
     },
     {
       "key": "dd4e3aa8",
       "text": "sum",
-      "file": "tts/dd4e3aa8.m4a",
+      "variant": "slow",
+      "file": "tts/dd4e3aa8_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "e04e3f61",
+      "text": "sun",
+      "variant": "normal",
+      "file": "tts/e04e3f61.m4a",
       "status": "exists"
     },
     {
       "key": "e04e3f61",
       "text": "sun",
-      "file": "tts/e04e3f61.m4a",
+      "variant": "slow",
+      "file": "tts/e04e3f61_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "aaf74aa2",
+      "text": "tap",
+      "variant": "normal",
+      "file": "tts/aaf74aa2.m4a",
       "status": "exists"
     },
     {
       "key": "aaf74aa2",
       "text": "tap",
-      "file": "tts/aaf74aa2.m4a",
+      "variant": "slow",
+      "file": "tts/aaf74aa2_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "41454691",
+      "text": "th",
+      "variant": "normal",
+      "file": "tts/41454691.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "b40eb21c",
+      "text": "the",
+      "variant": "normal",
+      "file": "tts/b40eb21c.m4a",
       "status": "exists"
     },
     {
       "key": "b40eb21c",
       "text": "the",
-      "file": "tts/b40eb21c.m4a",
+      "variant": "slow",
+      "file": "tts/b40eb21c_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "f3ac9ae3",
+      "text": "thumb",
+      "variant": "normal",
+      "file": "tts/f3ac9ae3.m4a",
       "status": "exists"
     },
     {
       "key": "f3ac9ae3",
       "text": "thumb",
-      "file": "tts/f3ac9ae3.m4a",
+      "variant": "slow",
+      "file": "tts/f3ac9ae3_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "bd0aeeb0",
+      "text": "tin",
+      "variant": "normal",
+      "file": "tts/bd0aeeb0.m4a",
       "status": "exists"
     },
     {
       "key": "bd0aeeb0",
       "text": "tin",
-      "file": "tts/bd0aeeb0.m4a",
+      "variant": "slow",
+      "file": "tts/bd0aeeb0_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "bb0aeb8a",
+      "text": "tip",
+      "variant": "normal",
+      "file": "tts/bb0aeb8a.m4a",
       "status": "exists"
     },
     {
       "key": "bb0aeb8a",
       "text": "tip",
-      "file": "tts/bb0aeb8a.m4a",
+      "variant": "slow",
+      "file": "tts/bb0aeb8a_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "42454824",
+      "text": "to",
+      "variant": "normal",
+      "file": "tts/42454824.m4a",
       "status": "exists"
     },
     {
       "key": "42454824",
       "text": "to",
-      "file": "tts/42454824.m4a",
+      "variant": "slow",
+      "file": "tts/42454824_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "9b28ce3e",
+      "text": "tuh",
+      "variant": "normal",
+      "file": "tts/9b28ce3e.m4a",
       "status": "exists"
     },
     {
       "key": "9b28ce3e",
       "text": "tuh",
-      "file": "tts/9b28ce3e.m4a",
+      "variant": "slow",
+      "file": "tts/9b28ce3e_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "5b4330e8",
+      "text": "uh",
+      "variant": "normal",
+      "file": "tts/5b4330e8.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "7c305f10",
+      "text": "vet",
+      "variant": "normal",
+      "file": "tts/7c305f10.m4a",
       "status": "exists"
     },
     {
       "key": "7c305f10",
       "text": "vet",
-      "file": "tts/7c305f10.m4a",
-      "status": "exists"
+      "variant": "slow",
+      "file": "tts/7c305f10_slow.m4a",
+      "status": "generated"
     },
     {
-      "key": "9a114c47",
-      "text": "vroom vroom",
-      "file": "tts/9a114c47.m4a",
-      "status": "exists"
+      "key": "98579a94",
+      "text": "vuh",
+      "variant": "normal",
+      "file": "tts/98579a94.m4a",
+      "status": "generated"
     },
     {
-      "key": "71302867",
-      "text": "wah wah",
-      "file": "tts/71302867.m4a",
+      "key": "21d9d8e7",
+      "text": "wet",
+      "variant": "normal",
+      "file": "tts/21d9d8e7.m4a",
       "status": "exists"
     },
     {
       "key": "21d9d8e7",
       "text": "wet",
-      "file": "tts/21d9d8e7.m4a",
+      "variant": "slow",
+      "file": "tts/21d9d8e7_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "39137b89",
+      "text": "woof woof",
+      "variant": "normal",
+      "file": "tts/39137b89.m4a",
       "status": "exists"
     },
     {
       "key": "39137b89",
       "text": "woof woof",
-      "file": "tts/39137b89.m4a",
-      "status": "exists"
+      "variant": "slow",
+      "file": "tts/39137b89_slow.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "25b13cc3",
+      "text": "wuh",
+      "variant": "normal",
+      "file": "tts/25b13cc3.m4a",
+      "status": "generated"
+    },
+    {
+      "key": "697850a1",
+      "text": "yuh",
+      "variant": "normal",
+      "file": "tts/697850a1.m4a",
+      "status": "generated"
     }
   ]
 }

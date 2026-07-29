@@ -19,6 +19,11 @@ export interface ActivityContext {
   record: (activity: string, detail?: string) => void
   // 保存一次成功的跟读录音（里程碑，同 key 覆盖）
   saveRecording: (key: string, blob: Blob) => void
+  // 翻书引擎钩子（均由 player 注入）：
+  // 注册页面离开时的清理（停止录音等）
+  onCleanup?: (fn: () => void) => void
+  // 标记互动进行中（如录音中）→ 引擎禁用 swipe 翻页
+  setBusy?: (busy: boolean) => void
 }
 
 export function makeContext(lesson: Lesson): ActivityContext {

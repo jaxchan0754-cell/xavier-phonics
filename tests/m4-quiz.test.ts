@@ -19,7 +19,7 @@ const NOW = Date.now()
 
 // ---- 造数：quizDue ----
 // 场景 1：无进度 → 不出现
-// 造课：l1-1..l1-4 各带一个 blend 词（素材充足，供 quizDue 校验通过）
+// 造课：l1-1..l1-4 各带一个 word 页（素材充足，供 quizDue 校验通过）
 const fakeLessons = [1, 2, 3, 4].map((i) => ({
   id: `l1-${i}`,
   level: 1,
@@ -27,8 +27,10 @@ const fakeLessons = [1, 2, 3, 4].map((i) => ({
   emoji: '🐱',
   activities: [
     {
-      type: 'blend' as const,
-      words: [{ word: `w${i}`, emoji: '🐶', letters: [{ char: 'w', audio: 'wuh' }], audio: `w${i}` }],
+      type: 'word' as const,
+      word: `w${i}`,
+      emoji: '🐶',
+      audio: { audio: `w${i}`, slow: true },
     },
   ],
 }))
@@ -55,29 +57,19 @@ const lesson = {
   order: 99,
   emoji: '🐱',
   activities: [
+    { type: 'phoneme' as const, grapheme: 's', emoji: '🐍', audio: { audio: 'sss', slow: true } },
+    { type: 'phoneme' as const, grapheme: 'a', emoji: '🍎', audio: { audio: 'ah', slow: true } },
+    { type: 'word' as const, word: 'I', emoji: '🧒', tricky: true, audio: { audio: 'I', slow: true } },
     {
-      type: 'echo' as const,
-      prompt: 'p',
-      items: [
-        { text: 's', model: 'sss', emoji: '🐍' },
-        { text: 'a', model: 'ah', emoji: '🍎' },
-        { text: 'I', model: 'I', emoji: '🧒', tricky: true },
+      type: 'word' as const,
+      word: 'cat',
+      emoji: '🐱',
+      letters: [
+        { char: 'c', audio: 'kuh' },
+        { char: 'a', audio: 'ah' },
+        { char: 't', audio: 'tuh' },
       ],
-    },
-    {
-      type: 'blend' as const,
-      words: [
-        {
-          word: 'cat',
-          emoji: '🐱',
-          letters: [
-            { char: 'c', audio: 'kuh' },
-            { char: 'a', audio: 'ah' },
-            { char: 't', audio: 'tuh' },
-          ],
-          audio: 'cat',
-        },
-      ],
+      audio: { audio: 'cat', slow: true },
     },
   ],
 }
@@ -95,7 +87,8 @@ check('重复播种保留原调度', await db.review.get('s').then((i) => [i?.in
 const sessionStart = NOW + DAY_MS
 await db.records.add({ levelId: 'review', activity: 'echo', detail: 's|confirmed', at: sessionStart + 1 })
 await db.records.add({ levelId: 'review', activity: 'echo', detail: 'a|retry', at: sessionStart + 2 })
-await db.records.add({ levelId: 'review', activity: 'listen', detail: 'wrong|cat|dog', at: sessionStart + 3 })
+await db.records.add({ levelId: 'review', activity: 'echo', detail: 'cat|softpass', at: sessionStart + 3 })
+await db.records.add({ levelId: 'review', activity: 'echo', detail: 'I|confirmed', at: sessionStart + 4 })
 const items = await dueReviewItems(sessionStart)
 await processReviewResults(items, sessionStart, sessionStart + 1000)
 const s = await db.review.get('s')
@@ -103,9 +96,9 @@ check('confirmed → reps+1、间隔按档推进', [s?.reps, s?.interval], [4, 1
 const a = await db.review.get('a')
 check('retry → 重置当天', [a?.reps, a?.interval, a?.due], [0, 0, sessionStart + 1000])
 const I = await db.review.get('I')
-check('tricky word（listen 快闪）无点错 → 通过', [I?.reps, I?.interval], [1, 1])
+check('tricky word confirmed → 通过推进', [I?.reps, I?.interval], [1, 1])
 const cat = await db.review.get('cat')
-check('listen 点错 → 重置当天', [cat?.reps, cat?.interval], [0, 0])
+check('softpass → 重置当天（待巩固）', [cat?.reps, cat?.interval], [0, 0])
 const audit = await db.records.where('levelId').equals('review').and((r) => r.activity === 'review').count()
 check('结算写 review 审计记录 4 条', audit, 4)
 

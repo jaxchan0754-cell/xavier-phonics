@@ -16,147 +16,127 @@
   ],
   "activities": [
     {
-      "type": "listen",
-      "kind": "letter",
-      "rounds": [
+      "type": "phoneme",
+      "grapheme": "g",
+      "emoji": "🍇",
+      "audio": {
+        "audio": "guh",
+        "slow": true
+      },
+      "cn": "葡萄",
+      "tip": "舌根抬起，短促有力"
+    },
+    {
+      "type": "phoneme",
+      "grapheme": "o",
+      "emoji": "🐙",
+      "audio": {
+        "audio": "aw",
+        "slow": true
+      },
+      "cn": "章鱼",
+      "tip": "圆圆的嘴，短短的'奥'"
+    },
+    {
+      "type": "word",
+      "word": "to",
+      "emoji": "➡️",
+      "cn": "到、向（tricky word，整体认读）",
+      "tricky": true,
+      "letters": [
         {
-          "prompt": "Tap the letter guh!",
-          "target": "g",
-          "cards": [
-            {
-              "id": "g",
-              "emoji": "🍇",
-              "text": "g",
-              "audio": "guh"
-            },
-            {
-              "id": "d",
-              "emoji": "🐶",
-              "text": "d",
-              "audio": "duh"
-            },
-            {
-              "id": "p",
-              "emoji": "🐷",
-              "text": "p",
-              "audio": "puh"
-            }
-          ]
+          "char": "t",
+          "audio": "tuh"
         },
         {
-          "prompt": "Tap the letter aw!",
-          "target": "o",
-          "cards": [
-            {
-              "id": "o",
-              "emoji": "🐙",
-              "text": "o",
-              "audio": "aw"
-            },
-            {
-              "id": "a",
-              "emoji": "🍎",
-              "text": "a",
-              "audio": "ah"
-            },
-            {
-              "id": "i",
-              "emoji": "✒️",
-              "text": "i",
-              "audio": "ih"
-            }
-          ]
+          "char": "o",
+          "audio": "aw"
         }
+      ],
+      "audio": {
+        "audio": "to",
+        "slow": true
+      }
+    },
+    {
+      "type": "word",
+      "word": "dog",
+      "emoji": "🐶",
+      "cn": "狗",
+      "letters": [
+        {
+          "char": "d",
+          "audio": "duh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
+        }
+      ],
+      "audio": {
+        "audio": "dog",
+        "slow": true
+      },
+      "misreadings": [
+        "tog"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen, then you say it!",
-      "items": [
+      "type": "word",
+      "word": "dig",
+      "emoji": "⛏️",
+      "cn": "挖",
+      "letters": [
         {
-          "text": "g",
-          "model": "guh",
-          "emoji": "🍇",
-          "cn": "葡萄"
+          "char": "d",
+          "audio": "duh"
         },
         {
-          "text": "o",
-          "model": "aw",
-          "emoji": "🐙",
-          "cn": "章鱼"
+          "char": "i",
+          "audio": "ih"
         },
         {
-          "text": "to",
-          "model": "to",
-          "emoji": "➡️",
-          "cn": "到、向（tricky word，整体认读）",
-          "tricky": true
+          "char": "g",
+          "audio": "guh"
         }
+      ],
+      "audio": {
+        "audio": "dig",
+        "slow": true
+      },
+      "misreadings": [
+        "tik"
       ]
     },
     {
-      "type": "blend",
-      "words": [
+      "type": "word",
+      "word": "dot",
+      "emoji": "🔵",
+      "cn": "圆点",
+      "letters": [
         {
-          "word": "dog",
-          "emoji": "🐶",
-          "cn": "狗",
-          "letters": [
-            {
-              "char": "d",
-              "audio": "duh"
-            },
-            {
-              "char": "o",
-              "audio": "aw"
-            },
-            {
-              "char": "g",
-              "audio": "guh"
-            }
-          ],
-          "audio": "dog"
+          "char": "d",
+          "audio": "duh"
         },
         {
-          "word": "dig",
-          "emoji": "⛏️",
-          "cn": "挖",
-          "letters": [
-            {
-              "char": "d",
-              "audio": "duh"
-            },
-            {
-              "char": "i",
-              "audio": "ih"
-            },
-            {
-              "char": "g",
-              "audio": "guh"
-            }
-          ],
-          "audio": "dig"
+          "char": "o",
+          "audio": "aw"
         },
         {
-          "word": "dot",
-          "emoji": "🔵",
-          "cn": "圆点",
-          "letters": [
-            {
-              "char": "d",
-              "audio": "duh"
-            },
-            {
-              "char": "o",
-              "audio": "aw"
-            },
-            {
-              "char": "t",
-              "audio": "tuh"
-            }
-          ],
-          "audio": "dot"
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "dot",
+        "slow": true
+      },
+      "misreadings": [
+        "tot"
       ]
     },
     {

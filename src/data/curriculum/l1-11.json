@@ -5,64 +5,152 @@
   "emoji": "🎯",
   "cn": "词尾辅音专项（cat/dog/pig 尾音读清楚）",
   "parentGuide": "中文母语专项：汉语几乎没有词尾辅音，孩子容易把 cat 读成「ca」。目标是听出并读出词尾音。约 8 分钟。家长示范时夸张一点：cat-t！平时玩「小尾巴」游戏——读一个词，让孩子指出最后的音是什么。",
-  "intro": { "audio": "Listen for the last sound! Cat! Can you hear the little tuh at the end?" },
+  "intro": {
+    "audio": "Listen for the last sound! Cat! Can you hear the little tuh at the end?"
+  },
   "trickyWords": [],
   "activities": [
     {
-      "type": "listen",
-      "kind": "minimal-pair",
-      "rounds": [
+      "type": "word",
+      "word": "cat",
+      "emoji": "🐱",
+      "cn": "猫（对比 cap）",
+      "letters": [
         {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "cat",
-          "target": "cat",
-          "pair": "final-consonant",
-          "cards": [
-            { "id": "cat", "emoji": "🐱", "audio": "cat", "cn": "猫" },
-            { "id": "cap", "emoji": "🧢", "audio": "cap", "cn": "帽子" }
-          ]
+          "char": "c",
+          "audio": "kuh"
         },
         {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "dog",
-          "target": "dog",
-          "pair": "final-consonant",
-          "cards": [
-            { "id": "dot", "emoji": "🔵", "audio": "dot", "cn": "圆点" },
-            { "id": "dog", "emoji": "🐶", "audio": "dog", "cn": "狗" }
-          ]
+          "char": "a",
+          "audio": "ah"
         },
         {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "pig",
-          "target": "pig",
-          "pair": "final-consonant",
-          "cards": [
-            { "id": "pig", "emoji": "🐷", "audio": "pig", "cn": "猪" },
-            { "id": "pin", "emoji": "📌", "audio": "pin", "cn": "别针" }
-          ]
-        },
-        {
-          "prompt": "Listen! Which word do you hear?",
-          "stimulus": "sock",
-          "target": "sock",
-          "pair": "final-consonant",
-          "cards": [
-            { "id": "sad", "emoji": "😢", "audio": "sad", "cn": "伤心的" },
-            { "id": "sock", "emoji": "🧦", "audio": "sock", "cn": "袜子" }
-          ]
+          "char": "t",
+          "audio": "tuh"
         }
+      ],
+      "audio": {
+        "audio": "cat",
+        "slow": true
+      },
+      "misreadings": [
+        "tat",
+        "kat"
       ]
     },
     {
-      "type": "echo",
-      "prompt": "Listen to the last sound, then you say it!",
-      "items": [
-        { "text": "cat", "model": "cat", "emoji": "🐱", "cn": "猫（尾音 /t/ 要读出来）" },
-        { "text": "dog", "model": "dog", "emoji": "🐶", "cn": "狗（尾音 /g/ 要读出来）" },
-        { "text": "pig", "model": "pig", "emoji": "🐷", "cn": "猪（尾音 /g/ 要读出来）" }
+      "type": "word",
+      "word": "cap",
+      "emoji": "🧢",
+      "cn": "帽子（对比 cat）",
+      "letters": [
+        {
+          "char": "c",
+          "audio": "kuh"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "p",
+          "audio": "puh"
+        }
+      ],
+      "audio": {
+        "audio": "cap",
+        "slow": true
+      },
+      "misreadings": [
+        "kap"
       ]
     },
-    { "type": "celebrate", "sticker": "🎯", "audio": "Great job! You can hear the little sounds at the end!" }
+    {
+      "type": "word",
+      "word": "cat",
+      "emoji": "🐱",
+      "cn": "猫（尾音 /t/ 要读出来）",
+      "letters": [
+        {
+          "char": "c",
+          "audio": "kuh"
+        },
+        {
+          "char": "a",
+          "audio": "ah"
+        },
+        {
+          "char": "t",
+          "audio": "tuh"
+        }
+      ],
+      "audio": {
+        "audio": "cat",
+        "slow": true
+      },
+      "misreadings": [
+        "tat",
+        "kat"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "dog",
+      "emoji": "🐶",
+      "cn": "狗（尾音 /g/ 要读出来）",
+      "letters": [
+        {
+          "char": "d",
+          "audio": "duh"
+        },
+        {
+          "char": "o",
+          "audio": "aw"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
+        }
+      ],
+      "audio": {
+        "audio": "dog",
+        "slow": true
+      },
+      "misreadings": [
+        "tog"
+      ]
+    },
+    {
+      "type": "word",
+      "word": "pig",
+      "emoji": "🐷",
+      "cn": "猪（尾音 /g/ 要读出来）",
+      "letters": [
+        {
+          "char": "p",
+          "audio": "puh"
+        },
+        {
+          "char": "i",
+          "audio": "ih"
+        },
+        {
+          "char": "g",
+          "audio": "guh"
+        }
+      ],
+      "audio": {
+        "audio": "pig",
+        "slow": true
+      },
+      "misreadings": [
+        "big"
+      ]
+    },
+    {
+      "type": "celebrate",
+      "sticker": "🎯",
+      "audio": "Great job! You can hear the little sounds at the end!"
+    }
   ]
 }

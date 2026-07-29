@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "gen:icons": "node scripts/generate-icons.mjs",
     "gen:tts": "node scripts/generate-tts.mjs",
-    "test": "esbuild tests/*.test.ts --bundle --format=esm --platform=node --outdir=node_modules/.tmp-tests --log-level=warning && for f in node_modules/.tmp-tests/*.test.js; do node \"$f\" || exit 1; done"
+    "test": "esbuild tests/*.test.ts --bundle --format=esm --platform=node --external:@huggingface/transformers --outdir=node_modules/.tmp-tests --log-level=warning && for f in node_modules/.tmp-tests/*.test.js; do node \"$f\" || exit 1; done"
   },
   "devDependencies": {
     "fake-indexeddb": "^6.2.5",
@@ -19,6 +19,7 @@
     "vite-plugin-pwa": "^0.21.0"
   },
   "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
     "dexie": "^4.0.0"
   }
 }

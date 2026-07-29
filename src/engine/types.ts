@@ -67,7 +67,39 @@ export interface CelebrateActivity {
   audio: string
 }
 
-export type Activity = ListenActivity | EchoActivity | BlendActivity | CelebrateActivity
+// 语音引用：字符串（仅常速版）或对象（slow:true 时 TTS 管线同时生成 <hash>_slow.m4a）
+export type AudioRef = string | { audio: string; slow?: boolean }
+
+export function audioText(ref: AudioRef): string {
+  return typeof ref === 'string' ? ref : ref.audio
+}
+
+// ---- phoneme：音素页（新主流程页型）----
+// 超大 grapheme + 锚定图 → 慢速示范 → 跟读（VAD 发声检测确认）→ 常速示范作结
+export interface PhonemeActivity {
+  type: 'phoneme'
+  grapheme: string // s / a / ck 等
+  emoji: string
+  audio: AudioRef // 示范音（声明 slow:true 生成慢速版）
+  cn?: string // 中文提示（家长看，小字）
+  tip?: string // 第 2 次未确认时的发音提示（中文）
+}
+
+// ---- word：词页（新主流程页型）----
+// 词图 + 拉开字母 → 整词慢速示范 → 音素分解示范（逐字母高亮）→ 跟读 → 词级宽松匹配
+export interface WordActivity {
+  type: 'word'
+  word: string
+  emoji: string
+  cn?: string
+  tip?: string
+  tricky?: boolean
+  letters?: BlendLetter[] // 音素分解数据（可缺省，缺省跳过分解示范）
+  audio: AudioRef // 整词示范（声明 slow:true 生成慢速版）
+  misreadings?: string[] // 儿童常见误读变体（宽松匹配放行）
+}
+
+export type Activity = ListenActivity | EchoActivity | BlendActivity | PhonemeActivity | WordActivity | CelebrateActivity
 
 // ---- Lesson ----
 export interface TrickyWord {

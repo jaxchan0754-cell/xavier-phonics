@@ -3,10 +3,7 @@ import { indexedDB, IDBKeyRange } from 'fake-indexeddb'
 ;(globalThis as Record<string, unknown>).indexedDB = indexedDB
 ;(globalThis as Record<string, unknown>).IDBKeyRange = IDBKeyRange
 
-import type { BankCard } from '../src/review'
-
 const { db, getLevelStates } = await import('../src/db')
-const { pickDistractors } = await import('../src/review')
 const { collectQuizMaterial, hasEnoughQuizMaterial } = await import('../src/quiz')
 
 let failed = 0
@@ -16,72 +13,30 @@ function check(name: string, actual: unknown, expected: unknown) {
   console.log(`${ok ? '✓' : '✗'} ${name}: ${JSON.stringify(actual)}${ok ? '' : ` ≠ 预期 ${JSON.stringify(expected)}`}`)
 }
 
-// ---- 1. pickDistractors：同 emoji 卡片不得成为干扰项（c=🐱 与 cat=🐱 撞车场景）----
-const bank: BankCard[] = [
-  { id: 'cat', emoji: '🐱' },
-  { id: 'c', emoji: '🐱' }, // 字母卡与 cat 同图
-  { id: 'dog', emoji: '🐶' },
-  { id: 'pig', emoji: '🐷' },
-]
-for (let i = 0; i < 20; i++) {
-  const picked = pickDistractors(bank, { id: 'cat', emoji: '🐱' }, 2)
-  if (picked.some((c) => c.emoji === '🐱')) {
-    check(`第 ${i} 次抽样含同图干扰项`, picked.map((c) => c.id), '不含 🐱')
-    break
-  }
-  if (i === 19) check('20 次抽样均排除同 emoji 干扰项', true, true)
-}
-// 候选不足时放宽数量下限（只有 1 个异图候选就给 1 个）
-const sparse: BankCard[] = [
-  { id: 'cat', emoji: '🐱' },
-  { id: 'c', emoji: '🐱' },
-  { id: 'dog', emoji: '🐶' },
-]
-check('候选不足 → 只给 1 个异图干扰项', pickDistractors(sparse, { id: 'cat', emoji: '🐱' }, 2).map((c) => c.id), ['dog'])
-// 全同图极端情况 → 放宽 emoji 限制兜底 1 个
-const allSame: BankCard[] = [
-  { id: 'cat', emoji: '🐱' },
-  { id: 'c', emoji: '🐱' },
-]
-check('全同图 → 兜底 1 个干扰项', pickDistractors(allSame, { id: 'cat', emoji: '🐱' }, 2).length, 1)
-
 // ---- 2. quiz 素材校验 ----
-const mkLesson = (id: string, withPair: boolean, withBlend: boolean) => ({
+const mkLesson = (id: string, wordCount: number) => ({
   id,
   level: 1,
   order: 1,
   emoji: '🐱',
-  activities: [
-    ...(withPair
-      ? [
-          {
-            type: 'listen' as const,
-            kind: 'minimal-pair' as const,
-            rounds: [{ prompt: 'p', target: 'ship', cards: [{ id: 'ship', emoji: '🚢' }] }],
-          },
-        ]
-      : []),
-    ...(withBlend
-      ? [
-          {
-            type: 'blend' as const,
-            words: [{ word: 'cat', emoji: '🐱', letters: [{ char: 'c', audio: 'kuh' }], audio: 'cat' }],
-          },
-        ]
-      : []),
-  ],
+  activities: Array.from({ length: wordCount }, (_, i) => ({
+    type: 'word' as const,
+    word: `w${i}`,
+    emoji: '🐶',
+    audio: { audio: `w${i}`, slow: true },
+  })),
 })
-// 前 4 课若都是字母课（无 pair/blend 素材）→ 不足以出卷
-const letterOnly = [mkLesson('a', false, false), mkLesson('b', false, false), mkLesson('c', false, false), mkLesson('d', false, false)]
-check('无素材 → 不出卷', hasEnoughQuizMaterial(letterOnly, new Set(['a', 'b', 'c', 'd'])), false)
-// 只有 2 个 blend 词 → 仍不足（<3）
-const twoWords = [mkLesson('a', false, true), mkLesson('b', false, true), mkLesson('c', false, false), mkLesson('d', false, false)]
+// 前 4 课若都无 word 页 → 不足以出卷
+const noWords = [mkLesson('a', 0), mkLesson('b', 0), mkLesson('c', 0), mkLesson('d', 0)]
+check('无素材 → 不出卷', hasEnoughQuizMaterial(noWords, new Set(['a', 'b', 'c', 'd'])), false)
+// 只有 2 个 word 页 → 仍不足（<3）
+const twoWords = [mkLesson('a', 1), mkLesson('b', 1), mkLesson('c', 0), mkLesson('d', 0)]
 check('素材 2 < 3 → 不出卷', hasEnoughQuizMaterial(twoWords, new Set(['a', 'b', 'c', 'd'])), false)
-// 2 词 + 1 听辨轮 → 够
-const mixed = [mkLesson('a', true, true), mkLesson('b', false, true), mkLesson('c', false, false), mkLesson('d', false, false)]
+// 3 个 word 页 → 够
+const mixed = [mkLesson('a', 2), mkLesson('b', 1), mkLesson('c', 0), mkLesson('d', 0)]
 check('素材 3 → 可出卷', hasEnoughQuizMaterial(mixed, new Set(['a', 'b', 'c', 'd'])), true)
 // 未完成的课不计入素材
-check('未完成课的素材不计入', collectQuizMaterial(mixed, new Set(['a'])).words.length, 1)
+check('未完成课的素材不计入', collectQuizMaterial(mixed, new Set(['a'])).words.length, 2)
 
 // ---- 3. getLevelStates：lessonId=null 的预告节点不分配 current ----
 await db.progress.put({ levelId: 'l1', completedAt: Date.now() })

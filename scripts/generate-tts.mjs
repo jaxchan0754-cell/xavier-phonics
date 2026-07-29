@@ -30,28 +30,36 @@ function audioKey(text) {
 }
 
 // ---- 递归收集课程 JSON 中所有语音文本 ----
+// 值可以是字符串（仅常速版）或 { audio, slow:true }（同时生成 <hash>_slow.m4a 慢速版）
 const AUDIO_KEYS = new Set(['audio', 'prompt', 'stimulus', 'model'])
-function collect(node, out) {
+const texts = new Map() // text -> { slow: boolean }
+function addText(text, slow) {
+  const t = String(text).trim()
+  if (!t) return
+  texts.set(t, { slow: texts.get(t)?.slow || !!slow })
+}
+function collect(node) {
   if (Array.isArray(node)) {
-    for (const item of node) collect(item, out)
+    for (const item of node) collect(item)
   } else if (node && typeof node === 'object') {
     for (const [k, v] of Object.entries(node)) {
-      if (AUDIO_KEYS.has(k) && typeof v === 'string' && v.trim()) out.add(v.trim())
-      else collect(v, out)
+      if (AUDIO_KEYS.has(k) && typeof v === 'string') addText(v, false)
+      else if (AUDIO_KEYS.has(k) && v && typeof v === 'object' && typeof v.audio === 'string') addText(v.audio, !!v.slow)
+      else collect(v)
     }
   }
 }
 
-const texts = new Set()
 for (const file of fs.readdirSync(curriculumDir).filter((f) => f.endsWith('.json'))) {
-  collect(JSON.parse(fs.readFileSync(path.join(curriculumDir, file), 'utf8')), texts)
+  collect(JSON.parse(fs.readFileSync(path.join(curriculumDir, file), 'utf8')))
 }
 // 非课程内的零散语音（地图引导角色等）
 const sharedAudioPath = path.join(root, 'src/data/shared-audio.json')
 if (fs.existsSync(sharedAudioPath)) {
-  for (const t of JSON.parse(fs.readFileSync(sharedAudioPath, 'utf8'))) texts.add(String(t).trim())
+  for (const t of JSON.parse(fs.readFileSync(sharedAudioPath, 'utf8'))) addText(t, false)
 }
-console.log(`共提取 ${texts.size} 条待生成语音文本`)
+const slowCount = [...texts.values()].filter((v) => v.slow).length
+console.log(`共提取 ${texts.size} 条语音文本（其中 ${slowCount} 条需生成慢速版）`)
 
 // ---- 探测生成方式 ----
 const venvEdgeTts = path.join(root, 'scripts/.venv/bin/edge-tts')
@@ -73,14 +81,15 @@ else {
 console.log(`生成引擎: ${engine.kind === 'edge-tts' ? 'edge-tts (en-US-AnaNeural)' : 'macOS say（兜底）'}`)
 
 const VOICE = 'en-US-AnaNeural' // 儿童音色
-const RATE = '-10%' // 稍慢，适合初学儿童
+const RATE = '-10%' // 常速（稍慢，适合初学儿童）
+const SLOW_RATE = '-25%' // 慢速示范（phoneme/word 页用）
 
-function generateOne(text, m4aPath) {
-  const tmpBase = path.join(outDir, `.tmp-${process.pid}`)
+function generateOne(text, m4aPath, rate = RATE) {
+  const tmpBase = path.join(outDir, `.tmp-${process.pid}-${Math.random().toString(36).slice(2, 8)}`)
   try {
     if (engine.kind === 'edge-tts') {
       const mp3 = `${tmpBase}.mp3`
-      execFileSync(engine.cmd, [...engine.args, '--voice', VOICE, `--rate=${RATE}`, '--text', text, '--write-media', mp3], {
+      execFileSync(engine.cmd, [...engine.args, '--voice', VOICE, `--rate=${rate}`, '--text', text, '--write-media', mp3], {
         stdio: 'ignore',
         timeout: 60000,
       })
@@ -101,31 +110,35 @@ function generateOne(text, m4aPath) {
 }
 
 // ---- 批量生成（跳过已存在），并写 manifest ----
+// 每条文本生成常速版；标记 slow 的另生成 <hash>_slow.m4a（--rate=-25%）
 const items = []
 let generated = 0
 let skipped = 0
 let failed = 0
-for (const text of [...texts].sort()) {
-  const key = audioKey(text)
-  const file = `tts/${key}.m4a`
-  const abs = path.join(outDir, `${key}.m4a`)
+function genVariant(key, text, suffix, rate, variant) {
+  const abs = path.join(outDir, `${key}${suffix}.m4a`)
   let status
   if (fs.existsSync(abs)) {
     status = 'exists'
     skipped++
-  } else if (generateOne(text, abs)) {
+  } else if (generateOne(text, abs, rate)) {
     status = 'generated'
     generated++
   } else {
     status = 'failed'
     failed++
   }
-  items.push({ key, text, file, status })
+  items.push({ key, text, variant, file: `tts/${key}${suffix}.m4a`, status })
+}
+for (const [text, { slow }] of [...texts.entries()].sort()) {
+  const key = audioKey(text)
+  genVariant(key, text, '', RATE, 'normal')
+  if (slow) genVariant(key, text, '_slow', SLOW_RATE, 'slow')
 }
 
 const totalBytes = items
   .filter((i) => i.status !== 'failed')
-  .reduce((sum, i) => sum + fs.statSync(path.join(outDir, `${i.key}.m4a`)).size, 0)
+  .reduce((sum, i) => sum + fs.statSync(path.join(outDir, `${i.key}${i.variant === 'slow' ? '_slow' : ''}.m4a`)).size, 0)
 
 const manifest = {
   generatedAt: new Date().toISOString(),
