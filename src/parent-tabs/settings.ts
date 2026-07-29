@@ -55,7 +55,7 @@ export async function renderSettingsTab(container: HTMLElement): Promise<void> {
   }
   if (isIOS) {
     volInput.disabled = true
-    volLabel.textContent = '请用 iPad 音量键调节'
+    volLabel.textContent = '请用设备音量键调节'
   }
   volRow.append(volInput, volLabel)
   sec2.appendChild(volRow)
@@ -66,7 +66,7 @@ export async function renderSettingsTab(container: HTMLElement): Promise<void> {
   sec3.appendChild(el('h3', '', '进度导出（JSON 冷备份）'))
   const exportBtn = document.createElement('button')
   exportBtn.className = 'btn btn-secondary settings-btn'
-  exportBtn.textContent = '⬇ 导出进度 JSON'
+  exportBtn.textContent = '导出进度 JSON'
   exportBtn.onclick = async () => {
     const recordings = await db.recordings.toArray()
     const data = {
@@ -92,24 +92,24 @@ export async function renderSettingsTab(container: HTMLElement): Promise<void> {
   const sec4 = el('section', 'parent-section')
   sec4.appendChild(el('h3', '', '进度重置'))
   const resetBtn = document.createElement('button')
-  resetBtn.className = 'btn btn-primary settings-btn'
-  resetBtn.textContent = '🗑 重置全部进度'
+  resetBtn.className = 'btn btn-danger settings-btn'
+  resetBtn.textContent = '重置全部进度'
   const resetHint = el('span', 'settings-hint', '清空关卡进度、练习记录与录音（设置保留）')
   let armed = false
   resetBtn.onclick = async () => {
     if (!armed) {
       armed = true
-      resetBtn.textContent = '⚠️ 再点一次确认重置'
+      resetBtn.textContent = '再点一次确认重置'
       setTimeout(() => {
         armed = false
-        resetBtn.textContent = '🗑 重置全部进度'
+        resetBtn.textContent = '重置全部进度'
       }, 3000)
       return
     }
     await resetAllProgress()
     armed = false
-    resetBtn.textContent = '🗑 重置全部进度'
-    resetHint.textContent = '✅ 已清空。返回地图后从头开始。'
+    resetBtn.textContent = '重置全部进度'
+    resetHint.textContent = '已清空。返回书架后从头开始。'
   }
   sec4.append(resetBtn, resetHint)
   container.appendChild(sec4)

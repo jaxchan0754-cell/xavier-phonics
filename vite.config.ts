@@ -25,7 +25,7 @@ export default defineConfig({
       },
       workbox: {
         // 预缓存静态资源（含音频、图标），首次加载后可离线运行
-        globPatterns: ['**/*.{js,css,html,png,svg,json,mp3,m4a}'],
+        globPatterns: ['**/*.{js,css,html,png,svg,json,mp3,m4a,woff2}'],
       },
     }),
   ],

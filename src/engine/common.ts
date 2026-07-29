@@ -45,7 +45,7 @@ export function guideRow(text: string, audioText?: string): HTMLElement {
   if (audioText) {
     const replay = document.createElement('button')
     replay.className = 'btn btn-ghost btn-small replay-btn'
-    replay.textContent = 'Listen'
+    replay.textContent = 'Replay'
     replay.setAttribute('aria-label', '再听一次')
     replay.onclick = () => void speak(audioText)
     bubble.appendChild(replay)

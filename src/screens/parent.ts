@@ -63,10 +63,10 @@ export function renderParentGate(root: HTMLElement, navigate: Navigate): void {
       saveSettings({ restOverrideDate: todayStr() })
       navigate('parent')
     } else {
-      error.textContent = '答案不对，请再试一次'
       a = randInt(11, 99)
       b = randInt(11, 99)
       renderQuestion()
+      error.textContent = '答案不对，请再试一次' // 须在 renderQuestion 之后（它会清空 error）
     }
   }
   ok.onclick = submit
@@ -101,7 +101,7 @@ export function renderParent(root: HTMLElement, navigate: Navigate): void {
   topbar.className = 'parent-topbar'
   const back = document.createElement('button')
   back.className = 'btn btn-secondary parent-back'
-  back.textContent = '← 返回地图'
+  back.textContent = '返回书架'
   back.onclick = () => navigate('map')
   const title = document.createElement('h2')
   title.textContent = '家长端'

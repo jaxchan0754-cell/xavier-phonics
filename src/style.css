@@ -26,6 +26,12 @@
   --line: #eee4d4;
   --coral: #ff6b4a;
   --coral-dark: #e04e2c;
+  --coral-btn: #c93e1f; /* 白字按钮底（对比度 5.0:1） */
+  --coral-btn-dark: #a83218;
+  --mint-btn: #0c7a6f; /* 白字按钮底（对比度 5.2:1） */
+  --mint-btn-dark: #0a655b;
+  --sun-dark: #8a5a00; /* 琥珀文字（对比度 5.5:1） */
+  --mint-text: #0c7a6f; /* 薄荷文字（对比度 4.8:1） */
   --mint: #2ec4b6;
   --mint-dark: #1fa295;
   --sun: #ffc53d;
@@ -84,6 +90,7 @@ button {
   border: none;
   border-radius: 999px;
   padding: 14px 28px;
+  min-height: 52px;
   font-size: 19px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -102,9 +109,9 @@ button {
 }
 
 .btn-primary {
-  background: var(--coral);
+  background: var(--coral-btn);
   color: #fff;
-  box-shadow: var(--shadow-btn) var(--coral-dark);
+  box-shadow: var(--shadow-btn) var(--coral-btn-dark);
 }
 .btn-secondary {
   background: var(--card);
@@ -118,6 +125,12 @@ button {
   border: 2px solid var(--line);
   box-shadow: none;
 }
+.btn-danger {
+  background: var(--card);
+  color: var(--coral-btn);
+  border: 2px solid var(--coral-btn);
+  box-shadow: var(--shadow-btn) #f2d9d2;
+}
 .btn-small {
   padding: 7px 16px;
   font-size: 14px;
@@ -125,15 +138,16 @@ button {
 
 /* 跟读录音按钮：薄荷绿大按钮 */
 .btn-record {
-  background: var(--mint);
+  background: var(--mint-btn);
   color: #fff;
-  box-shadow: var(--shadow-btn) var(--mint-dark);
+  box-shadow: var(--shadow-btn) var(--mint-btn-dark);
   font-size: 22px;
   padding: 18px 40px;
+  min-height: 64px;
 }
 .btn-record.recording {
-  background: var(--coral);
-  box-shadow: var(--shadow-btn) var(--coral-dark);
+  background: var(--coral-btn);
+  box-shadow: var(--shadow-btn) var(--coral-btn-dark);
   animation: recordPulse 1s ease-in-out infinite;
 }
 @keyframes recordPulse {
@@ -149,6 +163,7 @@ button {
 .big-next {
   font-size: 22px;
   padding: 18px 44px;
+  min-height: 64px;
 }
 
 /* ============================================================
@@ -250,6 +265,7 @@ button {
 }
 .arrow-btn {
   min-width: 96px;
+  min-height: 56px;
 }
 .arrow-btn.ready {
   animation: readyPulse 1.6s ease-in-out infinite;
@@ -310,8 +326,8 @@ button {
   transition: all 0.15s ease;
 }
 .page-dot.done {
-  background: var(--mint);
-  border-color: var(--mint);
+  background: var(--mint-btn);
+  border-color: var(--mint-btn);
   color: #fff;
 }
 .page-dot.active {
@@ -457,8 +473,8 @@ button {
     color 0.15s ease;
 }
 .word-letter.lit {
-  background: var(--coral);
-  border-color: var(--coral);
+  background: var(--coral-dark);
+  border-color: var(--coral-dark);
   color: #fff;
   transform: scale(1.12);
 }
@@ -627,7 +643,7 @@ button {
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  color: var(--sun);
+  color: #9a6f00;
 }
 .book-soon {
   font-size: 10px;
@@ -835,6 +851,9 @@ button {
   overflow-x: auto;
   margin-bottom: 18px;
   padding-bottom: 4px;
+  /* 右侧渐隐，提示可横滑 */
+  -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, #000 88%, transparent);
 }
 .parent-tab {
   flex: none;
@@ -912,10 +931,10 @@ button {
   font-size: 14px;
 }
 .legend-item.state-mastered {
-  color: var(--mint-dark);
+  color: var(--mint-text);
 }
 .legend-item.state-learning {
-  color: #d69a00;
+  color: var(--sun-dark);
 }
 .legend-item.state-none {
   color: var(--ink-soft);
@@ -983,22 +1002,29 @@ button {
   cursor: pointer;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   font-weight: 700;
+}
+.guide-name {
+  flex: 1;
+  min-width: 0;
 }
 .guide-state {
   font-size: 12px;
   font-weight: 700;
   border-radius: 999px;
   padding: 2px 10px;
+  flex: none;
+  white-space: nowrap;
 }
 .guide-state.state-done {
   background: #e9faf8;
-  color: var(--mint-dark);
+  color: var(--mint-text);
 }
 .guide-state.state-current {
   background: #ffe9e3;
-  color: var(--coral-dark);
+  color: var(--coral-btn);
 }
 .guide-state.state-locked {
   background: var(--paper);
@@ -1033,8 +1059,13 @@ button {
 .settings-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 16px;
+}
+.settings-row .btn {
+  flex: none;
+  white-space: nowrap;
 }
 .settings-input {
   font-family: inherit;
@@ -1090,6 +1121,12 @@ button {
   .stage {
     gap: 14px;
     padding: 14px;
+  }
+  .page-dot {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    border-width: 1.5px;
   }
   .guide-face {
     width: 44px;
