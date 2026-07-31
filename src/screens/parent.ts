@@ -13,9 +13,9 @@ function randInt(min: number, max: number): number {
 }
 
 export function renderParentGate(root: HTMLElement, navigate: Navigate): void {
-  // 两位数乘法，答错换一题
-  let a = randInt(11, 99)
-  let b = randInt(11, 99)
+  // 10 以内乘法（2-9 × 2-9），答错换一题
+  let a = randInt(2, 9)
+  let b = randInt(2, 9)
 
   const screen = document.createElement('div')
   screen.className = 'gate-screen'
@@ -63,8 +63,8 @@ export function renderParentGate(root: HTMLElement, navigate: Navigate): void {
       saveSettings({ restOverrideDate: todayStr() })
       navigate('parent')
     } else {
-      a = randInt(11, 99)
-      b = randInt(11, 99)
+      a = randInt(2, 9)
+      b = randInt(2, 9)
       renderQuestion()
       error.textContent = '答案不对，请再试一次' // 须在 renderQuestion 之后（它会清空 error）
     }

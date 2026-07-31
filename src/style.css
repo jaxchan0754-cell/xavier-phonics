@@ -790,7 +790,7 @@ button {
 }
 
 .parent-screen {
-  min-height: 100%;
+  height: 100%; /* 必须固定高度：body overflow:hidden，内部滚动才能生效 */
   padding: calc(env(safe-area-inset-top, 0px) + 12px) 20px calc(env(safe-area-inset-bottom, 0px) + 40px);
   background: var(--paper);
   overflow-y: auto;
@@ -893,20 +893,19 @@ button {
   font-size: 14px;
 }
 
-.phoneme-legend {
+.phoneme-filter {
   display: flex;
-  gap: 16px;
-  margin-bottom: 12px;
-  font-size: 14px;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
 }
-.legend-item.state-mastered {
-  color: var(--mint-text);
+.phoneme-filter-btn.state-mastered.active {
+  background: var(--mint-text);
+  border-color: var(--mint-text);
 }
-.legend-item.state-learning {
-  color: var(--sun-dark);
-}
-.legend-item.state-none {
-  color: var(--ink-soft);
+.phoneme-filter-btn.state-learning.active {
+  background: var(--sun-dark);
+  border-color: var(--sun-dark);
 }
 .phoneme-grid {
   display: grid;
@@ -955,6 +954,10 @@ button {
 }
 .phoneme-chip.state-none {
   opacity: 0.55;
+}
+.phoneme-chip.state-untaught {
+  border-style: dashed;
+  opacity: 0.45;
 }
 
 .guide-level {
