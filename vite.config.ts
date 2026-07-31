@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  define: {
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+  },
   // 相对路径，便于部署到 GitHub Pages 子目录
   base: './',
   plugins: [

@@ -1,4 +1,5 @@
-// 设置板块：每日时长上限、音量、进度导出 JSON、进度重置（二次确认）
+// 设置板块：每日时长上限、音量、进度导出 JSON、进度重置（二次确认）、版本号
+declare const __BUILD_TIME__: string | undefined
 import { db, resetAllProgress } from '../db'
 import { getSettings, saveSettings } from '../settings'
 import { todayStr } from '../stats'
@@ -113,4 +114,8 @@ export async function renderSettingsTab(container: HTMLElement): Promise<void> {
   }
   sec4.append(resetBtn, resetHint)
   container.appendChild(sec4)
+
+  // 版本号（构建时间注入，用于确认是否已刷新到最新部署）
+  const ver = el('p', 'settings-hint version-tag', `版本：${typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : 'dev'}`)
+  container.appendChild(ver)
 }
